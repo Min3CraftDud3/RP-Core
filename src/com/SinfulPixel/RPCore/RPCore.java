@@ -1,28 +1,21 @@
 package com.SinfulPixel.RPCore;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Field;
-
-import org.bukkit.ChatColor;
+import com.SinfulPixel.RPCore.Chat.Chat;
+import com.SinfulPixel.RPCore.Combat.CombatMgr;
+import com.SinfulPixel.RPCore.Economy.*;
+import com.SinfulPixel.RPCore.Pet.PetMgr;
+import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Scoreboard;
 
-import com.SinfulPixel.RPCore.Chat.Chat;
-import com.SinfulPixel.RPCore.Combat.CombatMgr;
-import com.SinfulPixel.RPCore.Economy.Bank;
-import com.SinfulPixel.RPCore.Economy.Bounty;
-import com.SinfulPixel.RPCore.Economy.MoneyHandler;
-import com.SinfulPixel.RPCore.Economy.MoneyUpdater;
-import com.SinfulPixel.RPCore.Economy.PListener;
-import com.SinfulPixel.RPCore.Pet.PetMgr;
-import com.SinfulPixel.RPCore.ServerMgnt.Lag;
+import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Field;
 
 
 public class RPCore extends JavaPlugin{
@@ -51,14 +44,6 @@ public class RPCore extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(pet, this);
 		getServer().getPluginManager().registerEvents(cbt, this);
 		getServer().getPluginManager().registerEvents(mb, this);
-		//ScoreBoards
-			//Party Board
-		party = getServer().getScoreboardManager().getNewScoreboard();
-		po = party.registerNewObjective("party", "dummy");
-		po.setDisplayName(ChatColor.GOLD+"== PARTY ==");
-		po.setDisplaySlot(DisplaySlot.SIDEBAR);
-			//Other Board
-		
 		//Create Default Config
 		try {
 		      saveConfig();
