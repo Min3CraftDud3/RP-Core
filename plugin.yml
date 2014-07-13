@@ -1,0 +1,50 @@
+name: RPCore
+main: com.SinfulPixel.RPCore.RPCore
+version: 1.9
+description: Extensive RPG Plugin (Containing Economy, Mob Bounty, Pets, Chats, and More!
+author: Min3CraftDud3
+website: http://www.SinfulPixel.com
+commands:
+  rpcore:
+    description: "Shows Plugin Info."
+  diag:
+    description: "Shows server diagnostics."
+  cleanup:
+    permission: RPCore.cleanup
+    description: "Runs Server Cleanup."
+  local:
+    description: "Swaps to Local Chat"
+  roleplay:
+    description: "Swaps to RP Chat"
+  trade:
+    description: "Swaps to Trade Chat"
+  global:
+    description: "Swaps to Global Chat"
+  admin:
+    permission: RPCore.Chat.Admin
+    description: "Swaps to Admin Chat"
+  money:
+    description: "Displays player current balance."
+  pay:
+    description: "Pay another player money. /pay <playername> <amount>"
+  EcoReset:
+    permission: Eco.Reset
+    description: "Resets target players account to 0.0. /EcoReset"
+  EcoRemove:
+    permission: Eco.Remove
+    description: "Removes Money from player balance. /EcoRemove <playername> <amount>."
+  EcoAdd:
+    permission: Eco.Add
+    description: "Adds Money to player balance. /EcoAdd <playername> <amount>."
+  Eco:
+    description: "Displays plugin information."
+  EcoLookUp:
+    permission: Eco.LookUp
+    description: "Shows balance of target account. /EcoLookup <playername>"
+  petme:
+    permission: Pet.Use
+    description: "Spawns a pet at user location."
+  roll:
+    description: "Rolls a specific dice a specified amount of times."
+  sb:
+    description: "Scoreboard commands."
