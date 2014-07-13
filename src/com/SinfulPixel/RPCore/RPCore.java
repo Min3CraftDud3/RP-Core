@@ -117,7 +117,7 @@ public class RPCore extends JavaPlugin{
 	      config.set("RPCore.MobBalance.OCELOT","5");
 	      config.set("RPCore.MobBalance.WITHER","5");
 	      config.set("RPCore.MobBalance.GIANT","5");
-	      config.set("RPCore.MobBalance.PLAYER","5");
+	      config.set("RPCore.MobBalance.PLAYER","0");
 	      saveConfig();
 	     }
 	  }

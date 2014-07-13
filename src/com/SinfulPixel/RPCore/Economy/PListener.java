@@ -1,11 +1,7 @@
 package com.SinfulPixel.RPCore.Economy;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
+import com.SinfulPixel.RPCore.Chat.Chat;
+import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -14,8 +10,11 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.SinfulPixel.RPCore.RPCore;
-import com.SinfulPixel.RPCore.Chat.Chat;
+import java.io.File;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class PListener implements Listener{
 	static RPCore plugin;
@@ -50,8 +49,14 @@ public class PListener implements Listener{
 		    fc.set("Player.PlayerName", player.getName());
 		    fc.set("Player.PlayerUUID", player.getUniqueId().toString());
 		    fc.set("Player.JoinDate", dateFormat.format(date));
+            fc.set("Player.LastJoin", dateFormat.format(date));
 		    fc.set("Player.PlayerIP", player.getAddress().getAddress().getHostAddress());
 		    fc.set("Player.Balance", Double.parseDouble(plugin.getConfig().getString("RPCore.Eco.StartingAmount")));
+            fc.set("Player.Account", 0);
+            fc.set("Player.Character.Name", player.getName());
+            fc.set("Player.Character.Race","Unset");
+            fc.set("Player.Character.Profession","Unset");
+            fc.set("Player.Character.Description","Unset");
 		    fc.save(playerFile);
 		   }
 	}
