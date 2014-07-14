@@ -51,12 +51,14 @@ public class PListener implements Listener{
 		    fc.set("Player.JoinDate", dateFormat.format(date));
             fc.set("Player.LastJoin", dateFormat.format(date));
 		    fc.set("Player.PlayerIP", player.getAddress().getAddress().getHostAddress());
+            fc.set("Player.CombatLogs", 0);
 		    fc.set("Player.Balance", Double.parseDouble(plugin.getConfig().getString("RPCore.Eco.StartingAmount")));
-            fc.set("Player.Account", 0);
+            fc.set("Player.Account", 0.0);
             fc.set("Player.Character.Name", player.getName());
             fc.set("Player.Character.Race","Unset");
             fc.set("Player.Character.Profession","Unset");
             fc.set("Player.Character.Description","Unset");
+            fc.set("Player.Pet",false);
 		    fc.save(playerFile);
 		   }
 	}

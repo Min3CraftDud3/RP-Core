@@ -1,22 +1,25 @@
 package com.SinfulPixel.RPCore.Combat;
 
-import java.util.ArrayList;
-import java.util.UUID;
-
+import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
-import com.SinfulPixel.RPCore.RPCore;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.UUID;
 
 public class CombatMgr implements Listener{
 	private static ArrayList<UUID> inCombat = new ArrayList<UUID>();
 	private String cl = ChatColor.GRAY+"["+ChatColor.DARK_RED+"CombatLog"+ChatColor.GRAY+"]";
-	RPCore plugin;
+	static RPCore plugin;
 	public CombatMgr(RPCore plugin){
 		this.plugin = plugin;
 	}
@@ -47,6 +50,16 @@ public class CombatMgr implements Listener{
 		if(inCombat.contains(e.getPlayer().getUniqueId())){
 			e.getPlayer().setHealth(0);
 			Bukkit.broadcastMessage(cl+ChatColor.RED+e.getPlayer().getName()+" has just combat logged.");
+            try{updateCBL(e.getPlayer());}catch(Exception i){i.printStackTrace();}
 		}
 	}
+    public static void updateCBL(Player player) throws IOException {
+        File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
+        if(playerFile.exists()){
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(playerFile);
+            int logs = fc.getInt("Player.CombatLogs");
+            fc.set("Player.CombatLogs", logs+1);
+            fc.save(playerFile);
+        }
+    }
 }
