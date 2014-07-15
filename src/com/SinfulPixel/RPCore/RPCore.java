@@ -5,17 +5,17 @@ import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
+import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
-import org.bukkit.scoreboard.Objective;
-import org.bukkit.scoreboard.Scoreboard;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
+import java.sql.Connection;
 
 
 public class RPCore extends JavaPlugin{
@@ -29,8 +29,10 @@ public class RPCore extends JavaPlugin{
 	CombatMgr cbt = new CombatMgr(this);
 	Bounty mb = new Bounty(this);
 	public EnchantGlow glow = new EnchantGlow(120);
-	public static Scoreboard party;
-	public static Objective po;
+
+    MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
+    getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
+    Connection c = null;
 	
 	
 	public void onEnable(){
@@ -52,6 +54,12 @@ public class RPCore extends JavaPlugin{
 		    } catch (Exception e) {
 		      e.printStackTrace();
 		    }
+        //MySQL
+        try {
+            if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
+                c = MySQL.openConnection();
+            }
+        }catch(Exception i){i.printStackTrace();}
 		//Register Commands
 		getCommand("rpcore").setExecutor(new CmdMgr(this));
 		getCommand("diag").setExecutor(new CmdMgr(this));
@@ -85,6 +93,13 @@ public class RPCore extends JavaPlugin{
 	      new File(getDataFolder(), "RESET.FILE").createNewFile();
 	      config.set("RPCore.Creator","Min3CraftDud3");
 	      config.set("RPCore.WebSite","http://www.SinfulPixel.com");
+          config.set("RPCore.MySQL.Warning", "====== MySQL Settings ======");
+          config.set("RPCore.MySQL.UseMySQL", false);
+          config.set("RPCore.MySQL.Host", "127.0.0.1");
+          config.set("RPCore.MySQL.Port", "3306");
+          config.set("RPCore.MySQL.Database", "minecraft");
+          config.set("RPCore.MySQL.Username", "UserNameHere");
+          config.set("RPCore.MySQL.Password", "PassHere");
           config.set("RPCore.General.Warning","====== General Settings ======");
           config.set("RPCore.General.MaxCombatLogs", 5);
 	      config.set("RPCore.Eco.Warning","====== Economy Settings ======");
