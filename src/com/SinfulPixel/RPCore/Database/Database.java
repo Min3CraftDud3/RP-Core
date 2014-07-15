@@ -1,4 +1,4 @@
-package com.SinfulPixel.RPCore.com.SinfulPixel.RPCore.Database;
+package com.SinfulPixel.RPCore.Database;
 
 import com.SinfulPixel.RPCore.RPCore;
 

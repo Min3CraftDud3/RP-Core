@@ -1,32 +1,22 @@
-package com.SinfulPixel.RPCore.com.SinfulPixel.RPCore.Database.MySQL;
+package com.SinfulPixel.RPCore.Database.SQLite;
 
 import com.SinfulPixel.RPCore.RPCore;
-import com.SinfulPixel.RPCore.com.SinfulPixel.RPCore.Database.Database;
+import com.SinfulPixel.RPCore.Database.Database;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.*;
+import java.util.logging.Level;
 
-/**
- * Connects to and uses a MySQL database
- *
- * @author -_Husky_-
- * @author tips48
- */
-public class MySQL extends Database {
-    private final String user;
-    private final String database;
-    private final String password;
-    private final String port;
-    private final String hostname;
+
+public class SQLite extends Database {
+    private final String dbLocation;
+
     private Connection connection;
 
-    public MySQL(RPCore plugin, String hostname, String port, String database,
-                 String username, String password) {
+    public SQLite(RPCore plugin, String dbLocation) {
         super(plugin);
-        this.hostname = hostname;
-        this.port = port;
-        this.database = database;
-        this.user = username;
-        this.password = password;
+        this.dbLocation = dbLocation;
         this.connection = null;
     }
     @Override
@@ -35,10 +25,23 @@ public class MySQL extends Database {
         if (checkConnection()) {
             return connection;
         }
-        Class.forName("com.mysql.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://"
-                        + this.hostname + ":" + this.port + "/" + this.database,
-                this.user, this.password);
+        if (!plugin.getDataFolder().exists()) {
+            plugin.getDataFolder().mkdirs();
+        }
+        File file = new File(plugin.getDataFolder(), dbLocation);
+        if (!(file.exists())) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                plugin.getLogger().log(Level.SEVERE,
+                        "Unable to create database!");
+            }
+        }
+        Class.forName("org.sqlite.JDBC");
+        connection = DriverManager
+                .getConnection("jdbc:sqlite:"
+                        + plugin.getDataFolder().toPath().toString() + "/"
+                        + dbLocation);
         return connection;
     }
     @Override
