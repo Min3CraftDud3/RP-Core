@@ -5,12 +5,6 @@ import com.SinfulPixel.RPCore.Database.Database;
 
 import java.sql.*;
 
-/**
- * Connects to and uses a MySQL database
- *
- * @author -_Husky_-
- * @author tips48
- */
 public class MySQL extends Database {
     private final String user;
     private final String database;
