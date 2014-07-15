@@ -26,6 +26,7 @@ public class PListener implements Listener{
 		Player player = event.getPlayer();
 		Chat.chLocal.add(player.getName());
 		MoneyHandler.givePouch(player);
+        checkForBan(player);
 		try{
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){
@@ -52,6 +53,7 @@ public class PListener implements Listener{
             fc.set("Player.LastJoin", dateFormat.format(date));
 		    fc.set("Player.PlayerIP", player.getAddress().getAddress().getHostAddress());
             fc.set("Player.CombatLogs", 0);
+            fc.set("Player.isBanned", false);
 		    fc.set("Player.Balance", Double.parseDouble(plugin.getConfig().getString("RPCore.Eco.StartingAmount")));
             fc.set("Player.Account", 0.0);
             fc.set("Player.Character.Name", player.getName());
@@ -62,4 +64,13 @@ public class PListener implements Listener{
 		    fc.save(playerFile);
 		   }
 	}
+    public static void checkForBan(Player player){
+        File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
+        if(!playerFile.exists())return;
+        FileConfiguration fc = YamlConfiguration.loadConfiguration(playerFile);
+        Boolean isBanned = fc.getBoolean("Player.isBanned");
+        if(isBanned==true){
+            player.kickPlayer("You have been banned from this server.");
+        }
+    }
 }

@@ -85,6 +85,8 @@ public class RPCore extends JavaPlugin{
 	      new File(getDataFolder(), "RESET.FILE").createNewFile();
 	      config.set("RPCore.Creator","Min3CraftDud3");
 	      config.set("RPCore.WebSite","http://www.SinfulPixel.com");
+          config.set("RPCore.General.Warning","====== General Settings ======");
+          config.set("RPCore.General.MaxCombatLogs", 5);
 	      config.set("RPCore.Eco.Warning","====== Economy Settings ======");
 	      config.set("RPCore.Eco.CurrencyName","Coins");
 	      config.set("RPCore.Eco.CurrencyName_Multiple","Coins");

@@ -54,10 +54,17 @@ public class CombatMgr implements Listener{
 		}
 	}
     public static void updateCBL(Player player) throws IOException {
+        int maxCBL = plugin.getConfig().getInt("RPCore.General.MaxCombatLogs");
         File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
         if(playerFile.exists()){
             FileConfiguration fc = YamlConfiguration.loadConfiguration(playerFile);
             int logs = fc.getInt("Player.CombatLogs");
+            if((logs+1)==maxCBL){
+                fc.set("Player.isBanned", true);
+                player.kickPlayer("You have been banned. Reason: Combat Logging");
+                fc.save(playerFile);
+                return;
+            }
             fc.set("Player.CombatLogs", logs+1);
             fc.save(playerFile);
         }
