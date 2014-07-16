@@ -17,7 +17,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
-public class Backpack extends JavaPlugin implements Listener {
+public class Backpack implements Listener {
     static RPCore plugin;
     public Backpack(RPCore plugin){this.plugin = plugin;}
 

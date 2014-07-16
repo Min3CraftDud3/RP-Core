@@ -30,7 +30,7 @@ public class RPCore extends JavaPlugin{
 	CombatMgr cbt = new CombatMgr(this);
 	Bounty mb = new Bounty(this);
 	public EnchantGlow glow = new EnchantGlow(120);
-    Backpack bk = new Backpack(this);
+    ;
 
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
     getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -48,6 +48,7 @@ public class RPCore extends JavaPlugin{
 		getServer().getPluginManager().registerEvents(pet, this);
 		getServer().getPluginManager().registerEvents(cbt, this);
 		getServer().getPluginManager().registerEvents(mb, this);
+        getServer().getPluginManager().registerEvents(new Backpack(this),this);
 		//Create Default Config
 		try {
 		      saveConfig();

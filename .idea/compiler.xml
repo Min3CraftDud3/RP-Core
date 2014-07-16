@@ -18,6 +18,12 @@
         <processorPath useClasspath="true" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="RP-Core" target="" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="DEPRECATION" value="false" />
   </component>
 </project>
 
