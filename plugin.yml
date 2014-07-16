@@ -46,5 +46,5 @@ commands:
     description: "Spawns a pet at user location."
   roll:
     description: "Rolls a specific dice a specified amount of times."
-  sb:
-    description: "Scoreboard commands."
+  backpack:
+    description: "Backpack commands."
