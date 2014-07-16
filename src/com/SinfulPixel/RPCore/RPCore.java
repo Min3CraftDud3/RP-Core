@@ -2,10 +2,11 @@ package com.SinfulPixel.RPCore;
 
 import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
+import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
+import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
-import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
@@ -29,6 +30,7 @@ public class RPCore extends JavaPlugin{
 	CombatMgr cbt = new CombatMgr(this);
 	Bounty mb = new Bounty(this);
 	public EnchantGlow glow = new EnchantGlow(120);
+    Backpack bk = new Backpack(this);
 
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
     getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -51,6 +53,7 @@ public class RPCore extends JavaPlugin{
 		      saveConfig();
 		      setupConfig(getConfig());
 		      saveConfig();
+              Backpack.createBPConfig();
 		    } catch (Exception e) {
 		      e.printStackTrace();
 		    }
@@ -78,7 +81,7 @@ public class RPCore extends JavaPlugin{
 		getCommand("EcoLookUp").setExecutor(new CmdMgr(this));
 		getCommand("petme").setExecutor(new CmdMgr(this));
 		getCommand("roll").setExecutor(new CmdMgr(this));
-		getCommand("sb").setExecutor(new CmdMgr(this));
+		getCommand("backpack").setExecutor(new CmdMgr(this));
 		//Register Enchantment
 		try{
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -88,6 +91,11 @@ public class RPCore extends JavaPlugin{
 		try {EnchantmentWrapper.registerEnchantment(glow);
 		}catch(IllegalArgumentException e){}
 	}
+    public void onDisable(){
+       try {
+           Backpack.disable();
+       }catch(IOException i){i.printStackTrace();}
+    }
 	private void setupConfig(FileConfiguration config) throws IOException{
 	    if (!new File(getDataFolder(), "RESET.FILE").exists()) {
 	      new File(getDataFolder(), "RESET.FILE").createNewFile();

@@ -3,6 +3,7 @@ package com.SinfulPixel.RPCore;
 import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.Economy.Bank;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
+import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -10,7 +11,6 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.DisplaySlot;
 
 import java.io.IOException;
 import java.util.Random;
@@ -94,25 +94,13 @@ public class CmdMgr implements CommandExecutor{
                 }else{sender.sendMessage("Please specify a dice type and # of dice to roll.");sender.sendMessage("Acceptable Types: d4, d6, d8, d10, d12, d20");}
             }
         }
+        //If Sender is a player
 		if(sender instanceof Player){
 			Player player = (Player)sender;
-			//Scoreboards plugin
-			if(cmd.getName().equalsIgnoreCase("sb")){
-				if(args.length==1){
-					if(args[0].equalsIgnoreCase("info")){
-					player.sendMessage("Usage: /sb <Show/Hide> <Window>");
-					}
-				}
-				if(args.length==2){
-					if(args[0].equalsIgnoreCase("show")){
-						if(args[1].equalsIgnoreCase("party")){
-							player.setScoreboard(RPCore.party);
-						}
-					}else if(args[0].equalsIgnoreCase("hide")){
-						player.getScoreboard().getObjective(DisplaySlot.SIDEBAR).unregister();
-					}
-				}
-			}
+			//Backpack Cmd
+			if(cmd.getName().equalsIgnoreCase("backpack")){
+                player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
+            }
 			//Diagnostic Command
 			if(cmd.getName().equalsIgnoreCase("diag")){
 				if(args.length==0){
