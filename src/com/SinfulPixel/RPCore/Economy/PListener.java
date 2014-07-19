@@ -28,14 +28,15 @@ public class PListener implements Listener{
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
-            plugin.statement.executeUpdate("INSERT INTO RPCORE ("+player.getUniqueId()+","+player.getName()+",0,null);");
+            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('"+player.getUniqueId()+"','"+player.getName()+"')");
+            System.out.println("Created DB Profile.");
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){
 			createNewPlayerFile(player);
 			player.sendMessage(ChatColor.WHITE+"["+ChatColor.GREEN+"Eco"+ChatColor.WHITE+"]"+ChatColor.AQUA+" Welcome, your bank account has been setup.");
 			player.sendMessage(ChatColor.AQUA+"Type /money to view your balance.");
 			}
-		}catch(Exception e){}
+		}catch(Exception e){e.printStackTrace();}
 	}
 	public static void createNewPlayerFile(Player player) throws IOException{
 		DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
