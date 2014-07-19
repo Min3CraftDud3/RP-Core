@@ -35,7 +35,7 @@ public class RPCore extends JavaPlugin{
 
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
     getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
-    Connection c = null;
+    static Connection c = null;
 	
 	
 	public void onEnable(){
@@ -64,8 +64,15 @@ public class RPCore extends JavaPlugin{
             if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
                 System.out.println("Connecting to Database");
                 c = MySQL.openConnection();
+                System.out.println("Connecting to Database...CONNECTED!");
                 Statement statement = c.createStatement();
-                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38),PNAME varchar(30));");
+                System.out.println("Creating Core Table");
+                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL,PNAME varchar(30) NOT NULL, " +
+                                        "ACCOUNT DECIMAL(10,2), RACE varchar(20));");
+                System.out.println("Creating Core Table...COMPLETE!");
+                System.out.println("Creating Skills Table");
+                //Add Skill Create Table Statement Here!
+                System.out.println("Creating Skills Table...COMPLETE!");
                 c.setAutoCommit(true);
                 c.close();
             }
