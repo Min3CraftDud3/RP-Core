@@ -68,7 +68,7 @@ public class RPCore extends JavaPlugin{
                 Statement statement = c.createStatement();
                 System.out.println("Creating Core Table");
                 statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
-                                        "ACCOUNT DECIMAL(10,2), RACE varchar(20));");
+                                        "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
                 System.out.println("Creating Core Table...COMPLETE!");
                 System.out.println("Creating Skills Table");
                 //Add Skill Create Table Statement Here!
