@@ -17,6 +17,7 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.Connection;
+import java.sql.Statement;
 
 
 public class RPCore extends JavaPlugin{
@@ -63,6 +64,10 @@ public class RPCore extends JavaPlugin{
             if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
                 System.out.println("Connecting to Database");
                 c = MySQL.openConnection();
+                Statement statement = c.createStatement();
+                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38),PNAME varchar(30));");
+                c.setAutoCommit(true);
+                c.close();
             }
         }catch(Exception i){i.printStackTrace();System.out.println("Error Connecting to Database. Please Check your login details.");}
 		//Register Commands
