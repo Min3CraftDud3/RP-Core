@@ -61,9 +61,10 @@ public class RPCore extends JavaPlugin{
         //MySQL
         try {
             if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
+                System.out.println("Connecting to Database");
                 c = MySQL.openConnection();
             }
-        }catch(Exception i){i.printStackTrace();}
+        }catch(Exception i){i.printStackTrace();System.out.println("Error Connecting to Database. Please Check your login details.");}
 		//Register Commands
 		getCommand("rpcore").setExecutor(new CmdMgr(this));
 		getCommand("diag").setExecutor(new CmdMgr(this));
@@ -105,7 +106,7 @@ public class RPCore extends JavaPlugin{
           config.set("RPCore.MySQL.Warning", "====== MySQL Settings ======");
           config.set("RPCore.MySQL.UseMySQL", false);
           config.set("RPCore.MySQL.Host", "127.0.0.1");
-          config.set("RPCore.MySQL.Port", "3306");
+          config.set("RPCore.MySQL.Port", 3306);
           config.set("RPCore.MySQL.Database", "minecraft");
           config.set("RPCore.MySQL.Username", "UserNameHere");
           config.set("RPCore.MySQL.Password", "PassHere");
