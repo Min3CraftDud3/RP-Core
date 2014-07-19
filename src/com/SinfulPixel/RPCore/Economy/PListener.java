@@ -12,9 +12,12 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.UUID;
 
 public class PListener implements Listener{
 	static RPCore plugin;
@@ -28,8 +31,10 @@ public class PListener implements Listener{
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
-            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('"+player.getUniqueId()+"','"+player.getName()+"')");
-            System.out.println("Created DB Profile.");
+            if(!isCreated(player.getUniqueId())) {
+                RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "')");
+                System.out.println("Created DB Profile.");
+            }
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){
 			createNewPlayerFile(player);
@@ -74,5 +79,10 @@ public class PListener implements Listener{
         if(isBanned==true){
             player.kickPlayer("You have been banned from this server.");
         }
+    }
+    public static boolean isCreated(UUID pu)throws SQLException{
+        RPCore.statement.executeQuery("SELECT * FROM RPCORE WHERE UUID='"+pu+"';");
+        ResultSet rs = RPCore.statement.getResultSet();
+        return rs.next();
     }
 }
