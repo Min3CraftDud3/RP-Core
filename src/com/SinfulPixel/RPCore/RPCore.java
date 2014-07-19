@@ -67,7 +67,7 @@ public class RPCore extends JavaPlugin{
                 System.out.println("Connecting to Database...CONNECTED!");
                 Statement statement = c.createStatement();
                 System.out.println("Creating Core Table");
-                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL,PNAME varchar(30) NOT NULL, " +
+                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
                                         "ACCOUNT DECIMAL(10,2), RACE varchar(20));");
                 System.out.println("Creating Core Table...COMPLETE!");
                 System.out.println("Creating Skills Table");
