@@ -28,6 +28,7 @@ public class PListener implements Listener{
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
+            plugin.statement.executeUpdate("INSERT INTO RPCORE ("+player.getUniqueId()+","+player.getName()+",0,null);");
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){
 			createNewPlayerFile(player);

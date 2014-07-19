@@ -36,6 +36,7 @@ public class RPCore extends JavaPlugin{
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
     getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
     static Connection c = null;
+    public static Statement statement = null;
 	
 	
 	public void onEnable(){
@@ -65,7 +66,7 @@ public class RPCore extends JavaPlugin{
                 System.out.println("Connecting to Database");
                 c = MySQL.openConnection();
                 System.out.println("Connecting to Database...CONNECTED!");
-                Statement statement = c.createStatement();
+                statement = c.createStatement();
                 System.out.println("Creating Core Table");
                 statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
                                         "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
