@@ -17,6 +17,8 @@ import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 
@@ -65,17 +67,21 @@ public class RPCore extends JavaPlugin{
             if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
                 System.out.println("Connecting to Database");
                 c = MySQL.openConnection();
-                System.out.println("Connecting to Database...CONNECTED!");
-                statement = c.createStatement();
-                System.out.println("Creating Core Table");
-                statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
-                                        "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
-                System.out.println("Creating Core Table...COMPLETE!");
-                System.out.println("Creating Skills Table");
-                //Add Skill Create Table Statement Here!
-                System.out.println("Creating Skills Table...COMPLETE!");
-                c.setAutoCommit(true);
-                c.close();
+                DatabaseMetaData meta = c.getMetaData();
+                ResultSet res = meta.getTables(null,null,"RPCORE",null);
+                if(!res.next()) {
+                    System.out.println("Connecting to Database...CONNECTED!");
+                    statement = c.createStatement();
+                    System.out.println("Creating Core Table");
+                    statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
+                            "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
+                    System.out.println("Creating Core Table...COMPLETE!");
+                    System.out.println("Creating Skills Table");
+                    //Add Skill Create Table Statement Here!
+                    System.out.println("Creating Skills Table...COMPLETE!");
+                    c.setAutoCommit(true);
+                    c.close();
+                }
             }
         }catch(Exception i){i.printStackTrace();System.out.println("Error Connecting to Database. Please Check your login details.");}
 		//Register Commands
