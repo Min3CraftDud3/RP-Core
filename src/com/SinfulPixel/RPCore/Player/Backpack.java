@@ -32,7 +32,7 @@ public class Backpack implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        Inventory inv = Bukkit.getServer().createInventory(e.getPlayer(), InventoryType.CHEST, "Backpack");
+        Inventory inv = Bukkit.getServer().createInventory(e.getPlayer(), InventoryType.CHEST, "BackpackCmd");
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);

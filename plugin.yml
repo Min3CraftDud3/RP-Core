@@ -47,4 +47,4 @@ commands:
   roll:
     description: "Rolls a specific dice a specified amount of times."
   backpack:
-    description: "Backpack commands."
+    description: "BackpackCmd commands."

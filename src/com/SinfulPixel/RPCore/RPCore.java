@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore;
 
 import com.SinfulPixel.RPCore.Chat.Chat;
+import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
@@ -84,24 +85,24 @@ public class RPCore extends JavaPlugin{
             }
         }catch(Exception i){i.printStackTrace();System.out.println("Error Connecting to Database. Please Check your login details.");}
 		//Register Commands
-		getCommand("rpcore").setExecutor(new CmdMgr(this));
-		getCommand("diag").setExecutor(new CmdMgr(this));
-		getCommand("cleanup").setExecutor(new CmdMgr(this));
-		getCommand("local").setExecutor(new CmdMgr(this));
-		getCommand("roleplay").setExecutor(new CmdMgr(this));
-		getCommand("trade").setExecutor(new CmdMgr(this));
-		getCommand("global").setExecutor(new CmdMgr(this));
-		getCommand("admin").setExecutor(new CmdMgr(this));
-		getCommand("money").setExecutor(new CmdMgr(this));
-		getCommand("pay").setExecutor(new CmdMgr(this));
-		getCommand("EcoReset").setExecutor(new CmdMgr(this));
-		getCommand("EcoRemove").setExecutor(new CmdMgr(this));
-		getCommand("EcoAdd").setExecutor(new CmdMgr(this));
-		getCommand("Eco").setExecutor(new CmdMgr(this));
-		getCommand("EcoLookUp").setExecutor(new CmdMgr(this));
-		getCommand("petme").setExecutor(new CmdMgr(this));
-		getCommand("roll").setExecutor(new CmdMgr(this));
-		getCommand("backpack").setExecutor(new CmdMgr(this));
+		getCommand("rpcore").setExecutor(new RPCoreCmd(this));
+		getCommand("diag").setExecutor(new DiagnosticCmd(this));
+		getCommand("cleanup").setExecutor(new CleanupCmd(this));
+		getCommand("local").setExecutor(new ChatCmd(this));
+		getCommand("roleplay").setExecutor(new ChatCmd(this));
+		getCommand("trade").setExecutor(new ChatCmd(this));
+		getCommand("global").setExecutor(new ChatCmd(this));
+		getCommand("admin").setExecutor(new ChatCmd(this));
+		getCommand("money").setExecutor(new EconomyCmd(this));
+		getCommand("pay").setExecutor(new EconomyCmd(this));
+		getCommand("EcoReset").setExecutor(new EconomyCmd(this));
+		getCommand("EcoRemove").setExecutor(new EconomyCmd(this));
+		getCommand("EcoAdd").setExecutor(new EconomyCmd(this));
+		getCommand("Eco").setExecutor(new EconomyCmd(this));
+		getCommand("EcoLookUp").setExecutor(new EconomyCmd(this));
+		getCommand("petme").setExecutor(new PetCmd(this));
+		getCommand("roll").setExecutor(new DiceCmd(this));
+		getCommand("backpack").setExecutor(new BackpackCmd(this));
 		//Register Enchantment
 		try{
 			Field f = Enchantment.class.getDeclaredField("acceptingNew");
