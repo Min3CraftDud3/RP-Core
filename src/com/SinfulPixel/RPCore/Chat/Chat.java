@@ -1,10 +1,9 @@
 package com.SinfulPixel.RPCore.Chat;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -12,7 +11,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
-import com.SinfulPixel.RPCore.RPCore;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Chat implements Listener{
 	public static ArrayList<String> chLocal = new ArrayList<String>();
@@ -27,6 +27,11 @@ public class Chat implements Listener{
 	@SuppressWarnings("deprecation")
 	@EventHandler (priority = EventPriority.MONITOR)
 	public void onPlayerChat(AsyncPlayerChatEvent e){
+    for (Player p : Bukkit.getOnlinePlayers()){
+        if (e.getMessage().toLowerCase().contains(p.getName().toLowerCase())){
+            p.playSound(p.getLocation(), Sound.NOTE_PLING, 10.0F, 1.0F);
+        }
+    }
 	String msg = e.getMessage();
 	Player p = e.getPlayer();
 	String channel = getChannel(p);
