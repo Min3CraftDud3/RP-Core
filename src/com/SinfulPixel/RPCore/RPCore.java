@@ -8,10 +8,13 @@ import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
+import com.SinfulPixel.RPCore.World.CheckTime;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.io.File;
@@ -33,6 +36,7 @@ public class RPCore extends JavaPlugin {
     PetMgr pet = new PetMgr(this);
     CombatMgr cbt = new CombatMgr(this);
     Bounty mb = new Bounty(this);
+    CheckTime ct = new CheckTime(this);
     public EnchantGlow glow = new EnchantGlow(120);
 
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
@@ -44,7 +48,8 @@ public class RPCore extends JavaPlugin {
     public void onEnable() {
         //Runnables
         @SuppressWarnings("unused")
-        BukkitTask TaskName = new MoneyUpdater(this).runTaskTimer(this, 60 * 20, 60 * 20);
+        BukkitTask MoneyUpdate = new MoneyUpdater(this).runTaskTimer(this, 60 * 20, 60 * 20);
+        int timecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {}}, 0L, 20L);
         //Register Events
         getServer().getPluginManager().registerEvents(chat, this);
         getServer().getPluginManager().registerEvents(pl, this);
