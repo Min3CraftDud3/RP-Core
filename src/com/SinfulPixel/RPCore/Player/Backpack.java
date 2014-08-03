@@ -77,11 +77,25 @@ public class Backpack implements Listener {
     private static void saveItem(ConfigurationSection section, ItemStack itemStack) {
         section.set("type", itemStack.getType().name());
         section.set("amount", itemStack.getAmount());
-        // Save more information.
+        section.set("durability",itemStack.getDurability());
+        if(itemStack.hasItemMeta()) {
+            if(itemStack.getItemMeta().getLore() != null) {
+                section.set("lore", itemStack.getItemMeta().getLore());
+            }
+            if(itemStack.getItemMeta().getDisplayName() != null){
+                section.set("name", itemStack.getItemMeta().getDisplayName());
+            }
+        }
     }
     private static ItemStack loadItem(ConfigurationSection section) {
-        return new ItemStack(Material.valueOf(section.getString("type")), section.getInt("amount"));
-        // Load more information.
+        ItemStack is = new ItemStack(Material.valueOf(section.getString("type")), section.getInt("amount"));
+        if(section.contains("durability")) {
+            is.setDurability((short) section.getInt("durability"));
+        }
+        if(section.contains("lore")){
+            is.getItemMeta().setLore(section.getStringList("lore"));
+        }
+        return is;
     }
     public static void disable()throws IOException{
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
@@ -101,5 +115,4 @@ public class Backpack implements Listener {
             }
         }
     }
-
 }
