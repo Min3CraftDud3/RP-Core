@@ -1,5 +1,6 @@
 package com.SinfulPixel.RPCore.Cmds;
 
+import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -21,6 +22,10 @@ public class PartyCmd implements CommandExecutor {
             if (cmd.getName().equalsIgnoreCase("Party")) {
                 if (args.length == 0) {
                     p.sendMessage(ChatColor.GREEN+"Usage: /Party <Create/Invite/Disband/Accept/Toggle> <Params>");
+                }else if(args.length == 1){
+                    if(args[0].equalsIgnoreCase("create")){
+                        PartyManager.createParty(p);
+                    }
                 }
             }
         }
