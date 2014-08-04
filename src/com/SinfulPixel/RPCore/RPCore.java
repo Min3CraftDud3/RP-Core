@@ -5,6 +5,7 @@ import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
+import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
@@ -29,13 +30,7 @@ import java.sql.Statement;
 public class RPCore extends JavaPlugin {
     ConfigMgr cfg = new ConfigMgr(this);
     Lag lag = new Lag(this);
-    Chat chat = new Chat(this);
-    PListener pl = new PListener(this);
     Bank bank = new Bank(this);
-    MoneyHandler mh = new MoneyHandler(this);
-    PetMgr pet = new PetMgr(this);
-    CombatMgr cbt = new CombatMgr(this);
-    Bounty mb = new Bounty(this);
     CheckTime ct = new CheckTime(this);
     public EnchantGlow glow = new EnchantGlow(120);
 
@@ -51,12 +46,13 @@ public class RPCore extends JavaPlugin {
         BukkitTask MoneyUpdate = new MoneyUpdater(this).runTaskTimer(this, 60 * 20, 60 * 20);
         int timecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {}}, 0L, 20L);
         //Register Events
-        getServer().getPluginManager().registerEvents(chat, this);
-        getServer().getPluginManager().registerEvents(pl, this);
-        getServer().getPluginManager().registerEvents(mh, this);
-        getServer().getPluginManager().registerEvents(pet, this);
-        getServer().getPluginManager().registerEvents(cbt, this);
-        getServer().getPluginManager().registerEvents(mb, this);
+        getServer().getPluginManager().registerEvents(new Chat(this), this);
+        getServer().getPluginManager().registerEvents(new PListener(this), this);
+        getServer().getPluginManager().registerEvents(new MoneyHandler(this), this);
+        getServer().getPluginManager().registerEvents(new PetMgr(this), this);
+        getServer().getPluginManager().registerEvents(new CombatMgr(this), this);
+        getServer().getPluginManager().registerEvents(new Bounty(this), this);
+        getServer().getPluginManager().registerEvents(new EntityManager(this), this);
         getServer().getPluginManager().registerEvents(new Backpack(this), this);
         //Create Default Config
         try {
