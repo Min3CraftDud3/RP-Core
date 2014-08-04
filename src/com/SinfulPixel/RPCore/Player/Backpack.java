@@ -46,6 +46,7 @@ public class Backpack implements Listener {
     }
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e)throws IOException{
+        if(!backpacks.containsKey(e.getPlayer().getUniqueId())){return;}
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);

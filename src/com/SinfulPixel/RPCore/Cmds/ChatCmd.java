@@ -20,7 +20,7 @@ public class ChatCmd implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("local")) {
-                Chat.switchCh(player, "L");
+                Chat.switchCh(player, "LC");
                 player.sendMessage(ChatColor.DARK_AQUA + "You are now talking in " + ChatColor.GRAY + "local " + ChatColor.DARK_AQUA + "chat.");
             }
             if (cmd.getName().equalsIgnoreCase("roleplay")) {

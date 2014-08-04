@@ -44,7 +44,7 @@ public class RPCore extends JavaPlugin {
         //Runnables
         @SuppressWarnings("unused")
         BukkitTask MoneyUpdate = new MoneyUpdater(this).runTaskTimer(this, 60 * 20, 60 * 20);
-        int timecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {}}, 0L, 20L);
+        int timecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {CheckTime.CheckIRLTime();}}, 0L, 20L);
         //Register Events
         getServer().getPluginManager().registerEvents(new Chat(this), this);
         getServer().getPluginManager().registerEvents(new PListener(this), this);

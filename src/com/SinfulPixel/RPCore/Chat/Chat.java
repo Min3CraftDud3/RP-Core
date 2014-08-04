@@ -109,7 +109,7 @@ public class Chat implements Listener{
 		if(chTrade.contains(p.getName())) chTrade.remove(p.getName());
 		if(chGlobal.contains(p.getName())) chGlobal.remove(p.getName());
 		if(chAdmin.contains(p.getName())) chAdmin.remove(p.getName());
-		if(channel.equals("L")){
+		if(channel.equals("LC")){
 			chLocal.add(p.getName());
 		}else if(channel.equals("RP")){
 			chRP.add(p.getName());

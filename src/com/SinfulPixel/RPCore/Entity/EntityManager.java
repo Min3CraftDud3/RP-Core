@@ -5,6 +5,7 @@ import com.SinfulPixel.RPCore.World.Hologram;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -21,7 +22,8 @@ public class EntityManager implements Listener {
     public void onHit(EntityDamageByEntityEvent e){
         if(e.getDamager() instanceof Player) {
             Player p = (Player) e.getDamager();
-            Location loc = e.getEntity().getLocation();
+            Entity en = e.getEntity();
+            Location loc = new Location(en.getWorld(),en.getLocation().getX(),en.getLocation().getY()+1,en.getLocation().getZ());
             Double dmg = e.getDamage();
             final Hologram holo = new Hologram(ChatColor.RED + "-"+dmg+" HP");
             holo.show(p, loc);
@@ -30,7 +32,7 @@ public class EntityManager implements Listener {
                 public void run() {
                     holo.destroy();
                 }
-            }, 1);
+            }, 5);
         }
     }
 
