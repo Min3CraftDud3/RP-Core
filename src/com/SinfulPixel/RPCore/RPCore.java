@@ -6,6 +6,7 @@ import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
+import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
@@ -32,6 +33,7 @@ public class RPCore extends JavaPlugin {
     Lag lag = new Lag(this);
     Bank bank = new Bank(this);
     CheckTime ct = new CheckTime(this);
+    PartyManager pm = new PartyManager(this);
     public EnchantGlow glow = new EnchantGlow(120);
 
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
