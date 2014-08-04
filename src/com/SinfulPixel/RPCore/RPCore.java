@@ -107,6 +107,7 @@ public class RPCore extends JavaPlugin {
         getCommand("EcoLookUp").setExecutor(new EconomyCmd(this));
         getCommand("petme").setExecutor(new PetCmd(this));
         getCommand("roll").setExecutor(new DiceCmd(this));
+        getCommand("Party").setExecutor(new PartyCmd(this));
         getCommand("backpack").setExecutor(new BackpackCmd(this));
         //Register Enchantment
         try {

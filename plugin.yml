@@ -48,3 +48,5 @@ commands:
     description: "Rolls a specific dice a specified amount of times."
   backpack:
     description: "BackpackCmd commands."
+  party:
+    description: "Party Commands"
