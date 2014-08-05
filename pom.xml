@@ -5,7 +5,7 @@
     <artifactId>RPCore</artifactId>
     <packaging>jar</packaging>
     <version>1.0.2-SNAPSHOT</version>
-    <name>Sneaky</name>
+    <name>RPCore</name>
     <url>http://maven.apache.org</url>
 
     <properties>
