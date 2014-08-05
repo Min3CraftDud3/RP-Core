@@ -1,6 +1,9 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="RPCore">
+  <artifact type="jar" build-on-make="true" name="RPCore">
     <output-path>$PROJECT_DIR$/out/artifacts/RPCore</output-path>
+    <properties id="ant-preprocessing">
+      <options enabled="true" />
+    </properties>
     <root id="archive" name="RPCore.jar">
       <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
       <element id="module-output" name="RP-Core" />
