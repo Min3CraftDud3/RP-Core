@@ -26,6 +26,9 @@ public class PartyCmd implements CommandExecutor {
                     if(args[0].equalsIgnoreCase("create")){
                         PartyManager.createParty(p);
                     }
+                    if(args[0].equalsIgnoreCase("list")){
+                        PartyManager.showMembers(p);
+                    }
                 }
             }
         }

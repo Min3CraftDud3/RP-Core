@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -71,36 +71,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PartyManager.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PartyManager.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
+            <state vertical-scroll-proportion="-0.89621085" vertical-offset="663" max-vertical-offset="1377">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RPCore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+      <file leaf-file-name="PartyCmd.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="2771">
-              <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
-              <folding>
-                <marker date="1407239635644" expanded="true" signature="3547:3717" placeholder="CREATE TABLE..RPCORE..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackpackCmd.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2520593" vertical-offset="0" max-vertical-offset="607">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+              <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,11 +152,11 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Chat/Chat.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Backpack.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
       </list>
     </option>
   </component>
@@ -791,7 +777,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="2216000" />
+      <workItem from="1407239874541" duration="2901000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -937,11 +923,15 @@
       <created>1407240183801</created>
       <updated>1407240183801</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="Re-Added Backpack Cmd&#10;">
+      <created>1407287704196</created>
+      <updated>1407287704196</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58144000" />
+    <option name="totallyTimeSpent" value="58829000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1018,7 +1008,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Continued Setting up MySQL/SQLite." />
     <MESSAGE value="Added inventory serialization." />
     <MESSAGE value="Added Backpack Support" />
     <MESSAGE value="Removed extends JavaPlugin from Backpack class" />
@@ -1043,7 +1032,8 @@
     <MESSAGE value="Added Party Command" />
     <MESSAGE value="MAven support test" />
     <MESSAGE value="Fixed Maven Messup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Maven Messup" />
+    <MESSAGE value="Re-Added Backpack Cmd&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Re-Added Backpack Cmd&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1146,21 +1136,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/DiceCmd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.19865319" vertical-offset="1" max-vertical-offset="1564">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="2771">
-          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
-          <folding>
-            <marker date="1407239635644" expanded="true" signature="3547:3717" placeholder="CREATE TABLE..RPCORE..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,6 +1151,32 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1247" max-vertical-offset="2771">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
+          <folding>
+            <marker date="1407239635644" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..RPCORE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="629">
+          <caret line="26" column="34" selection-start-line="26" selection-start-column="34" selection-end-line="26" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.89621085" vertical-offset="663" max-vertical-offset="1377">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
