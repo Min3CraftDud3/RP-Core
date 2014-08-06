@@ -7,47 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\module_rp-core.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\rp-core.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Chat\Chat.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\BackpackCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\ChatCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\CleanupCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\DiagnosticCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\DiceCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\EconomyCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\PartyCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\PetCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Cmds\RPCoreCmd.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Combat\CombatMgr.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\ConfigMgr.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Database\Database.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Database\MySQL\MySQL.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Database\SQLite\SQLite.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\Account.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\Bank.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\Bounty.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\MoneyHandler.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\MoneyUpdater.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Economy\PListener.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\EnchantGlow.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Entity\EntityManager.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Party\PartyManager.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Pet\PetMgr.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Backpack.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Race\Dwarf.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Race\Elf.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Race\Human.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Race\Orc.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Race\Race.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\Player\Skills\Skills.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\RPCore.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\ServerMgnt\Lag.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\ServerMgnt\SerializeInv.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\World\CheckTime.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\main\java\com\SinfulPixel\RPCore\World\Hologram.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_3_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -111,12 +71,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PartyManager.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PartyManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19604613" vertical-offset="0" max-vertical-offset="1377">
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
               <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RPCore.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="2771">
+              <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
+              <folding>
+                <marker date="1407239635644" expanded="true" signature="3547:3717" placeholder="CREATE TABLE..RPCORE..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BackpackCmd.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2520593" vertical-offset="0" max-vertical-offset="607">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -165,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/CleanupCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/CmdMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/EconomyCmd.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmds/PChatCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/Party.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmds/HelpCommand.java" />
@@ -187,6 +170,7 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
       </list>
     </option>
   </component>
@@ -265,6 +249,252 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="World" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ServerMgnt" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pet" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Party" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Economy" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Combat" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Cmds" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Chat" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -561,7 +791,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="285000" />
+      <workItem from="1407239874541" duration="2216000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -703,11 +933,15 @@
       <created>1407233823415</created>
       <updated>1407233823415</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Fixed Maven Messup">
+      <created>1407240183801</created>
+      <updated>1407240183801</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56213000" />
+    <option name="totallyTimeSpent" value="58144000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -727,6 +961,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -736,7 +971,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
@@ -784,7 +1018,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed project structure" />
     <MESSAGE value="Continued Setting up MySQL/SQLite." />
     <MESSAGE value="Added inventory serialization." />
     <MESSAGE value="Added Backpack Support" />
@@ -809,7 +1042,8 @@
     <MESSAGE value="Continued Implementing Party System." />
     <MESSAGE value="Added Party Command" />
     <MESSAGE value="MAven support test" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAven support test" />
+    <MESSAGE value="Fixed Maven Messup" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Maven Messup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -914,9 +1148,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19604613" vertical-offset="0" max-vertical-offset="1377">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1247" max-vertical-offset="2771">
+          <caret line="110" column="47" selection-start-line="110" selection-start-column="47" selection-end-line="110" selection-end-column="47" />
+          <folding>
+            <marker date="1407239635644" expanded="true" signature="3547:3717" placeholder="CREATE TABLE..RPCORE..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2520593" vertical-offset="0" max-vertical-offset="607">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
