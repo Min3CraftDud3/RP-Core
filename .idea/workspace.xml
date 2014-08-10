@@ -7,9 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
+      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\com\SinfulPixel\RPCore\Player\Race\Dwarf.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\com\SinfulPixel\RPCore\Player\Race\Elf.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\com\SinfulPixel\RPCore\Player\Race\Human.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\com\SinfulPixel\RPCore\Player\Race\Orc.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core\src\com\SinfulPixel\RPCore\Player\Race\Race.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -116,11 +118,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Lag.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Lag.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6025974" vertical-offset="890" max-vertical-offset="1275">
+            <state vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1275">
               <caret line="79" column="94" selection-start-line="79" selection-start-column="94" selection-end-line="79" selection-end-column="94" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Skills.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Skills.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.14003295" vertical-offset="0" max-vertical-offset="607">
+              <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -342,6 +354,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Skills" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -814,7 +852,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="6713000" />
+      <workItem from="1407239874541" duration="7061000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -972,11 +1010,15 @@
       <created>1407701072824</created>
       <updated>1407701072824</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Added auto anti-lag">
+      <created>1407702791205</created>
+      <updated>1407702791205</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62641000" />
+    <option name="totallyTimeSpent" value="62989000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -996,7 +1038,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1053,7 +1095,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Removed extends JavaPlugin from Backpack class" />
     <MESSAGE value="Starting to implement Race &amp; Skills" />
     <MESSAGE value="added to db connection" />
     <MESSAGE value="Creating Core Table Statement Complete." />
@@ -1078,7 +1119,8 @@
     <MESSAGE value="Re-Added Backpack Cmd&#10;" />
     <MESSAGE value="Party Commands added" />
     <MESSAGE value="Removed tool durability loss" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed tool durability loss" />
+    <MESSAGE value="Added auto anti-lag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added auto anti-lag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1254,8 +1296,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6025974" vertical-offset="890" max-vertical-offset="1275">
+        <state vertical-scroll-proportion="0.0" vertical-offset="681" max-vertical-offset="1275">
           <caret line="79" column="94" selection-start-line="79" selection-start-column="94" selection-end-line="79" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Skills.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.14003295" vertical-offset="0" max-vertical-offset="607">
+          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
         </state>
       </provider>
