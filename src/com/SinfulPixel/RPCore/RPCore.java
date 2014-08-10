@@ -83,7 +83,15 @@ public class RPCore extends JavaPlugin {
                             "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
                     System.out.println("Creating Core Table...COMPLETE!");
                     System.out.println("Creating Skills Table");
-                    //Add Skill Create Table Statement Here!
+                    statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY," +
+                            "PNAME varchar(30) NOT NULL, " +
+                            "MINING INTEGER(3)," +
+                            "WOODCUTTING INTEGER(3),"+
+                            "SMITHING INTEGER(3),"+
+                            "FARMING INTEGER(3),"+
+                            "ARCHERY INTEGER(3),"+
+                            "FIREMAKING INTEGER(3),"+
+                            "TOTAL INTEGER(9);");
                     System.out.println("Creating Skills Table...COMPLETE!");
                     c.setAutoCommit(true);
                 }
