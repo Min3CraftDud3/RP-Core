@@ -36,7 +36,6 @@ public class RPCore extends JavaPlugin {
     CheckTime ct = new CheckTime(this);
     PartyManager pm = new PartyManager(this);
     public EnchantGlow glow = new EnchantGlow(120);
-
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
     static Connection c = null;
@@ -83,15 +82,15 @@ public class RPCore extends JavaPlugin {
                             "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
                     System.out.println("Creating Core Table...COMPLETE!");
                     System.out.println("Creating Skills Table");
-                    statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY," +
+                    statement.executeUpdate("CREATE TABLE SKILLS (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY," +
                             "PNAME varchar(30) NOT NULL, " +
-                            "MINING INTEGER(3)," +
-                            "WOODCUTTING INTEGER(3),"+
-                            "SMITHING INTEGER(3),"+
-                            "FARMING INTEGER(3),"+
-                            "ARCHERY INTEGER(3),"+
-                            "FIREMAKING INTEGER(3),"+
-                            "TOTAL INTEGER(9);");
+                            "MINING INT," +
+                            "WOODCUTTING INT,"+
+                            "SMITHING INT,"+
+                            "FARMING INT,"+
+                            "ARCHERY INT,"+
+                            "FIREMAKING INT,"+
+                            "TOTAL INT);");
                     System.out.println("Creating Skills Table...COMPLETE!");
                     c.setAutoCommit(true);
                 }

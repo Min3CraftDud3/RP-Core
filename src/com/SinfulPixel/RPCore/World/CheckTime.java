@@ -12,6 +12,7 @@ import java.util.Date;
  */
 public class CheckTime{
     static RPCore plugin;
+    public static boolean isCleaning = false;
     public CheckTime(RPCore plugin) {
         this.plugin = plugin;
     }
@@ -103,15 +104,19 @@ public class CheckTime{
         String[] d = dt.split(":");
         switch(d[1]){
             case "00":
+                if(isCleaning==false)
                 Lag.doClean();
                 break;
             case "15":
+                if(isCleaning==false)
                 Lag.doClean();
                 break;
             case "30":
+                if(isCleaning==false)
                 Lag.doClean();
                 break;
             case "45":
+                if(isCleaning==false)
                 Lag.doClean();
                 break;
         }

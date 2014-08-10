@@ -1,14 +1,13 @@
 package com.SinfulPixel.RPCore.ServerMgnt;
 
+import com.SinfulPixel.RPCore.RPCore;
+import com.SinfulPixel.RPCore.World.CheckTime;
 import net.minecraft.server.v1_7_R3.EntityPlayer;
-
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_7_R3.entity.CraftPlayer;
 import org.bukkit.entity.*;
-
-import com.SinfulPixel.RPCore.RPCore;
 
 public class Lag implements Runnable {
 	private static RPCore plugin;
@@ -48,6 +47,7 @@ public class Lag implements Runnable {
 		Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Entity wipe in "+ChatColor.GRAY+"30"+ChatColor.AQUA+" seconds.");
 		plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() { 
 			  public void run() {
+                    CheckTime.isCleaning = true;
 					int i =0;
 					int e =0;
 					for (World world : plugin.getServer().getWorlds()) {
@@ -78,7 +78,11 @@ public class Lag implements Runnable {
 					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Wiped "+ChatColor.GRAY+(i+e)+ChatColor.AQUA+" entities.");
 					System.gc();
 					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Anti-Lag: "+ChatColor.DARK_GREEN+"COMPLETE");
+                  plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin,new Runnable(){
+                      public void run(){
+                          CheckTime.isCleaning = false;                      }
+                  },120L);
 			  }
-			}, 600L);
+			}, 0L);
 	}
 }
