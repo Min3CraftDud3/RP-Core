@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.World;
 
 import com.SinfulPixel.RPCore.RPCore;
+import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -94,6 +95,25 @@ public class CheckTime{
                 plugin.getServer().getWorld("world").setTime(23000);
                 break;
         }
-
+    }
+    public static void CheckTime(){
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm");
+        Date date = new Date();
+        String dt = dateFormat.format(date).toString();
+        String[] d = dt.split(":");
+        switch(d[1]){
+            case "00":
+                Lag.doClean();
+                break;
+            case "15":
+                Lag.doClean();
+                break;
+            case "30":
+                Lag.doClean();
+                break;
+            case "45":
+                Lag.doClean();
+                break;
+        }
     }
 }

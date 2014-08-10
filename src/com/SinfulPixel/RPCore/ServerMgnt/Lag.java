@@ -6,21 +6,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_7_R3.entity.CraftPlayer;
-import org.bukkit.entity.Bat;
-import org.bukkit.entity.CaveSpider;
-import org.bukkit.entity.Creeper;
-import org.bukkit.entity.Entity;
-import org.bukkit.entity.ExperienceOrb;
-import org.bukkit.entity.Ghast;
-import org.bukkit.entity.Item;
-import org.bukkit.entity.MagmaCube;
-import org.bukkit.entity.PigZombie;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Skeleton;
-import org.bukkit.entity.Slime;
-import org.bukkit.entity.Spider;
-import org.bukkit.entity.Witch;
-import org.bukkit.entity.Zombie;
+import org.bukkit.entity.*;
 
 import com.SinfulPixel.RPCore.RPCore;
 
@@ -81,6 +67,8 @@ public class Lag implements Runnable {
 							   entity instanceof Ghast ||
 							   entity instanceof MagmaCube ||
 							   entity instanceof ExperienceOrb ||
+                               entity instanceof Item ||
+                               entity instanceof Enderman ||
 							   entity instanceof Spider){
 							   entity.remove();
 							   e++;
@@ -88,9 +76,8 @@ public class Lag implements Runnable {
 						}
 					}
 					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Wiped "+ChatColor.GRAY+(i+e)+ChatColor.AQUA+" entities.");
-					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Attempting Garbage Collection.");
 					System.gc();
-					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Garbage Collection: "+ChatColor.DARK_GREEN+"COMPLETE");
+					Bukkit.broadcastMessage(ChatColor.RED+"[RPCore]"+ChatColor.AQUA+" Anti-Lag: "+ChatColor.DARK_GREEN+"COMPLETE");
 			  }
 			}, 600L);
 	}
