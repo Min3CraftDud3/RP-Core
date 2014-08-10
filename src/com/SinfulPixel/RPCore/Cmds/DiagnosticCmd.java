@@ -22,6 +22,7 @@ public class DiagnosticCmd implements CommandExecutor {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("diag")) {
                 if (args.length == 0) {
+                    Bukkit.getServer().getIPBans();
                     player.sendMessage(ChatColor.GOLD + "       ====== " + ChatColor.LIGHT_PURPLE + "Server Diagnostics" + ChatColor.GOLD + " ======");
                     Integer ping = Integer.valueOf(Lag.getPing(player));
                     player.sendMessage(ChatColor.GREEN + "Your Ping is: " + ChatColor.DARK_GREEN + ping);

@@ -9,6 +9,7 @@ import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
+import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import org.bukkit.Bukkit;
@@ -56,6 +57,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Bounty(this), this);
         getServer().getPluginManager().registerEvents(new EntityManager(this), this);
         getServer().getPluginManager().registerEvents(new Backpack(this), this);
+        getServer().getPluginManager().registerEvents(new NoItemBreak(this),this);
         //Create Default Config
         try {
             saveConfig();
