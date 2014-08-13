@@ -1,0 +1,33 @@
+Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
+Forge = lava on glass - GUI to smelt items.
+FirePit = 4 jungle slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
+
+//Environmental Effects
+Blindness at night
+Mob levels - epicenter & health increase
+
+//Player
+Guilds
+Item/Armor weight
+Bounty
+Health
+
+//Skills
+Smithing
+Smelting
+Mining
+Cooking
+Fishing
+Woodcutting
+Archery
+Farming
+Firemaking
+
+//Sounds
+forge = Lava blub noise
+Cooking = fire/mob extinguish by rain noise
+Smithing =  anvil ting noise
+
+//Ideas
+Add gui achievement system.
+
