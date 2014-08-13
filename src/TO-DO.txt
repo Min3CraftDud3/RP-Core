@@ -22,6 +22,7 @@ Woodcutting
 Archery
 Farming
 Firemaking
+?alchemy? - potions and stuff
 
 //Sounds
 forge = Lava blub noise

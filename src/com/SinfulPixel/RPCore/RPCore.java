@@ -6,6 +6,7 @@ import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
+import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
@@ -58,6 +59,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new EntityManager(this), this);
         getServer().getPluginManager().registerEvents(new Backpack(this), this);
         getServer().getPluginManager().registerEvents(new NoItemBreak(this),this);
+        getServer().getPluginManager().registerEvents(new FireGUI(this), this);
         //Create Default Config
         try {
             saveConfig();
