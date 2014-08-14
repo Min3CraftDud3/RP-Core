@@ -106,12 +106,12 @@ public class CheckTime{
             case "00":
                 if (!isCleaning){
                     isCleaning = true;
-                Lag.doClean();
-                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
-                    public void run() {
-                        CheckTime.isCleaning = false;
-                    }
-                }, 1500L);
+                    Lag.doClean();
+                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                        public void run() {
+                            CheckTime.isCleaning = false;
+                        }
+                    }, 2500L);
                 }
                 break;
             case "15":
@@ -122,7 +122,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 1500L);
+                    }, 2500L);
                 }
                 break;
             case "30":
@@ -133,7 +133,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 1500L);
+                    }, 2500L);
                 }
                 break;
             case "45":
@@ -144,7 +144,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 1500L);
+                    }, 2500L);
                 }
                 break;
         }

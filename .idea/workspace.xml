@@ -109,17 +109,17 @@
       <file leaf-file-name="CheckTime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.7001648" vertical-offset="1331" max-vertical-offset="2550">
-              <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.22405271" vertical-offset="1581" max-vertical-offset="2550">
+              <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
               <folding>
-                <element signature="e#3889#4039#0" expanded="true" />
-                <element signature="e#4020#4021#0" expanded="true" />
-                <element signature="e#4307#4473#0" expanded="true" />
-                <element signature="e#4450#4451#0" expanded="true" />
-                <element signature="e#4741#4907#0" expanded="true" />
-                <element signature="e#4884#4885#0" expanded="true" />
-                <element signature="e#5175#5341#0" expanded="true" />
-                <element signature="e#5318#5319#0" expanded="true" />
+                <element signature="e#3897#4063#0" expanded="true" />
+                <element signature="e#4040#4041#0" expanded="true" />
+                <element signature="e#4331#4497#0" expanded="true" />
+                <element signature="e#4474#4475#0" expanded="true" />
+                <element signature="e#4765#4931#0" expanded="true" />
+                <element signature="e#4908#4909#0" expanded="true" />
+                <element signature="e#5199#5365#0" expanded="true" />
+                <element signature="e#5342#5343#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -901,7 +901,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="28299000" />
+      <workItem from="1407239874541" duration="28756000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1091,11 +1091,15 @@
       <created>1407976712425</created>
       <updated>1407976712425</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="fixed lag timings&#10;">
+      <created>1407976798140</created>
+      <updated>1407976798140</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84227000" />
+    <option name="totallyTimeSpent" value="84684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1445,17 +1449,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.7001648" vertical-offset="1331" max-vertical-offset="2550">
-          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.22405271" vertical-offset="1581" max-vertical-offset="2550">
+          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
           <folding>
-            <element signature="e#3889#4039#0" expanded="true" />
-            <element signature="e#4020#4021#0" expanded="true" />
-            <element signature="e#4307#4473#0" expanded="true" />
-            <element signature="e#4450#4451#0" expanded="true" />
-            <element signature="e#4741#4907#0" expanded="true" />
-            <element signature="e#4884#4885#0" expanded="true" />
-            <element signature="e#5175#5341#0" expanded="true" />
-            <element signature="e#5318#5319#0" expanded="true" />
+            <element signature="e#3897#4063#0" expanded="true" />
+            <element signature="e#4040#4041#0" expanded="true" />
+            <element signature="e#4331#4497#0" expanded="true" />
+            <element signature="e#4474#4475#0" expanded="true" />
+            <element signature="e#4765#4931#0" expanded="true" />
+            <element signature="e#4908#4909#0" expanded="true" />
+            <element signature="e#5199#5365#0" expanded="true" />
+            <element signature="e#5342#5343#0" expanded="true" />
           </folding>
         </state>
       </provider>
