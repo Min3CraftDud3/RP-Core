@@ -111,7 +111,7 @@ public class CheckTime{
                     public void run() {
                         CheckTime.isCleaning = false;
                     }
-                }, 2000L);
+                }, 1500L);
                 }
                 break;
             case "15":
@@ -122,7 +122,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 2000L);
+                    }, 1500L);
                 }
                 break;
             case "30":
@@ -133,7 +133,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 2000L);
+                    }, 1500L);
                 }
                 break;
             case "45":
@@ -144,7 +144,7 @@ public class CheckTime{
                         public void run() {
                             CheckTime.isCleaning = false;
                         }
-                    }, 2000L);
+                    }, 1500L);
                 }
                 break;
         }
