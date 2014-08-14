@@ -102,22 +102,50 @@ public class CheckTime{
         Date date = new Date();
         String dt = dateFormat.format(date).toString();
         String[] d = dt.split(":");
-        switch(d[1]){
+        switch(d[1]) {
             case "00":
-                if(isCleaning==false)
+                if (!isCleaning){
+                    isCleaning = true;
                 Lag.doClean();
+                plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                    public void run() {
+                        CheckTime.isCleaning = false;
+                    }
+                }, 1000L);
+                }
                 break;
             case "15":
-                if(isCleaning==false)
-                Lag.doClean();
+                if(!isCleaning) {
+                    isCleaning = true;
+                    Lag.doClean();
+                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                        public void run() {
+                            CheckTime.isCleaning = false;
+                        }
+                    }, 1000L);
+                }
                 break;
             case "30":
-                if(isCleaning==false)
-                Lag.doClean();
+                if(!isCleaning) {
+                    isCleaning = true;
+                    Lag.doClean();
+                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                        public void run() {
+                            CheckTime.isCleaning = false;
+                        }
+                    }, 1000L);
+                }
                 break;
             case "45":
-                if(isCleaning==false)
-                Lag.doClean();
+                if(!isCleaning) {
+                    isCleaning = true;
+                    Lag.doClean();
+                    plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+                        public void run() {
+                            CheckTime.isCleaning = false;
+                        }
+                    }, 1000L);
+                }
                 break;
         }
     }

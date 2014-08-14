@@ -23,7 +23,7 @@ public class FireGUI implements Listener {
     static{
         //Option 1 - Extinguish
         ArrayList<String> lrExtinguish = new ArrayList<String>();
-        lrExtinguish.add("Click to "+ ChatColor.UNDERLINE+"extinguish"+ChatColor.RESET+" your fire.");
+        lrExtinguish.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"extinguish"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" your fire.");
         ItemStack extinguish = new ItemStack(Material.WATER_BUCKET,1);
         ItemMeta extinguishIM = extinguish.getItemMeta();
         extinguishIM.setDisplayName(ChatColor.RED+""+ChatColor.BOLD+"Extinguish Fire");
@@ -31,7 +31,7 @@ public class FireGUI implements Listener {
         extinguish.setItemMeta(extinguishIM);
         //Option 2 - Cook
         ArrayList<String> lrCook = new ArrayList<String>();
-        lrCook.add("Click to "+ ChatColor.UNDERLINE+"cook"+ChatColor.RESET+" using your fire.");
+        lrCook.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"cook"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" using your fire.");
         ItemStack cook = new ItemStack(Material.GRILLED_PORK,1);
         ItemMeta cookIM = cook.getItemMeta();
         cookIM.setDisplayName(ChatColor.RED+""+ChatColor.BOLD+"Cook Food");
@@ -39,8 +39,8 @@ public class FireGUI implements Listener {
         cook.setItemMeta(cookIM);
         //Option 3 - Stoke
         ArrayList<String> lrStoke = new ArrayList<String>();
-        lrStoke.add("Click to "+ ChatColor.UNDERLINE+"stoke"+ChatColor.RESET+" your fire.");
-        lrStoke.add(ChatColor.DARK_RED+"Consumes "+ChatColor.UNDERLINE+"1 "+ChatColor.RESET+ChatColor.RED+"log.");
+        lrStoke.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"stoke"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" your fire.");
+        lrStoke.add(ChatColor.DARK_RED+"Consumes "+ChatColor.UNDERLINE+"1"+ChatColor.RESET+ChatColor.RED+" log.");
         lrStoke.add(ChatColor.DARK_GREEN+"Fire Life +5 Minutes.");
         ItemStack stoke = new ItemStack(Material.STICK,1);
         ItemMeta stokeIM = stoke.getItemMeta();
@@ -79,9 +79,10 @@ public class FireGUI implements Listener {
     public void onFireClick(PlayerInteractEvent e){
         Player p = e.getPlayer();
         World w = p.getWorld();
-        Material block = e.getClickedBlock().getType();
         Location loc = e.getClickedBlock().getLocation();
-        Material base = w.getBlockAt(loc.getBlockX(),loc.getBlockY()-1,loc.getBlockZ()).getType();
+        Material block = w.getBlockAt(loc.getBlockX(), loc.getBlockY() + 1, loc.getBlockZ()).getType();
+        Material base = e.getClickedBlock().getType();
+        Material under = w.getBlockAt(loc.getBlockX(),loc.getBlockY(),loc.getBlockZ()).getType();
         if(block.equals(Material.FIRE) && base.equals(Material.NETHERRACK)){
             p.openInventory(fireGUI);
         }
