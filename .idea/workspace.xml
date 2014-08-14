@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -111,8 +109,8 @@
       <file leaf-file-name="CheckTime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6919275" vertical-offset="1943" max-vertical-offset="2550">
-              <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.6919275" vertical-offset="1382" max-vertical-offset="2550">
+              <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
               <folding>
                 <element signature="e#3889#4039#0" expanded="true" />
                 <element signature="e#4020#4021#0" expanded="true" />
@@ -903,7 +901,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="27556000" />
+      <workItem from="1407239874541" duration="28211000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1085,11 +1083,15 @@
       <created>1407968447280</created>
       <updated>1407968447280</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="fixed lag timings&#10;">
+      <created>1407975948279</created>
+      <updated>1407975948279</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83484000" />
+    <option name="totallyTimeSpent" value="84139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1166,7 +1168,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed error when table already created." />
     <MESSAGE value="Tweaks" />
     <MESSAGE value="Login Check Added" />
     <MESSAGE value="Added per name msg noise." />
@@ -1191,7 +1192,8 @@
     <MESSAGE value="Fixed Anti-Lag bug" />
     <MESSAGE value="To-Do List" />
     <MESSAGE value="Added GUI for Fire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GUI for Fire" />
+    <MESSAGE value="fixed lag timings&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed lag timings&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1439,8 +1441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6919275" vertical-offset="1943" max-vertical-offset="2550">
-          <caret line="146" column="25" selection-start-line="146" selection-start-column="25" selection-end-line="146" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.6919275" vertical-offset="1382" max-vertical-offset="2550">
+          <caret line="113" column="20" selection-start-line="113" selection-start-column="20" selection-end-line="113" selection-end-column="20" />
           <folding>
             <element signature="e#3889#4039#0" expanded="true" />
             <element signature="e#4020#4021#0" expanded="true" />
