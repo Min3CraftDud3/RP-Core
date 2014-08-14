@@ -7,7 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -109,7 +108,7 @@
       <file leaf-file-name="CheckTime.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22405271" vertical-offset="1581" max-vertical-offset="2550">
+            <state vertical-scroll-proportion="2.8286655" vertical-offset="0" max-vertical-offset="2550">
               <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
               <folding>
                 <element signature="e#3897#4063#0" expanded="true" />
@@ -901,7 +900,7 @@
       <workItem from="1407233708142" duration="99000" />
       <workItem from="1407233808419" duration="192000" />
       <workItem from="1407239587274" duration="2000" />
-      <workItem from="1407239874541" duration="28756000" />
+      <workItem from="1407239874541" duration="29486000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1095,11 +1094,15 @@
       <created>1407976798140</created>
       <updated>1407976798140</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="fixed lag timings&#10;">
+      <created>1407977278140</created>
+      <updated>1407977278140</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84684000" />
+    <option name="totallyTimeSpent" value="85414000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1449,7 +1452,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22405271" vertical-offset="1581" max-vertical-offset="2550">
+        <state vertical-scroll-proportion="2.8286655" vertical-offset="0" max-vertical-offset="2550">
           <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
           <folding>
             <element signature="e#3897#4063#0" expanded="true" />
