@@ -31,4 +31,5 @@ Smithing =  anvil ting noise
 
 //Ideas
 Add gui achievement system.
+NPC shops/Quest givers
 

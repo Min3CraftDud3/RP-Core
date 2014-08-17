@@ -5,6 +5,7 @@ import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
@@ -12,6 +13,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by Min3 on 8/13/2014.
@@ -20,6 +22,7 @@ public class FireGUI implements Listener {
     RPCore plugin;
     public FireGUI(RPCore plugin){this.plugin=plugin;}
     public static Inventory fireGUI = Bukkit.createInventory(null,9,"What do you wish to do?");
+    private static HashMap<Location,Boolean> fires = new HashMap<Location,Boolean>();
     static{
         //Option 1 - Extinguish
         ArrayList<String> lrExtinguish = new ArrayList<String>();
@@ -62,6 +65,12 @@ public class FireGUI implements Listener {
                 e.setCancelled(true);
                 p.closeInventory();
                 //Extinguish Fire
+                ItemStack t = new ItemStack(Material.LOG);
+                ItemMeta tm = t.getItemMeta();
+                tm.setDisplayName(ChatColor.GRAY+"Fire Pit");
+                t.setItemMeta(tm);
+
+                p.getInventory().addItem(t);
                 p.sendMessage("You extinguish the fire.");
             }else if(clicked.getItemMeta().getDisplayName().equals(ChatColor.RED+""+ChatColor.BOLD+"Cook Food")){
                 e.setCancelled(true);
@@ -86,5 +95,24 @@ public class FireGUI implements Listener {
         if(block.equals(Material.FIRE) && base.equals(Material.NETHERRACK)){
             p.openInventory(fireGUI);
         }
+    }
+    @EventHandler
+    public void onFirePlace(BlockPlaceEvent e ){
+        Player p = e.getPlayer();
+        if(p.getItemInHand().hasItemMeta()){
+            if(p.getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GRAY+"Fire Pit")){
+                placeFire(e.getBlock().getLocation());
+            }
+        }
+    }
+    public void placeFire(Location l){
+        World w = l.getWorld();
+        w.getBlockAt(l).setType(Material.NETHERRACK);
+        w.getBlockAt(l.getBlockX()-1,l.getBlockY(),l.getBlockZ()).setTypeIdAndData(Material.STEP.getId(), TreeSpecies.JUNGLE.getData(), true);
+        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()-1).setTypeIdAndData(Material.STEP.getId(), TreeSpecies.JUNGLE.getData(), true);
+        w.getBlockAt(l.getBlockX()+1,l.getBlockY(),l.getBlockZ()).setTypeIdAndData(Material.STEP.getId(), TreeSpecies.JUNGLE.getData(), true);
+        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()+1).setTypeIdAndData(Material.STEP.getId(), TreeSpecies.JUNGLE.getData(), true);
+        w.getBlockAt(l.getBlockX(),l.getBlockY()+1,l.getBlockZ()).setType(Material.FIRE);
+        fires.put(l,true);
     }
 }
