@@ -23,6 +23,7 @@ public class FireGUI implements Listener {
     public FireGUI(RPCore plugin){this.plugin=plugin;}
     public static Inventory fireGUI = Bukkit.createInventory(null,9,"What do you wish to do?");
     private static HashMap<Location,Boolean> fires = new HashMap<Location,Boolean>();
+    private static HashMap<String,Location> pl = new HashMap<String,Location>();
     static{
         //Option 1 - Extinguish
         ArrayList<String> lrExtinguish = new ArrayList<String>();
@@ -69,9 +70,10 @@ public class FireGUI implements Listener {
                 ItemMeta tm = t.getItemMeta();
                 tm.setDisplayName(ChatColor.GRAY+"Fire Pit");
                 t.setItemMeta(tm);
-
-                p.getInventory().addItem(t);
-                p.sendMessage("You extinguish the fire.");
+                if(pl.containsKey(p.getName())){
+                    extinguishFire(pl.get(p.getName()));
+                    p.sendMessage("You extinguish the fire.");
+                }
             }else if(clicked.getItemMeta().getDisplayName().equals(ChatColor.RED+""+ChatColor.BOLD+"Cook Food")){
                 e.setCancelled(true);
                 p.closeInventory();
@@ -102,6 +104,7 @@ public class FireGUI implements Listener {
         if(p.getItemInHand().hasItemMeta()){
             if(p.getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GRAY+"Fire Pit")){
                 placeFire(e.getBlock().getLocation());
+                pl.put(p.getName(),e.getBlock().getLocation());
             }
         }
     }
@@ -114,5 +117,15 @@ public class FireGUI implements Listener {
         w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()+1).setTypeIdAndData(Material.STEP.getId(), TreeSpecies.JUNGLE.getData(), true);
         w.getBlockAt(l.getBlockX(),l.getBlockY()+1,l.getBlockZ()).setType(Material.FIRE);
         fires.put(l,true);
+    }
+    public void extinguishFire(Location l){
+        World w = l.getWorld();
+        w.getBlockAt(l).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX()-1,l.getBlockY(),l.getBlockZ()).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()-1).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX()+1,l.getBlockY(),l.getBlockZ()).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()+1).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(),l.getBlockY()+1,l.getBlockZ()).setType(Material.AIR);
+        fires.remove(l);
     }
 }
