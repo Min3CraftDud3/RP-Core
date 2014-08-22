@@ -28,11 +28,14 @@ public class PetCmd implements CommandExecutor {
                             || args[0].equalsIgnoreCase("pig")
                             || args[0].equalsIgnoreCase("sheep")
                             || args[0].equalsIgnoreCase("horse")) {
+                        try{PetMgr.removePet(player);}catch(Exception e){}
+                        PetMgr.hasPet.put(player.getName(),true);
                         PetMgr.setupPet(player, args[0].toLowerCase(), null,
                                 null);
                     }else if(args[0].equalsIgnoreCase("dismiss")){
                         PetMgr.removePet(player);
                         player.sendMessage("You have dismissed your pet.");
+                        PetMgr.hasPet.remove(player.getName());
                     }
                 } else if (args.length == 2) {
                     if (args[0].equalsIgnoreCase("Creeper")
@@ -47,8 +50,12 @@ public class PetCmd implements CommandExecutor {
                         if (args[1].equalsIgnoreCase("powered")
                                 || args[1].equalsIgnoreCase("wither")
                                 || args[1].equalsIgnoreCase("baby")) {
+                            try{PetMgr.removePet(player);}catch(Exception e){}
+                            PetMgr.hasPet.put(player.getName(),true);
                             PetMgr.setupPet(player, args[0].toLowerCase().toString(), args[1].toLowerCase().toString(), null);
                         }else{
+                            try{PetMgr.removePet(player);}catch(Exception e){}
+                            PetMgr.hasPet.put(player.getName(),true);
                             PetMgr.setupPet(player, args[0].toLowerCase().toString(), null, args[1]);
                         }
                     }
@@ -66,6 +73,8 @@ public class PetCmd implements CommandExecutor {
                                 || args[1].equalsIgnoreCase("wither")
                                 || args[1].equalsIgnoreCase("baby")) {
                             if (args[2] != null) {
+                                try{PetMgr.removePet(player);}catch(Exception e){}
+                                PetMgr.hasPet.put(player.getName(),true);
                                 PetMgr.setupPet(player, args[0], args[1], args[2]);
                             }
                         }

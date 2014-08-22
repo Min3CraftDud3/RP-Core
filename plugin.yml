@@ -1,6 +1,6 @@
 name: RPCore
 main: com.SinfulPixel.RPCore.RPCore
-version: 1.9
+version: 2.5
 description: Extensive RPG Plugin (Containing Economy, Mob Bounty, Pets, Chats, and More!)
 author: Min3CraftDud3
 website: http://www.SinfulPixel.com
@@ -49,4 +49,6 @@ commands:
   backpack:
     description: "BackpackCmd commands."
   party:
+    description: "Party Commands"
+  bank:
     description: "Party Commands"

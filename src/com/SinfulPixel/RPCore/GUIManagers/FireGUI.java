@@ -5,6 +5,7 @@ import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
@@ -21,8 +22,8 @@ import java.util.HashMap;
 public class FireGUI implements Listener {
     RPCore plugin;
     public FireGUI(RPCore plugin){this.plugin=plugin;}
-    public static Inventory fireGUI = Bukkit.createInventory(null,9,"What do you wish to do?");
-    private static HashMap<Location,Boolean> fires = new HashMap<Location,Boolean>();
+    public static Inventory fireGUI = Bukkit.createInventory(null,9,ChatColor.GOLD+"What do you wish to do?");
+    public static HashMap<Location,Boolean> fires = new HashMap<Location,Boolean>();
     private static HashMap<String,Location> pl = new HashMap<String,Location>();
     static{
         //Option 1 - Extinguish
@@ -61,50 +62,59 @@ public class FireGUI implements Listener {
         Player p = (Player)e.getWhoClicked();
         ItemStack clicked = e.getCurrentItem();
         Inventory inv = e.getInventory();
-        if(inv.getName().equals(fireGUI.getName())){
-            if(clicked.getItemMeta().getDisplayName().equals(ChatColor.RED+""+ChatColor.BOLD+"Extinguish Fire")){
-                e.setCancelled(true);
-                p.closeInventory();
-                //Extinguish Fire
-                ItemStack t = new ItemStack(Material.LOG);
-                ItemMeta tm = t.getItemMeta();
-                tm.setDisplayName(ChatColor.GRAY+"Fire Pit");
-                t.setItemMeta(tm);
-                if(pl.containsKey(p.getName())){
-                    extinguishFire(pl.get(p.getName()));
-                    p.sendMessage("You extinguish the fire.");
-                }
-            }else if(clicked.getItemMeta().getDisplayName().equals(ChatColor.RED+""+ChatColor.BOLD+"Cook Food")){
-                e.setCancelled(true);
-                p.closeInventory();
-                //Open Cooking GUI (Fire Mode)
-            }else if(clicked.getItemMeta().getDisplayName().equals(ChatColor.RED+""+ChatColor.BOLD+"Stoke Fire")){
-                e.setCancelled(true);
-                p.closeInventory();
-                //Add Time to Fire
-                p.sendMessage("You stoke the fire, adding to it's burn time.");
+            if (inv.getName().equals(fireGUI.getName())) {
+                if (clicked.getItemMeta().getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + "Extinguish Fire")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    //Extinguish Fire
+                    ItemStack t = new ItemStack(Material.LOG);
+                    ItemMeta tm = t.getItemMeta();
+                    tm.setDisplayName(ChatColor.GRAY + "Fire Pit");
+                    t.setItemMeta(tm);
+                    if (pl.containsKey(p.getName())) {
+                        extinguishFire(pl.get(p.getName()),p);
+                        p.sendMessage("You extinguish the fire.");
+                    }
+                } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + "Cook Food")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    //Open Cooking GUI (Fire Mode)
+                } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.RED + "" + ChatColor.BOLD + "Stoke Fire")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    //Add Time to Fire
+                    p.sendMessage("You stoke the fire, adding to it's burn time.");
             }
         }
     }
     @EventHandler
     public void onFireClick(PlayerInteractEvent e){
-        Player p = e.getPlayer();
-        World w = p.getWorld();
-        Location loc = e.getClickedBlock().getLocation();
-        Material block = w.getBlockAt(loc.getBlockX(), loc.getBlockY() + 1, loc.getBlockZ()).getType();
-        Material base = e.getClickedBlock().getType();
-        Material under = w.getBlockAt(loc.getBlockX(),loc.getBlockY(),loc.getBlockZ()).getType();
-        if(block.equals(Material.FIRE) && base.equals(Material.NETHERRACK)){
-            p.openInventory(fireGUI);
-        }
+        try {
+            Player p = e.getPlayer();
+            World w = p.getWorld();
+            Location loc = e.getClickedBlock().getLocation();
+            Material block = w.getBlockAt(loc.getBlockX(), loc.getBlockY() + 1, loc.getBlockZ()).getType();
+            Material base = e.getClickedBlock().getType();
+            Material under = w.getBlockAt(loc.getBlockX(), loc.getBlockY(), loc.getBlockZ()).getType();
+            if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                if (block.equals(Material.FIRE) && base.equals(Material.NETHERRACK)) {
+                    p.openInventory(fireGUI);
+                }
+            }
+        }catch (Exception i){}
     }
     @EventHandler
     public void onFirePlace(BlockPlaceEvent e ){
         Player p = e.getPlayer();
         if(p.getItemInHand().hasItemMeta()){
             if(p.getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GRAY+"Fire Pit")){
-                placeFire(e.getBlock().getLocation());
-                pl.put(p.getName(),e.getBlock().getLocation());
+                if(pl.containsKey(p.getName())){
+                    p.sendMessage(ChatColor.RED+"You already have a fire burning, please extinguish it to build another.");
+                    e.setCancelled(true);
+                }else {
+                    placeFire(e.getBlock().getLocation());
+                    pl.put(p.getName(), e.getBlock().getLocation());
+                }
             }
         }
     }
@@ -118,14 +128,29 @@ public class FireGUI implements Listener {
         w.getBlockAt(l.getBlockX(),l.getBlockY()+1,l.getBlockZ()).setType(Material.FIRE);
         fires.put(l,true);
     }
-    public void extinguishFire(Location l){
+    public void extinguishFire(Location l, Player p){
+        if(pl.containsKey(p.getName())) {
+            World w = l.getWorld();
+            w.getBlockAt(l).setType(Material.AIR);
+            w.getBlockAt(l.getBlockX() - 1, l.getBlockY(), l.getBlockZ()).setType(Material.AIR);
+            w.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() - 1).setType(Material.AIR);
+            w.getBlockAt(l.getBlockX() + 1, l.getBlockY(), l.getBlockZ()).setType(Material.AIR);
+            w.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() + 1).setType(Material.AIR);
+            w.getBlockAt(l.getBlockX(), l.getBlockY() + 1, l.getBlockZ()).setType(Material.AIR);
+            fires.remove(l);
+            pl.remove(p.getName());
+        }else{
+            p.sendMessage(ChatColor.RED+"You cannot extinguish a fire that you haven't built.");
+        }
+    }
+    public static void exAll(Location l){
         World w = l.getWorld();
         w.getBlockAt(l).setType(Material.AIR);
-        w.getBlockAt(l.getBlockX()-1,l.getBlockY(),l.getBlockZ()).setType(Material.AIR);
-        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()-1).setType(Material.AIR);
-        w.getBlockAt(l.getBlockX()+1,l.getBlockY(),l.getBlockZ()).setType(Material.AIR);
-        w.getBlockAt(l.getBlockX(),l.getBlockY(),l.getBlockZ()+1).setType(Material.AIR);
-        w.getBlockAt(l.getBlockX(),l.getBlockY()+1,l.getBlockZ()).setType(Material.AIR);
-        fires.remove(l);
+        w.getBlockAt(l.getBlockX() - 1, l.getBlockY(), l.getBlockZ()).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() - 1).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX() + 1, l.getBlockY(), l.getBlockZ()).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(), l.getBlockY(), l.getBlockZ() + 1).setType(Material.AIR);
+        w.getBlockAt(l.getBlockX(), l.getBlockY() + 1, l.getBlockZ()).setType(Material.AIR);
     }
+
 }

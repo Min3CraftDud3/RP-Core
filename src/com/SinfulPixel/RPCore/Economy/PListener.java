@@ -2,6 +2,7 @@ package com.SinfulPixel.RPCore.Economy;
 
 import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.RPCore;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -26,13 +27,23 @@ public class PListener implements Listener{
 	}
 	@EventHandler
 	public void onPJoin(PlayerJoinEvent event){
-		Player player = event.getPlayer();
+		final Player player = event.getPlayer();
 		Chat.chLocal.add(player.getName());
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
             if(!isCreated(player.getUniqueId())) {
-                RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "')");
+                Bukkit.getScheduler().scheduleAsyncDelayedTask(plugin, new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "')");
+                            RPCore.statement.executeUpdate("INSERT INTO SKILLS (UUID,PNAME,MINING,WOODCUTTING,SMITHING,FARMING,ARCHERY,FIREMAKING,COOKING,SMELTING)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "0,0,0,0,0,0,0,0')");
+                        }catch(SQLException e){
+                            System.out.println("Error Creating DB Profile: \n"+e.toString());
+                        }
+                    }
+                });
                 System.out.println("Created DB Profile.");
             }
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");

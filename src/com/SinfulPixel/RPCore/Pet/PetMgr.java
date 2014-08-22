@@ -1,38 +1,23 @@
 package com.SinfulPixel.RPCore.Pet;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-import java.util.UUID;
-
-import net.minecraft.server.v1_7_R3.EntityInsentient;
-import net.minecraft.server.v1_7_R3.PathEntity;
-import net.minecraft.server.v1_7_R3.PathfinderGoal;
-import net.minecraft.server.v1_7_R3.PathfinderGoalFloat;
-import net.minecraft.server.v1_7_R3.PathfinderGoalSelector;
-
+import com.SinfulPixel.RPCore.RPCore;
+import net.minecraft.server.v1_7_R3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.craftbukkit.v1_7_R3.entity.CraftLivingEntity;
 import org.bukkit.craftbukkit.v1_7_R3.util.UnsafeList;
-import org.bukkit.entity.Chicken;
-import org.bukkit.entity.Cow;
-import org.bukkit.entity.Creeper;
+import org.bukkit.entity.*;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.Horse;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.entity.Pig;
-import org.bukkit.entity.PigZombie;
-import org.bukkit.entity.Player;
-import org.bukkit.entity.Skeleton;
 import org.bukkit.entity.Skeleton.SkeletonType;
-import org.bukkit.entity.Zombie;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityCombustEvent;
 
-import com.SinfulPixel.RPCore.RPCore;
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.UUID;
  
 public class PetMgr implements Listener{
  
@@ -40,15 +25,14 @@ public class PetMgr implements Listener{
 	private static Field goalSelector;
 	private static Field targetSelector;
 	private static HashMap<UUID,UUID> pets = new HashMap<UUID,UUID>();
+    public static HashMap<String, Boolean> hasPet = new HashMap<String,Boolean>();
  
 	static {
 		try {
 			gsa = PathfinderGoalSelector.class.getDeclaredField("b");
 			gsa.setAccessible(true);
- 
 			goalSelector = EntityInsentient.class.getDeclaredField("goalSelector");
 			goalSelector.setAccessible(true);
- 
 			targetSelector = EntityInsentient.class.getDeclaredField("targetSelector");
 			targetSelector.setAccessible(true);
 		} catch (Exception e) {
@@ -72,13 +56,10 @@ public class PetMgr implements Listener{
 		try {
 			Object nms_entity = ((CraftLivingEntity) e).getHandle();
 			if (nms_entity instanceof EntityInsentient) {
- 
 				PathfinderGoalSelector goal = (PathfinderGoalSelector) goalSelector.get(nms_entity);
 				PathfinderGoalSelector target = (PathfinderGoalSelector) targetSelector.get(nms_entity);
- 
 				gsa.set(goal, new UnsafeList<Object>());
 				gsa.set(target, new UnsafeList<Object>());
- 
 				goal.a(0, new PathfinderGoalFloat((EntityInsentient) nms_entity));
 				goal.a(1, new PathfinderGoalWalktoTile((EntityInsentient) nms_entity, toFollow));
  
@@ -91,34 +72,22 @@ public class PetMgr implements Listener{
 	}
  
 	public static class PathfinderGoalWalktoTile extends PathfinderGoal {
- 
 		private EntityInsentient entity;
 		private PathEntity path;
 		private UUID p;
- 
 		public PathfinderGoalWalktoTile(EntityInsentient entitycreature, UUID p) {
 			this.entity = entitycreature;
 			this.p = p;
 		}
- 
 		@Override
 		public boolean a() {
- 
-			if (Bukkit.getPlayer(p) == null) {
-				return path != null;
-			}
- 
+			if (Bukkit.getPlayer(p) == null) {return path != null;}
 			Location targetLocation = Bukkit.getPlayer(p).getLocation();
- 
 			boolean flag = this.entity.getNavigation().c();
- 
 			this.entity.getNavigation().b(false);
 			this.path = this.entity.getNavigation().a(targetLocation.getX() + 1, targetLocation.getY(), targetLocation.getZ() + 1);
 			this.entity.getNavigation().b(flag);
- 
-			if (this.path != null) {
-				this.c();
-			}
+			if (this.path != null) {this.c();}
 			return this.path != null;
 		}
  

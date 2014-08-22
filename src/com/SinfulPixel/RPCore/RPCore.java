@@ -5,6 +5,7 @@ import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
+import com.SinfulPixel.RPCore.Entity.Banker;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.Party.PartyManager;
@@ -14,9 +15,12 @@ import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.enchantments.EnchantmentWrapper;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Villager;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -24,10 +28,7 @@ import org.bukkit.scheduler.BukkitTask;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 
 public class RPCore extends JavaPlugin {
@@ -60,12 +61,16 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Backpack(this), this);
         getServer().getPluginManager().registerEvents(new NoItemBreak(this),this);
         getServer().getPluginManager().registerEvents(new FireGUI(this), this);
+        getServer().getPluginManager().registerEvents(new Banker(this),this);
         //Create Default Config
         try {
+            MakeDir();
             saveConfig();
             setupConfig(getConfig());
             saveConfig();
             Backpack.createBPConfig();
+            Banker.createBankerFile();
+            Banker.cacheBanker();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -81,7 +86,7 @@ public class RPCore extends JavaPlugin {
                 if (!res.next()) {
                     System.out.println("Creating Core Table");
                     statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
-                            "ACCOUNTBAL DECIMAL(10,2), RACE varchar(20));");
+                            "ACCOUNTBAL DECIMAL(10,2));");
                     System.out.println("Creating Core Table...COMPLETE!");
                     System.out.println("Creating Skills Table");
                     statement.executeUpdate("CREATE TABLE SKILLS (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY," +
@@ -92,7 +97,8 @@ public class RPCore extends JavaPlugin {
                             "FARMING INT,"+
                             "ARCHERY INT,"+
                             "FIREMAKING INT,"+
-                            "TOTAL INT);");
+                            "COOKING INT," +
+                            "SMELTING INT);");
                     System.out.println("Creating Skills Table...COMPLETE!");
                     c.setAutoCommit(true);
                 }
@@ -121,6 +127,7 @@ public class RPCore extends JavaPlugin {
         getCommand("roll").setExecutor(new DiceCmd(this));
         getCommand("Party").setExecutor(new PartyCmd(this));
         getCommand("backpack").setExecutor(new BackpackCmd(this));
+        getCommand("bank").setExecutor(new BankCreateCmd(this));
         //Register Enchantment
         try {
             Field f = Enchantment.class.getDeclaredField("acceptingNew");
@@ -134,9 +141,28 @@ public class RPCore extends JavaPlugin {
         } catch (IllegalArgumentException e) {
         }
     }
+    private void MakeDir(){
+        File dir = this.getDataFolder();
+        if(!dir.exists()){
+            boolean res = dir.mkdir();
+        }
+    }
     public void onDisable() {
         try {
+            for(Entity e : Bukkit.getWorld("world").getEntities()){
+                if(e instanceof Villager){
+                    e.remove();
+                }
+            }
+            System.out.println("Disabling Backpacks.");
             Backpack.disable();
+            System.out.println("Disabling Backpacks...COMPLETE!");
+            System.out.println("Extinguishing Fires.");
+            for(Location l : FireGUI.fires.keySet()) {
+                FireGUI.exAll(l);
+            }
+            System.out.println("Extinguishing Fires...COMPLETE!");
+            try{c.close();}catch(SQLException ex){}
         } catch (IOException i) {
             i.printStackTrace();
         }
