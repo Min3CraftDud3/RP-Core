@@ -18,7 +18,7 @@ public class BackpackCmd implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("backpack")) {
-                player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
+               player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
             }
         }
         return false;

@@ -4,6 +4,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -12,13 +13,13 @@ import java.util.List;
  */
 public class LoreMgr {
 
-    public ItemStack setLore(ItemStack i, String s){
+    public static ItemStack setLore(ItemStack i, String s){
         ItemMeta im = i.getItemMeta();
         im.setLore(Arrays.asList(s));
         i.setItemMeta(im);
         return i;
     }
-    public ItemStack addLore(ItemStack i, String s){
+    public static ItemStack addLore(ItemStack i, String s){
         ItemMeta im = i.getItemMeta();
         List<String> lore = im.getLore();
         lore.add(s);
@@ -26,7 +27,7 @@ public class LoreMgr {
         i.setItemMeta(im);
         return i;
     }
-    public String getLore(ItemStack i, String s){
+    public static String getLore(ItemStack i, String s){
         String result = "";
         for(int o=0;o<i.getItemMeta().getLore().size();o++){
             if(i.getItemMeta().getLore().get(o).contains(s)){
@@ -35,13 +36,13 @@ public class LoreMgr {
         }
         return result;
     }
-    public String splitLore(String s){
+    public static String splitLore(String s){
         String[] args = s.split(":");
         args[1] = ChatColor.stripColor(args[1]);
         String string = args[1].trim();
         return string;
     }
-    public Boolean hasAttribute(ItemStack i){
+    public static Boolean hasAttribute(ItemStack i){
         if(i.hasItemMeta()){
             for(int o=0;o<i.getItemMeta().getLore().size();o++){
                 if(i.getItemMeta().getLore().get(o).contains("Attribute")){
@@ -51,7 +52,7 @@ public class LoreMgr {
         }
         return false;
     }
-    public String getAttribute(ItemStack i){
+    public static String getAttribute(ItemStack i){
         if(hasAttribute(i)){
             for(int o=0;o<i.getItemMeta().getLore().size();o++){
                 if(i.getItemMeta().getLore().get(o).contains("Poison")||
@@ -64,9 +65,15 @@ public class LoreMgr {
         }
         return null;
     }
-    public ItemStack addAttribute(ItemStack i, String att){
+    public static ItemStack addAttribute(ItemStack i, String att){
+        List<String> lore = new ArrayList<String>();
         ItemMeta im = i.getItemMeta();
-        List<String> lore = im.getLore();
+        if(im.hasLore()) {
+            List<String> lr = im.getLore();
+            for(String s:lr){
+                lore.add(s);
+            }
+        }
         lore.add("Attribute: "+att);
         im.setLore(lore);
         i.setItemMeta(im);
