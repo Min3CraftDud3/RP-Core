@@ -1,5 +1,6 @@
 package com.SinfulPixel.RPCore.Entity;
 
+import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -118,8 +119,8 @@ public class Banker implements Listener{
         Entity en = e.getRightClicked();
         if(bankers.containsKey(en.getUniqueId())){
             e.setCancelled(true);
-            //OpenBankMenu
-            p.sendMessage("Works");
+            BankerGUI.setPlayer(p);
+            p.openInventory(BankerGUI.bankGUI);
         }
     }
 

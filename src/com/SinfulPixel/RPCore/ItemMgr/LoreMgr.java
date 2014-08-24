@@ -7,11 +7,13 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Min3 on 8/24/2014.
  */
 public class LoreMgr {
+    static Random rand = new Random();
 
     public static ItemStack setLore(ItemStack i, String s){
         ItemMeta im = i.getItemMeta();
@@ -65,7 +67,7 @@ public class LoreMgr {
         }
         return null;
     }
-    public static ItemStack addAttribute(ItemStack i, String att){
+    public static ItemStack addAttribute(ItemStack i, String st){
         List<String> lore = new ArrayList<String>();
         ItemMeta im = i.getItemMeta();
         if(im.hasLore()) {
@@ -74,9 +76,43 @@ public class LoreMgr {
                 lore.add(s);
             }
         }
-        lore.add("Attribute: "+att);
+        lore.add("Attribute: "+st);
         im.setLore(lore);
         i.setItemMeta(im);
         return i;
+    }
+    public static ItemStack addAttribute(ItemStack i, int level){
+        List<String> lore = new ArrayList<String>();
+        ItemMeta im = i.getItemMeta();
+        if(im.hasLore()) {
+            List<String> lr = im.getLore();
+            for(String s:lr){
+                lore.add(s);
+            }
+        }
+        String att = pickAttribute(level);
+        if(att != null) {
+            lore.add("Attribute: " + att);
+        }else{
+            return i;
+        }
+        im.setLore(lore);
+        i.setItemMeta(im);
+        return i;
+    }
+    public static String pickAttribute(int level){
+        int p = rand.nextInt(100);
+        double d = level/4;
+        double total = p+d;
+        if(total>90){
+            return "Life Steal";
+        }else if(total>70 && total<80){
+            return "Erosion";
+        }else if(total>60 && total<70){
+            return "Poison";
+        }else if(total>50 && total<60){
+            return "Fire";
+        }
+        return null;
     }
 }
