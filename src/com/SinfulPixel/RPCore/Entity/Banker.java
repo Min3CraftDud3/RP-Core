@@ -119,7 +119,7 @@ public class Banker implements Listener{
         Entity en = e.getRightClicked();
         if(bankers.containsKey(en.getUniqueId())){
             e.setCancelled(true);
-            BankerGUI.setPlayer(p);
+            BankerGUI.p = p;
             p.openInventory(BankerGUI.bankGUI);
         }
     }

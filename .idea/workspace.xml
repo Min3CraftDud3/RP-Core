@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ToolLevel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -89,8 +86,8 @@
       <file leaf-file-name="Account.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-              <caret line="30" column="63" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="527">
+              <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
               <folding>
                 <element signature="e#546#547#0" expanded="true" />
                 <element signature="e#608#609#0" expanded="true" />
@@ -101,11 +98,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Banker.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Banker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82828283" vertical-offset="1191" max-vertical-offset="1870">
-              <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="1870">
+              <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -151,15 +148,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BankerGUI.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="BankerGUI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="2244">
-              <caret line="80" column="57" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.484375" vertical-offset="800" max-vertical-offset="2261">
+              <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1028#1041#0" expanded="true" />
-                <element signature="e#1137#1145#0" expanded="true" />
+                <element signature="e#1021#1034#0" expanded="true" />
+                <element signature="e#1130#1138#0" expanded="true" />
+                <element signature="e#1647#1655#0" expanded="true" />
+                <element signature="e#2165#2173#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -240,10 +239,10 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ToolLevel.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
       </list>
     </option>
   </component>
@@ -931,7 +930,7 @@
       <workItem from="1408002912515" duration="4737000" />
       <workItem from="1408484661424" duration="17272000" />
       <workItem from="1408755847115" duration="591000" />
-      <workItem from="1408857378958" duration="11082000" />
+      <workItem from="1408857378958" duration="12821000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1153,11 +1152,15 @@
       <created>1408899421231</created>
       <updated>1408899421231</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Added Banker GUI">
+      <created>1408915881675</created>
+      <updated>1408915881675</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119741000" />
+    <option name="totallyTimeSpent" value="121480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1176,7 +1179,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33070865" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33070865" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1234,7 +1237,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added to backpack system." />
     <MESSAGE value="bug fixed" />
     <MESSAGE value="IRL Timing System Added." />
     <MESSAGE value="Added Hit HoloGrams cleaned up some code&#10;" />
@@ -1259,7 +1261,8 @@
     <MESSAGE value="Banker added" />
     <MESSAGE value="Weapon Lore/Name systems - added" />
     <MESSAGE value="naming updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="naming updated" />
+    <MESSAGE value="Added Banker GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Banker GUI" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1627,31 +1630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
-          <caret line="30" column="63" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#546#547#0" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#661#662#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="205" max-vertical-offset="2244">
-          <caret line="80" column="57" selection-start-line="80" selection-start-column="37" selection-end-line="80" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1028#1041#0" expanded="true" />
-            <element signature="e#1137#1145#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="3417">
@@ -1663,11 +1641,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="527">
+          <caret line="26" column="45" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding>
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#608#609#0" expanded="true" />
+            <element signature="e#661#662#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82828283" vertical-offset="1191" max-vertical-offset="1870">
-          <caret line="122" column="47" selection-start-line="122" selection-start-column="47" selection-end-line="122" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1191" max-vertical-offset="1870">
+          <caret line="121" column="28" selection-start-line="121" selection-start-column="28" selection-end-line="121" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.484375" vertical-offset="800" max-vertical-offset="2261">
+          <caret line="58" column="86" selection-start-line="58" selection-start-column="86" selection-end-line="58" selection-end-column="86" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1021#1034#0" expanded="true" />
+            <element signature="e#1130#1138#0" expanded="true" />
+            <element signature="e#1647#1655#0" expanded="true" />
+            <element signature="e#2165#2173#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

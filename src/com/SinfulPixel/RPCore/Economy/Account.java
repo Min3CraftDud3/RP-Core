@@ -24,7 +24,7 @@ public class Account implements Listener {
         p.sendMessage(ChatColor.GREEN+"Withdrew $"+d);
     }
     public static void transfer(Player p, Player t, double d){
-        p.sendMessage(ChatColor.GREEN+"Sent "+d+" to "+t.getName());
-        t.sendMessage(ChatColor.GREEN+p.getName()+" transferred "+d+" to your bank account.");
+        p.sendMessage(ChatColor.GREEN+"Sent $"+d+" to "+t.getName());
+        t.sendMessage(ChatColor.GREEN+p.getName()+" transferred $"+d+" to your bank account.");
     }
 }

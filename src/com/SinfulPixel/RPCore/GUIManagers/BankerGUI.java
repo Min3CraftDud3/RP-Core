@@ -26,7 +26,7 @@ public class BankerGUI implements Listener {
     RPCore plugin;
     public BankerGUI(RPCore plugin){this.plugin=plugin;}
     public static Inventory bankGUI = Bukkit.createInventory(null, 9, ChatColor.GOLD + "What do you wish to do?");
-    public static Player p = null;
+    public static Player p;
     HashMap<UUID,String> banking = new HashMap<UUID,String>();
     static{
         //Option 1 - Deposit
@@ -48,7 +48,7 @@ public class BankerGUI implements Listener {
         //Option 3 - Transfer
         ArrayList<String> lrTransfer = new ArrayList<String>();
         lrTransfer.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"transfer"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" gold.");
-        ItemStack transfer = new ItemStack(Material.STICK,1);
+        ItemStack transfer = new ItemStack(Material.EMERALD,1);
         ItemMeta transferIM = transfer.getItemMeta();
         transferIM.setDisplayName(ChatColor.GOLD+""+ChatColor.BOLD+"Transfer Gold");
         transferIM.setLore(lrTransfer);
@@ -56,9 +56,7 @@ public class BankerGUI implements Listener {
         //Option 4 Balance
         ItemStack balance = new ItemStack(Material.MAP,1);
         ItemMeta balanceIM = balance.getItemMeta();
-        if(p !=null) {
-            balanceIM.setDisplayName(ChatColor.GREEN + "Balance: " + Account.getBalance(p));
-        }
+        balanceIM.setDisplayName(ChatColor.GREEN + "Balance: " + Account.getBalance(p));
         balance.setItemMeta(balanceIM);
         //Menu
         bankGUI.setItem(3,deposit);
@@ -68,59 +66,62 @@ public class BankerGUI implements Listener {
     }
     @EventHandler
     public void onInventoryClick(InventoryClickEvent e){
-        Player p = (Player)e.getWhoClicked();
-        ItemStack clicked = e.getCurrentItem();
-        Inventory inv = e.getInventory();
-        if (inv.getName().equals(bankGUI.getName())) {
-            if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD+""+ChatColor.BOLD+"Deposit Gold")) {
-                e.setCancelled(true);
-                p.closeInventory();
-                p.sendMessage(ChatColor.GREEN+"Please enter amount to deposit, or type exit to quit.");
-                banking.put(p.getUniqueId(),"DEPOSIT");
-            } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD+""+ChatColor.BOLD+"Withdraw Gold")) {
-                e.setCancelled(true);
-                p.closeInventory();
-                p.sendMessage(ChatColor.GREEN+"Please enter amount to withdraw, or type exit to quit.");
-                banking.put(p.getUniqueId(),"WITHDRAW");
-            } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD+""+ChatColor.BOLD+"Transfer Gold")) {
-                e.setCancelled(true);
-                p.closeInventory();
-                p.sendMessage(ChatColor.GREEN+"Please enter a player name and amount to transfer, or type exit to quit.");
-                banking.put(p.getUniqueId(),"TRANSFER");
+        try {
+            Player p = (Player) e.getWhoClicked();
+            ItemStack clicked = e.getCurrentItem();
+            Inventory inv = e.getInventory();
+            if (inv.getName().equals(bankGUI.getName())) {
+                if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD + "" + ChatColor.BOLD + "Deposit Gold")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    p.sendMessage(ChatColor.GREEN + "Please enter amount to deposit, or type exit to quit.");
+                    banking.put(p.getUniqueId(), "DEPOSIT");
+                } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD + "" + ChatColor.BOLD + "Withdraw Gold")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    p.sendMessage(ChatColor.GREEN + "Please enter amount to withdraw, or type exit to quit.");
+                    banking.put(p.getUniqueId(), "WITHDRAW");
+                } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GOLD + "" + ChatColor.BOLD + "Transfer Gold")) {
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    p.sendMessage(ChatColor.GREEN + "Please enter a player name and amount to transfer, or type exit to quit.");
+                    banking.put(p.getUniqueId(), "TRANSFER");
+                }
             }
-        }
+        }catch(Exception ex){}
     }
-    public static void setPlayer(Player p){BankerGUI.p=p;}
     @EventHandler
     public void onAction(AsyncPlayerChatEvent e){
-        if(banking.containsKey(e.getPlayer().getUniqueId())){
-        String[] msg = e.getMessage().split(" ");
-        if(Bank.isInt(msg[0])){
-            if(banking.get(e.getPlayer().getUniqueId()).equals("DEPOSIT")){
-                Account.deposit(e.getPlayer(),Double.parseDouble(msg[0]));
-                banking.remove(e.getPlayer().getUniqueId());
-                e.setCancelled(true);
-            }
-            if(banking.get(e.getPlayer().getUniqueId()).equals("WITHDRAW")){
-                Account.withdraw(e.getPlayer(),Double.parseDouble(msg[0]));
-                banking.remove(e.getPlayer().getUniqueId());
-                e.setCancelled(true);
-            }
-        }
-        if(msg[0].equalsIgnoreCase("exit")){
-            banking.remove(e.getPlayer().getUniqueId());
-            e.setCancelled(true);
-        }
-        if(msg[0] != null){
-            Player target = Bukkit.getPlayer(msg[0]);
-            if(target != null){
-                if(Bank.isInt(msg[1])){
-                    Account.transfer(e.getPlayer(),target,Double.parseDouble(msg[1]));
+        try {
+            if (banking.containsKey(e.getPlayer().getUniqueId())) {
+                String[] msg = e.getMessage().split(" ");
+                if (Bank.isInt(msg[0])) {
+                    if (banking.get(e.getPlayer().getUniqueId()).equals("DEPOSIT")) {
+                        Account.deposit(e.getPlayer(), Double.parseDouble(msg[0]));
+                        banking.remove(e.getPlayer().getUniqueId());
+                        e.setCancelled(true);
+                    }
+                    if (banking.get(e.getPlayer().getUniqueId()).equals("WITHDRAW")) {
+                        Account.withdraw(e.getPlayer(), Double.parseDouble(msg[0]));
+                        banking.remove(e.getPlayer().getUniqueId());
+                        e.setCancelled(true);
+                    }
+                }
+                if (msg[0].equalsIgnoreCase("exit")) {
                     banking.remove(e.getPlayer().getUniqueId());
                     e.setCancelled(true);
                 }
+                if (msg[0] != null) {
+                    Player target = Bukkit.getPlayer(msg[0]);
+                    if (target != null) {
+                        if (Bank.isInt(msg[1])) {
+                            Account.transfer(e.getPlayer(), target, Double.parseDouble(msg[1]));
+                            banking.remove(e.getPlayer().getUniqueId());
+                            e.setCancelled(true);
+                        }
+                    }
+                }
             }
-        }
-        }
+        }catch(Exception ex){}
     }
 }
