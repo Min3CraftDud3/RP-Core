@@ -18,7 +18,6 @@ public class PartyManager {
     RPCore plugin;
     public PartyManager(RPCore plugin){this.plugin=plugin;}
     public static HashMap<UUID,String> playersinParty = new HashMap<UUID,String>();
-    public static HashMap<String,String> partyName = new HashMap<String,String>();
     public static HashMap<String, String> invited = new HashMap<String,String>();
     public static List<UUID> leaders = new ArrayList<UUID>();
 
@@ -42,7 +41,6 @@ public class PartyManager {
             p.sendMessage(ChatColor.GREEN+"To invite people type /Party Invite <Player>");
             leaders.add(p.getUniqueId());
             playersinParty.put(p.getUniqueId(), p.getName());
-            partyName.put(p.getName(),p.getName()+"'s Party.");
         }
     }
 
@@ -77,7 +75,39 @@ public class PartyManager {
     }
 
     public static void disbandParty(Player p){
+        if(leaders.contains(p.getUniqueId())){
+            for(Player pl : Bukkit.getOnlinePlayers()){
+                if(playersinParty.containsKey(pl.getUniqueId())){
+                    if(playersinParty.get(pl.getUniqueId()).equalsIgnoreCase(p.getName())){
+                        playersinParty.remove(pl.getUniqueId());
+                        pl.sendMessage(ChatColor.RED+"Party Disbanded.");
+                    }
+                }
+            }
+            leaders.remove(p.getUniqueId());
+        }
+    }
 
+    public static void makeLeader(Player p, Player t){
+        if(leaders.contains(p.getUniqueId())){
+            leaders.add(t.getUniqueId());
+            leaders.remove(p.getUniqueId());
+            playersinParty.remove(t.getUniqueId());
+            playersinParty.put(t.getUniqueId(),t.getName());
+            playersinParty.remove(p.getUniqueId());
+            playersinParty.put(p.getUniqueId(),t.getName());
+            p.sendMessage(ChatColor.RED+t.getName()+" is not leading the party.");
+            t.sendMessage(ChatColor.RED+"You are now the party leader.");
+            for(Player pl : Bukkit.getOnlinePlayers()){
+                if(playersinParty.containsKey(pl.getUniqueId())){
+                    if(playersinParty.get(pl.getUniqueId()).equalsIgnoreCase(p.getName())){
+                        playersinParty.remove(pl.getUniqueId());
+                        playersinParty.put(pl.getUniqueId(),t.getName());
+                        pl.sendMessage(ChatColor.RED+t.getName()+" is now the party leader.");
+                    }
+                }
+            }
+        }
     }
 
 
