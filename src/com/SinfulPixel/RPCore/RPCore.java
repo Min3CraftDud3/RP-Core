@@ -10,6 +10,7 @@ import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
+import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
@@ -40,6 +41,7 @@ public class RPCore extends JavaPlugin {
     CheckTime ct = new CheckTime(this);
     PartyManager pm = new PartyManager(this);
     NameMgr nm = new NameMgr(this);
+    Account acc = new Account(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -66,6 +68,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new FireGUI(this), this);
         getServer().getPluginManager().registerEvents(new Banker(this),this);
         getServer().getPluginManager().registerEvents(new BankerGUI(this),this);
+        getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         //Create Default Config
         try {
             MakeDir();
