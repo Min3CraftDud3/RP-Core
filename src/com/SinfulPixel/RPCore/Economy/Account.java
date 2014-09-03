@@ -35,9 +35,10 @@ public class Account{
             res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
             res.next();
             Double b = res.getDouble("ACCOUNTBAL");
-            RPCore.statement.executeQuery("UPDATE RPCORE SET ACCOUNTBAL='"+(b+d)+"' WHERE UUID='"+p.getUniqueId()+"';");
+            Double t = b+d;
+            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+t+"' WHERE UUID='"+p.getUniqueId()+"';");
             Bank.removeFromBalance(p,d+"");
-        }catch(Exception e){}
+        }catch(Exception e){e.printStackTrace();}
         p.sendMessage(ChatColor.GREEN+"Deposited $"+d);
     }
     public static void withdraw(Player p, double d){
@@ -46,7 +47,7 @@ public class Account{
             res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
             res.next();
             Double b = res.getDouble("ACCOUNTBAL");
-            RPCore.statement.executeQuery("UPDATE RPCORE SET ACCOUNTBAL='"+(b-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
+            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(b-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
             Bank.addToBalance(p,d+"");
         }catch(Exception e){}
         p.sendMessage(ChatColor.GREEN+"Withdrew $"+d);
@@ -60,8 +61,8 @@ public class Account{
             res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
             res.next();
             Double pb = res.getDouble("ACCOUNTBAL");
-            RPCore.statement.executeQuery("UPDATE RPCORE SET ACCOUNTBAL='"+(pb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
-            RPCore.statement.executeQuery("UPDATE RPCORE SET ACCOUNTBAL='"+(tb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
+            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(pb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
+            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(tb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
         }catch(Exception e){}
         p.sendMessage(ChatColor.GREEN+"Sent $"+d+" to "+t.getName());
         t.sendMessage(ChatColor.GREEN+p.getName()+" transferred $"+d+" to your bank account.");

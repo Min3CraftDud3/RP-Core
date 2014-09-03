@@ -56,7 +56,7 @@ public class BankerGUI implements Listener {
         //Option 4 Balance
         ItemStack balance = new ItemStack(Material.MAP,1);
         ItemMeta balanceIM = balance.getItemMeta();
-        balanceIM.setDisplayName(ChatColor.GREEN + "Balance: " + Account.getBalance(p));
+        balanceIM.setDisplayName(ChatColor.GREEN + "Click for balance.");
         balance.setItemMeta(balanceIM);
         //Menu
         bankGUI.setItem(3,deposit);
@@ -86,6 +86,10 @@ public class BankerGUI implements Listener {
                     p.closeInventory();
                     p.sendMessage(ChatColor.GREEN + "Please enter a player name and amount to transfer, or type exit to quit.");
                     banking.put(p.getUniqueId(), "TRANSFER");
+                } else if(clicked.getItemMeta().getDisplayName().equals(ChatColor.GREEN + "Click for balance.")){
+                    e.setCancelled(true);
+                    p.closeInventory();
+                    p.sendMessage(ChatColor.GREEN+"Your Account Balance is: "+ChatColor.AQUA+Account.getBalance(p));
                 }
             }
         }catch(Exception ex){}
