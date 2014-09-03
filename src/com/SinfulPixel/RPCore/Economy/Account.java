@@ -3,7 +3,6 @@ package com.SinfulPixel.RPCore.Economy;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
 
 import java.sql.ResultSet;
 import java.util.HashMap;
@@ -12,7 +11,7 @@ import java.util.UUID;
 /**
  * Created by Min3 on 7/13/2014.
  */
-public class Account implements Listener {
+public class Account{
     RPCore plugin;
     public Account(RPCore plugin){this.plugin=plugin;}
     public static HashMap<UUID, Boolean> canCmd = new HashMap<UUID, Boolean>();
