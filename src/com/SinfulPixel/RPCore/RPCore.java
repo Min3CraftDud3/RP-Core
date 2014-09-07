@@ -18,6 +18,7 @@ import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import com.SinfulPixel.RPCore.World.ProgressBar;
+import com.SinfulPixel.RPCore.World.StatusBarAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -159,6 +160,7 @@ public class RPCore extends JavaPlugin {
     }
     public void onDisable() {
         try {
+            StatusBarAPI.removeAllStatusBars();
             for(Entity e : Bukkit.getWorld("world").getEntities()){
                 if(e instanceof Villager){
                     e.remove();

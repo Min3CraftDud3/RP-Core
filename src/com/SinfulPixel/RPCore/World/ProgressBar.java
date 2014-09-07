@@ -10,20 +10,23 @@ import org.bukkit.entity.Player;
 public class ProgressBar {
     static RPCore plugin;
     public ProgressBar(RPCore plugin){this.plugin=plugin;}
+    public static int cd;
     public static void progressBar(final Player p, final String i, final int s){
         // P = Player, I = Skill Description, S = Seconds
         if(!StatusBarAPI.hasStatusBar(p)){
-            Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,new Runnable(){
-                int n=0;
+            cd = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,new Runnable(){
+                int sec = s;
+                int n = 0;
                 public void run(){
-                if(n>=s){
-                n=0;
+                if(n>=sec){
                     StatusBarAPI.removeStatusBar(p);
+                    cancel();
                 }
                     n++;
                     StatusBarAPI.setStatusBar(p,i,(n/2));
                 }
-            },20,20 );
+            },0,20L);
         }
     }
+    public static void cancel(){Bukkit.getScheduler().cancelTask(cd);}
 }
