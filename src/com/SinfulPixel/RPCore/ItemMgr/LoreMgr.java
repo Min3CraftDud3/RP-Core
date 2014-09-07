@@ -14,7 +14,6 @@ import java.util.Random;
  */
 public class LoreMgr {
     static Random rand = new Random();
-
     public static ItemStack setLore(ItemStack i, String s){
         ItemMeta im = i.getItemMeta();
         im.setLore(Arrays.asList(s));

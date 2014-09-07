@@ -106,7 +106,6 @@ public class Banker implements Listener{
             }
         },0,0);
     }
-
     @EventHandler
     public void onNPC(EntityDamageEvent e){
         if(bankers.containsKey(e.getEntity().getUniqueId())){
@@ -123,5 +122,4 @@ public class Banker implements Listener{
             p.openInventory(BankerGUI.bankGUI);
         }
     }
-
 }

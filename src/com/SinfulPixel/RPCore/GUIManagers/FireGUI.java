@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.GUIManagers;
 
 import com.SinfulPixel.RPCore.RPCore;
+import com.SinfulPixel.RPCore.World.ProgressBar;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -83,6 +84,7 @@ public class FireGUI implements Listener {
                     e.setCancelled(true);
                     p.closeInventory();
                     //Add Time to Fire
+                    ProgressBar.progressBar(p,"Stoking Fire",3);
                     p.sendMessage("You stoke the fire, adding to it's burn time.");
             }
         }

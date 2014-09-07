@@ -32,7 +32,7 @@ public class EntityManager implements Listener {
                 public void run() {
                     holo.destroy();
                 }
-            }, 10);
+            }, 15);
         }
     }
 

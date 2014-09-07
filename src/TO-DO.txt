@@ -3,7 +3,6 @@ Forge = lava on glass - GUI to smelt items.
 FirePit = 4 jungle slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
 
 //Environmental Effects
-Blindness at night
 Mob levels - epicenter & health increase
 
 //Player
@@ -31,5 +30,9 @@ Smithing =  anvil ting noise
 
 //Ideas
 Add gui achievement system.
-NPC shops/Quest givers
+NPC shops/Quest givers - Nether Star
+Crafting Kit - Used to craft all items. Disable crafting table.
+Crafting Kit - Lvl 0+
+Advanced Crafting Kit - Lvl 40+
+Master Crafting Kit - Lvl 80+
 

@@ -17,6 +17,7 @@ import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.World.CheckTime;
+import com.SinfulPixel.RPCore.World.ProgressBar;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -42,6 +43,7 @@ public class RPCore extends JavaPlugin {
     PartyManager pm = new PartyManager(this);
     NameMgr nm = new NameMgr(this);
     Account acc = new Account(this);
+    ProgressBar pb = new ProgressBar(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
