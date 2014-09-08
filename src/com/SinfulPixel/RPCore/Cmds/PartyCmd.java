@@ -22,7 +22,7 @@ public class PartyCmd implements CommandExecutor {
             Player p = (Player)sender;
             if (cmd.getName().equalsIgnoreCase("Party")) {
                 if (args.length == 0) {
-                    p.sendMessage(ChatColor.GREEN+"Usage: /Party <Create/Invite/Disband/Accept/Toggle/Leader> <Params>");
+                    p.sendMessage(ChatColor.GREEN+"Usage: /Party <Create/Invite/Disband/Accept/Toggle/Leader/List> <Params>");
                 }else if(args.length == 1) {
                     if (args[0].equalsIgnoreCase("create")) {
                         PartyManager.createParty(p);
@@ -32,6 +32,9 @@ public class PartyCmd implements CommandExecutor {
                     }
                     if(args[0].equalsIgnoreCase("disband")){
                         PartyManager.disbandParty(p);
+                    }
+                    if(args[0].equalsIgnoreCase("accept")){
+                        PartyManager.joinParty(p);
                     }
                 }else if(args.length==2){
                         if(args[0].equalsIgnoreCase("leader")){
@@ -48,6 +51,15 @@ public class PartyCmd implements CommandExecutor {
                                 p.sendMessage("Toggled Party PvP");
                             }
                         }
+                    if(args[0].equalsIgnoreCase("invite")){
+                        Player t = Bukkit.getPlayer(args[1]);
+                        if(t != null){
+                            PartyManager.invited.put(t.getName(),p.getName());
+                            t.sendMessage(ChatColor.GREEN+p.getName()+" has invited you to the party. Type: /party accept to join.");
+                            p.sendMessage(ChatColor.GREEN+"Invited "+t.getName()+" to your party.");
+                        }
+
+                    }
                     }
                 }
             }

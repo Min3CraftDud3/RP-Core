@@ -32,12 +32,17 @@ public class Account{
     public static void deposit(Player p,double d){
         ResultSet res;
         try{
-            res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
-            res.next();
-            Double b = res.getDouble("ACCOUNTBAL");
-            Double t = b+d;
-            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+t+"' WHERE UUID='"+p.getUniqueId()+"';");
-            Bank.removeFromBalance(p,d+"");
+            if(Bank.getBalance(p)>d){
+                p.sendMessage(ChatColor.RED+"You do not have that much money in your pouch.");
+                return;
+            }else {
+                res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='" + p.getUniqueId() + "';");
+                res.next();
+                Double b = res.getDouble("ACCOUNTBAL");
+                Double t = b + d;
+                RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='" + t + "' WHERE UUID='" + p.getUniqueId() + "';");
+                Bank.removeFromBalance(p, d + "");
+            }
         }catch(Exception e){e.printStackTrace();}
         p.sendMessage(ChatColor.GREEN+"Deposited $"+d);
     }
@@ -47,24 +52,35 @@ public class Account{
             res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
             res.next();
             Double b = res.getDouble("ACCOUNTBAL");
-            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(b-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
-            Bank.addToBalance(p,d+"");
+            if(b<d){
+                p.sendMessage(ChatColor.RED + "You do not have that much money in your account.");
+                return;
+            }else {
+                RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='" + (b - d) + "' WHERE UUID='" + p.getUniqueId() + "';");
+                Bank.addToBalance(p, d + "");
+                p.sendMessage(ChatColor.GREEN + "Withdrew $" + d);
+            }
         }catch(Exception e){}
-        p.sendMessage(ChatColor.GREEN+"Withdrew $"+d);
+
     }
     public static void transfer(Player p, Player t, double d){
         ResultSet res;
         try{
-            res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
+            res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+t.getUniqueId()+"';");
             res.next();
             Double tb = res.getDouble("ACCOUNTBAL");
             res = RPCore.statement.executeQuery("SELECT ACCOUNTBAL FROM RPCORE WHERE UUID ='"+p.getUniqueId()+"';");
             res.next();
             Double pb = res.getDouble("ACCOUNTBAL");
-            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(pb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
-            RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='"+(tb-d)+"' WHERE UUID='"+p.getUniqueId()+"';");
+            if(pb<d){
+                p.sendMessage(ChatColor.RED+"You do not have that much money in your account.");
+                return;
+            }else {
+                RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='" + (pb - d) + "' WHERE UUID='" + p.getUniqueId() + "';");
+                RPCore.statement.executeUpdate("UPDATE RPCORE SET ACCOUNTBAL='" + (tb - d) + "' WHERE UUID='" + p.getUniqueId() + "';");
+                p.sendMessage(ChatColor.GREEN + "Sent $" + d + " to " + t.getName());
+                t.sendMessage(ChatColor.GREEN + p.getName() + " transferred $" + d + " to your bank account.");
+            }
         }catch(Exception e){}
-        p.sendMessage(ChatColor.GREEN+"Sent $"+d+" to "+t.getName());
-        t.sendMessage(ChatColor.GREEN+p.getName()+" transferred $"+d+" to your bank account.");
     }
 }

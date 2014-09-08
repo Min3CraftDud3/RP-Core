@@ -1,5 +1,6 @@
 package com.SinfulPixel.RPCore.Combat;
 
+import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -29,6 +30,13 @@ public class CombatMgr implements Listener{
 			final Player p = (Player)e.getEntity();
 			if(e.getDamager() instanceof Player) {
 		        final Player a = (Player) e.getDamager();
+                try {
+                    if (PartyManager.playersinParty.containsKey(p.getUniqueId()) || PartyManager.playersinParty.containsKey(a.getUniqueId())) {
+                        if (PartyManager.playersinParty.get(p.getUniqueId()).equals(PartyManager.playersinParty.get(a.getUniqueId()))) {
+                            return;
+                        }
+                    }
+                }catch(Exception ex){}
 		        inCombat.add(p.getUniqueId());
 		        inCombat.add(a.getUniqueId());
 		        p.sendMessage(cl+ChatColor.GRAY+"You have entered combat.");

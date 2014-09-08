@@ -29,9 +29,16 @@ public class PartyManager {
         }
     }
 
-    public static void joinParty(Player p, String name){
+    public static void joinParty(Player p){
         if(!isInParty(p)){
-            playersinParty.put(p.getUniqueId(),name);
+            if(invited.containsKey(p.getName())) {
+                playersinParty.put(p.getUniqueId(), invited.get(p.getName()));
+                Player t = Bukkit.getPlayer(invited.get(p.getName()));
+                if(t !=null){
+                    t.sendMessage(ChatColor.GREEN+p.getName()+" has joined the party.");
+                    p.sendMessage(ChatColor.GREEN+"You have joined "+t.getName()+"'s party.");
+                }
+            }
         }
     }
 
@@ -96,7 +103,7 @@ public class PartyManager {
             playersinParty.put(t.getUniqueId(),t.getName());
             playersinParty.remove(p.getUniqueId());
             playersinParty.put(p.getUniqueId(),t.getName());
-            p.sendMessage(ChatColor.RED+t.getName()+" is not leading the party.");
+            p.sendMessage(ChatColor.RED+t.getName()+" is now leading the party.");
             t.sendMessage(ChatColor.RED+"You are now the party leader.");
             for(Player pl : Bukkit.getOnlinePlayers()){
                 if(playersinParty.containsKey(pl.getUniqueId())){

@@ -84,7 +84,7 @@ public class FireGUI implements Listener {
                     e.setCancelled(true);
                     p.closeInventory();
                     //Add Time to Fire
-                    ProgressBar.progressBar(p,"Stoking Fire",3);
+                    ProgressBar.progressBar(p,"Stoking Fire",3,2);
                     p.sendMessage("You stoke the fire, adding to it's burn time.");
             }
         }
