@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.Combat;
 
 import com.SinfulPixel.RPCore.Party.PartyManager;
+import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -31,6 +32,9 @@ public class CombatMgr implements Listener{
 			if(e.getDamager() instanceof Player) {
 		        final Player a = (Player) e.getDamager();
                 try {
+                    if(PetMgr.hasPet(p)){
+                        PetMgr.removePet(p);
+                    }
                     if (PartyManager.playersinParty.containsKey(p.getUniqueId()) || PartyManager.playersinParty.containsKey(a.getUniqueId())) {
                         if (PartyManager.playersinParty.get(p.getUniqueId()).equals(PartyManager.playersinParty.get(a.getUniqueId()))) {
                             return;

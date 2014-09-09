@@ -43,6 +43,12 @@ public class PetMgr implements Listener{
 	public PetMgr(RPCore plugin){
 		this.plugin = plugin;
 	}
+    public static boolean hasPet(Player p){
+        if(hasPet.containsKey(p.getName())){
+            return true;
+        }
+        return false;
+    }
 	@EventHandler
 	public void combust(EntityCombustEvent e){
 		for(Player p:Bukkit.getOnlinePlayers()){
@@ -124,6 +130,7 @@ public class PetMgr implements Listener{
 			creeper.setMaxHealth(creeper.getHealth()+10000);
 	        PetMgr.makePet(creeper, p.getUniqueId());
 	        pets.put(p.getUniqueId(), creeper.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "zombie":
@@ -142,6 +149,7 @@ public class PetMgr implements Listener{
 			zombie.setMaxHealth(zombie.getHealth()+10000);
 	        PetMgr.makePet(zombie, p.getUniqueId());
 	        pets.put(p.getUniqueId(), zombie.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "skeleton": 
@@ -159,6 +167,7 @@ public class PetMgr implements Listener{
 			skeleton.setMaxHealth(skeleton.getHealth()+10000);
 	        PetMgr.makePet(skeleton, p.getUniqueId());
 	        pets.put(p.getUniqueId(), skeleton.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "pigman":
@@ -176,6 +185,7 @@ public class PetMgr implements Listener{
 			pigman.setMaxHealth(pigman.getHealth()+10000);
 	        PetMgr.makePet(pigman, p.getUniqueId());
 	        pets.put(p.getUniqueId(), pigman.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "cow":
@@ -193,6 +203,7 @@ public class PetMgr implements Listener{
 			cow.setMaxHealth(cow.getHealth()+10000);
 	        PetMgr.makePet(cow, p.getUniqueId());
 	        pets.put(p.getUniqueId(), cow.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "pig": 
@@ -210,6 +221,7 @@ public class PetMgr implements Listener{
 			pig.setMaxHealth(pig.getHealth()+10000);
 	        PetMgr.makePet(pig, p.getUniqueId());
 	        pets.put(p.getUniqueId(), pig.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "chicken": 
@@ -227,6 +239,7 @@ public class PetMgr implements Listener{
 			chicken.setMaxHealth(chicken.getHealth()+10000);
 	        PetMgr.makePet(chicken, p.getUniqueId());
 	        pets.put(p.getUniqueId(), chicken.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
 		case "horse": 
@@ -244,9 +257,9 @@ public class PetMgr implements Listener{
 			horse.setMaxHealth(horse.getHealth()+10000);
 	        PetMgr.makePet(horse, p.getUniqueId());
 	        pets.put(p.getUniqueId(), horse.getUniqueId());
+            hasPet.put(p.getName(),true);
 	        p.sendMessage("Your pet now follows you.");
 			break;
-		
 		}
 	}
 }

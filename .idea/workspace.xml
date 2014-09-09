@@ -7,14 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyCombat.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyCombat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/RPCore.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/RPCore.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -101,62 +95,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartyManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1972">
-              <caret line="38" column="91" selection-start-line="38" selection-start-column="91" selection-end-line="38" selection-end-column="91" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.9044482" vertical-offset="0" max-vertical-offset="1462">
-              <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
-              <folding>
-                <marker date="1410160556316" expanded="true" signature="635:698" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410160556316" expanded="true" signature="1188:1255" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410160556316" expanded="true" signature="1426:1503" placeholder="UPDATE RPCOR..." />
-                <marker date="1410160556316" expanded="true" signature="1823:1886" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410160556316" expanded="true" signature="2179:2262" placeholder="UPDATE RPCOR..." />
-                <marker date="1410160556316" expanded="true" signature="2579:2642" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410160556316" expanded="true" signature="2773:2836" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410160556316" expanded="true" signature="3129:3213" placeholder="UPDATE RPCOR..." />
-                <marker date="1410160556316" expanded="true" signature="3266:3350" placeholder="UPDATE RPCOR..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PartyCombat.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyCombat.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="23" column="24" selection-start-line="20" selection-start-column="16" selection-end-line="23" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CombatMgr.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CombatMgr.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.48653197" vertical-offset="0" max-vertical-offset="1156">
+              <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PartyCmd.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java">
+      <file leaf-file-name="PetMgr.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1139">
-              <caret line="58" column="69" selection-start-line="58" selection-start-column="69" selection-end-line="58" selection-end-column="69" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="4267">
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+              <folding>
+                <element signature="e#1393#1394#0" expanded="true" />
+                <element signature="e#1420#1421#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -216,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Database/CreateTables.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/Lag.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PetCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/PListener.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/CustomEntities/CustomEntityType.java" />
@@ -238,8 +194,9 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyCombat.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" />
       </list>
     </option>
   </component>
@@ -383,7 +340,121 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="ServerMgnt" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Skills" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pet" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Party" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ItemMgr" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,7 +498,103 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Entity" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Economy" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SQLite" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Database" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MySQL" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -777,7 +944,7 @@
       <workItem from="1409713728301" duration="2158000" />
       <workItem from="1409876494385" duration="597000" />
       <workItem from="1410116959170" duration="8403000" />
-      <workItem from="1410139374515" duration="13519000" />
+      <workItem from="1410139374515" duration="15260000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1019,11 +1186,15 @@
       <created>1410126959781</created>
       <updated>1410126959781</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="Fixed party/account bugs">
+      <created>1410160846722</created>
+      <updated>1410160846722</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146157000" />
+    <option name="totallyTimeSpent" value="147898000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1100,7 +1271,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Started Implementing Party System." />
     <MESSAGE value="Continued Implementing Party System." />
     <MESSAGE value="Added Party Command" />
     <MESSAGE value="MAven support test" />
@@ -1125,7 +1295,8 @@
     <MESSAGE value="Fixed Account Bug - Now working" />
     <MESSAGE value="Added Crafting Timer For Skills. Needs Test" />
     <MESSAGE value="testing" />
-    <option name="LAST_COMMIT_MESSAGE" value="testing" />
+    <MESSAGE value="Fixed party/account bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed party/account bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1296,7 +1467,7 @@
         <state vertical-scroll-proportion="2.604377" vertical-offset="0" max-vertical-offset="2329">
           <caret line="91" column="114" selection-start-line="91" selection-start-column="114" selection-end-line="91" selection-end-column="114" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1312,13 +1483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36408567" vertical-offset="0" max-vertical-offset="607">
           <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.940692" vertical-offset="1348" max-vertical-offset="4012">
-          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1442,9 +1606,8 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#839#1006#0" expanded="true" />
-            <element signature="e#983#984#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#983#984#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1500,29 +1663,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1105">
-          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1462">
+          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+          <folding>
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410160556316" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.9044482" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="74" column="18" selection-start-line="74" selection-start-column="18" selection-end-line="74" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1173" max-vertical-offset="4267">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
           <folding>
-            <marker date="1410160556316" expanded="true" signature="635:698" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410160556316" expanded="true" signature="1188:1255" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410160556316" expanded="true" signature="1426:1503" placeholder="UPDATE RPCOR..." />
-            <marker date="1410160556316" expanded="true" signature="1823:1886" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410160556316" expanded="true" signature="2179:2262" placeholder="UPDATE RPCOR..." />
-            <marker date="1410160556316" expanded="true" signature="2579:2642" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410160556316" expanded="true" signature="2773:2836" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410160556316" expanded="true" signature="3129:3213" placeholder="UPDATE RPCOR..." />
-            <marker date="1410160556316" expanded="true" signature="3266:3350" placeholder="UPDATE RPCOR..." />
+            <element signature="e#1393#1394#0" expanded="true" />
+            <element signature="e#1420#1421#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.48653197" vertical-offset="0" max-vertical-offset="1156">
+          <caret line="35" column="44" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding />
         </state>
       </provider>
     </entry>
