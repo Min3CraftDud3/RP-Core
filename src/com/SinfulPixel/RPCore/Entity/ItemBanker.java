@@ -1,6 +1,6 @@
 package com.SinfulPixel.RPCore.Entity;
 
-import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
+import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -24,77 +24,77 @@ import java.util.List;
 import java.util.UUID;
 
 /**
- * Created by Min3 on 8/21/2014.
+ * Created by Min3 on 9/9/2014.
  */
-public class Banker implements Listener{
+public class ItemBanker implements Listener {
     static RPCore plugin;
-    public static ArrayList<Location> loc = new ArrayList<Location>();
-    public static HashMap<UUID,Location> bankers = new HashMap<UUID,Location>();
+    public static ArrayList<Location> iloc = new ArrayList<Location>();
+    public static HashMap<UUID,Location> ibankers = new HashMap<UUID,Location>();
     public static int freeze;
-    public Banker(RPCore plugin){this.plugin=plugin;}
-    public static void cacheBanker(){
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+    public ItemBanker(RPCore plugin){this.plugin=plugin;}
+    public static void cacheItemBanker(){
+        File Bankers = new File(plugin.getDataFolder()+File.separator+"ItemBankers.yml");
         List<String> locs = null;
         if(Bankers.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);
-            locs = fc.getStringList("Bankers");
+            locs = fc.getStringList("Item-Bankers");
         }
         if(locs != null) {
             for (String s : locs) {
                 String[] t = s.split(",");
-                loc.add(new Location(Bukkit.getWorld(t[0]), Double.parseDouble(t[1]), Double.parseDouble(t[2]), Double.parseDouble(t[3])));
-                System.out.println("Caching Banker at Location: " + t[1] + "," + t[2] + "," + t[3]);
+                iloc.add(new Location(Bukkit.getWorld(t[0]), Double.parseDouble(t[1]), Double.parseDouble(t[2]), Double.parseDouble(t[3])));
+                System.out.println("Caching Item-Banker at Location: " + t[1] + "," + t[2] + "," + t[3]);
             }
         }
-        createBanker();
+        createItemBanker();
     }
-    public static void saveBanker(String s)throws IOException{
+    public static void saveItemBanker(String s)throws IOException {
         List<String> saves = new ArrayList<String>();
-        for(int i=0;i<loc.size();i++){
-            Location l = loc.get(i);
+        for(int i=0;i<iloc.size();i++){
+            Location l = iloc.get(i);
             saves.add(l.getWorld().getName()+","+l.getBlockX()+","+l.getBlockY()+","+l.getBlockZ());
         }
         saves.add(s);
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+        File Bankers = new File(plugin.getDataFolder()+File.separator+"ItemBankers.yml");
         if(Bankers.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);
-            fc.set("Bankers",saves);
+            fc.set("Item-Bankers",saves);
             fc.save(Bankers);
         }
-        cacheBanker();
+        cacheItemBanker();
     }
-    public static void createBankerFile() throws IOException{
+    public static void createItemBankerFile() throws IOException{
         List<String> defaults = new ArrayList<String>();
         defaults.add("world,100,60,100");
         defaults.add("world,98,60,98");
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+        File Bankers = new File(plugin.getDataFolder()+File.separator+"ItemBankers.yml");
         if(!Bankers.exists()){
             Bankers.createNewFile();
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);
-            fc.set("Bankers",defaults);
+            fc.set("Item-Bankers",defaults);
             fc.save(Bankers);
         }
     }
-    public static void createBanker(){
-        for(Location l:loc){
+    public static void createItemBanker(){
+        for(Location l:iloc){
             Villager villager = (Villager)l.getWorld().spawnEntity(l, EntityType.VILLAGER);
-            villager.setCustomName(ChatColor.GREEN+"Banker");
+            villager.setCustomName(ChatColor.GREEN+"Item-Banker");
             villager.setCustomNameVisible(true);
             villager.setNoDamageTicks(Integer.MAX_VALUE);
             villager.setRemoveWhenFarAway(false);
             villager.setAdult();
-            villager.setProfession(Villager.Profession.LIBRARIAN);
-            bankers.put(villager.getUniqueId(),villager.getLocation());
+            villager.setProfession(Villager.Profession.PRIEST);
+            ibankers.put(villager.getUniqueId(),villager.getLocation());
         }
         freezeBanker();
     }
     public static void freezeBanker(){
         freeze = Bukkit.getScheduler().scheduleSyncRepeatingTask(plugin,new Runnable(){
             public void run() {
-                for (UUID u : bankers.keySet()) {
+                for (UUID u : ibankers.keySet()) {
                     for (Entity e : Bukkit.getWorld("world").getEntities()) {
                         if (e.getUniqueId().equals(u)) {
-                            Location l = bankers.get(u);
+                            Location l = ibankers.get(u);
                             e.teleport(new Location(l.getWorld(),l.getX(),l.getWorld().getHighestBlockYAt((int)l.getX(),(int)l.getZ()),l.getZ()));
                         }
                     }
@@ -104,7 +104,7 @@ public class Banker implements Listener{
     }
     @EventHandler
     public void onNPC(EntityDamageEvent e){
-        if(bankers.containsKey(e.getEntity().getUniqueId())){
+        if(ibankers.containsKey(e.getEntity().getUniqueId())){
             e.setCancelled(true);
         }
     }
@@ -112,10 +112,9 @@ public class Banker implements Listener{
     public void onUse(PlayerInteractEntityEvent e){
         Player p = e.getPlayer();
         Entity en = e.getRightClicked();
-        if(bankers.containsKey(en.getUniqueId())){
+        if(ibankers.containsKey(en.getUniqueId())){
             e.setCancelled(true);
-            BankerGUI.p = p;
-            p.openInventory(BankerGUI.bankGUI);
+            p.openInventory(Backpack.backpacks.get(p.getUniqueId()));
         }
     }
 }

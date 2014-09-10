@@ -5,18 +5,18 @@ package com.SinfulPixel.RPCore.Player;
  */
 
 import com.SinfulPixel.RPCore.RPCore;
+import com.SinfulPixel.RPCore.ServerMgnt.SerializeInv;
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryType;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,13 +32,14 @@ public class Backpack implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        Inventory inv = Bukkit.getServer().createInventory(e.getPlayer(), InventoryType.CHEST, "BackpackCmd");
+        Inventory inv = Bukkit.getServer().createInventory(e.getPlayer(), InventoryType.CHEST, ChatColor.GOLD+"Item Bank");
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
-            if(fc.contains("backpacks." + e.getPlayer().getUniqueId())){
-                for(String item : fc.getConfigurationSection("backpacks." + e.getPlayer().getUniqueId()).getKeys(false)){
-                    inv.addItem(loadItem(fc.getConfigurationSection("backpacks." + e.getPlayer().getUniqueId() + "." + item)));
+            if(fc.contains("backpacks." + e.getPlayer().getUniqueId()+".Contents")){
+                String s = fc.getString("backpacks."+e.getPlayer().getUniqueId()+".Contents");
+                if(s != null) {
+                    inv.setContents(SerializeInv.StringToInventory(s).getContents());
                 }
             }
             backpacks.put(e.getPlayer().getUniqueId(), inv);
@@ -46,20 +47,15 @@ public class Backpack implements Listener {
     }
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e)throws IOException{
-        if(!backpacks.containsKey(e.getPlayer().getUniqueId())){return;}
+        Player p = e.getPlayer();
+        if(!backpacks.containsKey(p.getUniqueId())){return;}
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
-            if(fc.contains("backpacks."+e.getPlayer().getUniqueId())){
-                fc.createSection("backpacks."+e.getPlayer().getUniqueId());
+            if(fc.contains("backpacks."+p.getUniqueId())){
+                fc.set("backpacks." + p.getUniqueId() + ".Contents", SerializeInv.InventoryToString(backpacks.get(p.getUniqueId())));
+                fc.save(backpackFile);
             }
-            char c = 'a';
-            for(ItemStack itemStack : backpacks.get(e.getPlayer().getUniqueId())){
-                if(itemStack != null){
-                    saveItem(fc.createSection("backpacks."+e.getPlayer().getUniqueId()+"."+c++), itemStack);
-                }
-            }
-            fc.save(backpackFile);
         }
     }
     public static void createBPConfig() throws IOException{
@@ -75,44 +71,15 @@ public class Backpack implements Listener {
             fc.save(backpackFile);
         }
     }
-    private static void saveItem(ConfigurationSection section, ItemStack itemStack) {
-        section.set("type", itemStack.getType().name());
-        section.set("amount", itemStack.getAmount());
-        section.set("durability",itemStack.getDurability());
-        if(itemStack.hasItemMeta()) {
-            if(itemStack.getItemMeta().getLore() != null) {
-                section.set("lore", itemStack.getItemMeta().getLore());
-            }
-            if(itemStack.getItemMeta().getDisplayName() != null){
-                section.set("name", itemStack.getItemMeta().getDisplayName());
-            }
-        }
-    }
-    private static ItemStack loadItem(ConfigurationSection section) {
-        ItemStack is = new ItemStack(Material.valueOf(section.getString("type")), section.getInt("amount"));
-        if(section.contains("durability")) {
-            is.setDurability((short) section.getInt("durability"));
-        }
-        if(section.contains("lore")){
-            is.getItemMeta().setLore(section.getStringList("lore"));
-        }
-        return is;
-    }
     public static void disable()throws IOException{
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if (backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
             for(Map.Entry<UUID,Inventory> entry:backpacks.entrySet()){
                 if(fc.contains("backpacks." + entry.getKey())){
-                    fc.createSection("backpacks." + entry.getKey());
+                    fc.set("backpacks." + entry.getKey()+".Contents", SerializeInv.InventoryToString(backpacks.get(entry.getKey())));
+                    fc.save(backpackFile);
                 }
-                char c = 'a';
-                for(ItemStack itemStack:entry.getValue()){
-                    if(itemStack !=null){
-                        Backpack.saveItem(fc.createSection("backpacks." + entry.getKey() + "." + c++), itemStack);
-                    }
-                }
-                fc.save(backpackFile);
             }
         }
     }

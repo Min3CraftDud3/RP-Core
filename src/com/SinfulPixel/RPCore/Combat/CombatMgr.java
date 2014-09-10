@@ -32,9 +32,7 @@ public class CombatMgr implements Listener{
 			if(e.getDamager() instanceof Player) {
 		        final Player a = (Player) e.getDamager();
                 try {
-                    if(PetMgr.hasPet(p)){
-                        PetMgr.removePet(p);
-                    }
+                    if(PetMgr.hasPet(p)){PetMgr.removePet(p);}
                     if (PartyManager.playersinParty.containsKey(p.getUniqueId()) || PartyManager.playersinParty.containsKey(a.getUniqueId())) {
                         if (PartyManager.playersinParty.get(p.getUniqueId()).equals(PartyManager.playersinParty.get(a.getUniqueId()))) {
                             return;

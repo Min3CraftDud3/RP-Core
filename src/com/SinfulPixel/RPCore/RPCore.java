@@ -7,6 +7,7 @@ import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Entity.Banker;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
+import com.SinfulPixel.RPCore.Entity.ItemBanker;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
@@ -72,6 +73,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Banker(this),this);
         getServer().getPluginManager().registerEvents(new BankerGUI(this),this);
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
+        getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         //Create Default Config
         try {
             MakeDir();
@@ -81,6 +83,8 @@ public class RPCore extends JavaPlugin {
             Backpack.createBPConfig();
             Banker.createBankerFile();
             Banker.cacheBanker();
+            ItemBanker.createItemBankerFile();
+            ItemBanker.cacheItemBanker();
             NameMgr.createNameFile();
         } catch (Exception e) {
             e.printStackTrace();
@@ -159,8 +163,8 @@ public class RPCore extends JavaPlugin {
         }
     }
     public void onDisable() {
+        StatusBarAPI.removeAllStatusBars();
         try {
-            StatusBarAPI.removeAllStatusBars();
             for(Entity e : Bukkit.getWorld("world").getEntities()){
                 if(e instanceof Villager){
                     e.remove();

@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.Cmds;
 
 import com.SinfulPixel.RPCore.Entity.Banker;
+import com.SinfulPixel.RPCore.Entity.ItemBanker;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -22,13 +23,23 @@ public class BankCreateCmd implements CommandExecutor {
             if(args.length==0){
                 sender.sendMessage("Usage: /bank create");
             }
-            if(args.length==1){
-                if(args[0].equalsIgnoreCase("create")){
-                    try {
-                        Location l = p.getLocation();
-                        Banker.saveBanker(l.getWorld().getName() + "," + l.getBlockX() + "," + l.getBlockY() + "," + l.getBlockZ());
-                        p.sendMessage(ChatColor.GREEN+"Created Banker!");
-                    }catch(Exception ee){}
+            if(args.length==2){
+                if(args[0].equalsIgnoreCase("create")) {
+                    if (args[1].equalsIgnoreCase("bank")) {
+                        try {
+                            Location l = p.getLocation();
+                            Banker.saveBanker(l.getWorld().getName() + "," + l.getBlockX() + "," + l.getBlockY() + "," + l.getBlockZ());
+                            p.sendMessage(ChatColor.GREEN + "Created Banker!");
+                        } catch (Exception ee) {
+                        }
+                    }
+                    if(args[1].equalsIgnoreCase("item")){
+                        try{
+                            Location l = p.getLocation();
+                            ItemBanker.saveItemBanker(l.getWorld().getName() + "," + l.getBlockX() + "," + l.getBlockY() + "," + l.getBlockZ());
+                            p.sendMessage(ChatColor.GREEN + "Created Item Banker!");
+                        }catch(Exception ee){}
+                    }
                 }
             }
             }

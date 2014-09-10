@@ -36,3 +36,9 @@ Crafting Kit - Lvl 0+
 Advanced Crafting Kit - Lvl 40+
 Master Crafting Kit - Lvl 80+
 
+//Enchants/Effects
+Poison: poisons target.
+Erosion: Wither + Slowness applied to target.
+Fire: sets target on fire.
+Life-Steal: steals life from target.
+

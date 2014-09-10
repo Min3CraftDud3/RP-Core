@@ -37,8 +37,9 @@ public class PListener implements Listener{
                     @Override
                     public void run() {
                         try {
-                            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "')");
-                            RPCore.statement.executeUpdate("INSERT INTO SKILLS (UUID,PNAME,MINING,WOODCUTTING,SMITHING,FARMING,ARCHERY,FIREMAKING,COOKING,SMELTING)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "0,0,0,0,0,0,0,0')");
+                            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME,ACCOUNTBAL)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "','0.0')");
+                            RPCore.statement.executeUpdate("INSERT INTO SKILLS (UUID,PNAME,MINING,WOODCUTTING,SMITHING,FARMING,ARCHERY,FIREMAKING,COOKING,SMELTING)VALUES" +
+                                    " ('" + player.getUniqueId() + "','" + player.getName() + "','0','0','0','0','0','0','0','0')");
                         }catch(SQLException e){
                             System.out.println("Error Creating DB Profile: \n"+e.toString());
                         }
