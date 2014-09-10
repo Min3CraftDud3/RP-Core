@@ -1,11 +1,15 @@
 package com.SinfulPixel.RPCore.ServerMgnt;
 
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -21,6 +25,16 @@ public class SerializeInv {
             ItemStack is = invInventory.getItem(i);
             if (is != null) {
                 String serializedItemStack = new String();
+                if(is.hasItemMeta()){
+                    if(is.getItemMeta().hasDisplayName()){
+                        String isName = is.getItemMeta().getDisplayName();
+                        serializedItemStack += "n@" + isName;
+                    }
+                    if(is.getItemMeta().hasLore()){
+                        String isLore = StringUtils.join(is.getItemMeta().getLore(), "|");
+                        serializedItemStack += "l@" + isLore;
+                    }
+                }
                 String isType = String.valueOf(is.getType().getId());
                 serializedItemStack += "t@" + isType;
                 if (is.getDurability() != 0) {
@@ -42,7 +56,7 @@ public class SerializeInv {
         }
         return serialization;
     }
-    public static Inventory StringToInventory(String invString) {
+    public static ItemStack[] StringToInventory(String invString) {
         String[] serializedBlocks = invString.split(";");
         String invInfo = serializedBlocks[0];
         Inventory deserializedInventory = Bukkit.getServer().createInventory(null, Integer.valueOf(invInfo));
@@ -57,21 +71,35 @@ public class SerializeInv {
             ItemStack is = null;
             Boolean createdItemStack = false;
             String[] serializedItemStack = serializedBlock[1].split(":");
+            ItemMeta im = null;
             for (String itemInfo : serializedItemStack) {
                 String[] itemAttribute = itemInfo.split("@");
                 if (itemAttribute[0].equals("t")) {
                     is = new ItemStack(Material.getMaterial(Integer.valueOf(itemAttribute[1])));
+                    im = is.getItemMeta();
                     createdItemStack = true;
                 } else if (itemAttribute[0].equals("d") && createdItemStack) {
                     is.setDurability(Short.valueOf(itemAttribute[1]));
                 } else if (itemAttribute[0].equals("a") && createdItemStack) {
                     is.setAmount(Integer.valueOf(itemAttribute[1]));
                 } else if (itemAttribute[0].equals("e") && createdItemStack) {
-                    is.addEnchantment(Enchantment.getById(Integer.valueOf(itemAttribute[1])), Integer.valueOf(itemAttribute[2]));
+                    is.addUnsafeEnchantment(Enchantment.getById(Integer.valueOf(itemAttribute[1])), Integer.valueOf(itemAttribute[2]));
+                } else if (itemAttribute[0].equals("n") && createdItemStack) {
+                    im.setDisplayName(itemAttribute[1]);
+                } else if (itemAttribute[0].equals("l") && createdItemStack){
+                    im = is.getItemMeta();
+                    List<String> lr = new ArrayList<>();
+                    for(String s : itemAttribute[2].split("|")){
+                        lr.add(s);
+                    }
+                    im.setLore(lr);
                 }
+            }
+            if(im != null) {
+                is.setItemMeta(im);
             }
             deserializedInventory.setItem(stackPosition, is);
         }
-        return deserializedInventory;
+        return deserializedInventory.getContents();
     }
 }

@@ -32,14 +32,18 @@ public class Backpack implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
+        Player p = e.getPlayer();
         Inventory inv = Bukkit.getServer().createInventory(e.getPlayer(), InventoryType.CHEST, ChatColor.GOLD+"Item Bank");
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
-            if(fc.contains("backpacks." + e.getPlayer().getUniqueId()+".Contents")){
-                String s = fc.getString("backpacks."+e.getPlayer().getUniqueId()+".Contents");
+            if(fc.contains("backpacks." + p.getUniqueId()+".Contents")){
+                String s = fc.getString("backpacks." + p.getUniqueId()+".Contents");
+                System.out.println(s);
                 if(s != null) {
-                    inv.setContents(SerializeInv.StringToInventory(s).getContents());
+                    inv.setContents(SerializeInv.StringToInventory(s));
+                    p.updateInventory();
+                    System.out.println("com");
                 }
             }
             backpacks.put(e.getPlayer().getUniqueId(), inv);
@@ -50,12 +54,17 @@ public class Backpack implements Listener {
         Player p = e.getPlayer();
         if(!backpacks.containsKey(p.getUniqueId())){return;}
         File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
+        String s = SerializeInv.InventoryToString(backpacks.get(p.getUniqueId()));
         if(backpackFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
-            if(fc.contains("backpacks."+p.getUniqueId())){
-                fc.set("backpacks." + p.getUniqueId() + ".Contents", SerializeInv.InventoryToString(backpacks.get(p.getUniqueId())));
+            if(fc.contains("backpacks." + p.getUniqueId() + ".Contents")){
+                fc.set("backpacks." + p.getUniqueId()+".Contents", s);
+                fc.save(backpackFile);
+            }else{
+                fc.set("backpacks." + p.getUniqueId()+".Contents", s);
                 fc.save(backpackFile);
             }
+            fc.save(backpackFile);
         }
     }
     public static void createBPConfig() throws IOException{
