@@ -38,7 +38,7 @@ public class LoreMgr {
         return result;
     }
     public static String splitLore(String s){
-        String[] args = s.split(":");
+        String[] args = s.split("-");
         args[1] = ChatColor.stripColor(args[1]);
         String string = args[1].trim();
         return string;
@@ -56,10 +56,10 @@ public class LoreMgr {
     public static String getAttribute(ItemStack i){
         if(hasAttribute(i)){
             for(int o=0;o<i.getItemMeta().getLore().size();o++){
-                if(i.getItemMeta().getLore().get(o).contains("Poison")||
-                   i.getItemMeta().getLore().get(o).contains("Fire")||
-                   i.getItemMeta().getLore().get(o).contains("Life Steal")||
-                   i.getItemMeta().getLore().get(o).contains("Erosion")){
+                if(i.getItemMeta().getLore().get(o).contains("|Poison|")||
+                   i.getItemMeta().getLore().get(o).contains("|Fire|")||
+                   i.getItemMeta().getLore().get(o).contains("|Life Steal|")||
+                   i.getItemMeta().getLore().get(o).contains("|Erosion|")){
                     return i.getItemMeta().getLore().get(o).toString();
                 }
             }
@@ -75,7 +75,7 @@ public class LoreMgr {
                 lore.add(s);
             }
         }
-        lore.add("Attribute: "+st);
+        lore.add("Attribute "+st);
         im.setLore(lore);
         i.setItemMeta(im);
         return i;
@@ -91,7 +91,7 @@ public class LoreMgr {
         }
         String att = pickAttribute(level);
         if(att != null) {
-            lore.add("Attribute: " + att);
+            lore.add("Attribute " + att);
         }else{
             return i;
         }
@@ -104,13 +104,13 @@ public class LoreMgr {
         double d = level/4;
         double total = p+d;
         if(total>90){
-            return "Life Steal";
+            return "|Life Steal|";
         }else if(total>70 && total<80){
-            return "Erosion";
+            return "|Erosion|";
         }else if(total>60 && total<70){
-            return "Poison";
+            return "|Poison|";
         }else if(total>50 && total<60){
-            return "Fire";
+            return "|Fire|";
         }
         return null;
     }

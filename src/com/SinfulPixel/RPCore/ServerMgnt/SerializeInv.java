@@ -25,18 +25,22 @@ public class SerializeInv {
             ItemStack is = invInventory.getItem(i);
             if (is != null) {
                 String serializedItemStack = new String();
+                String isType = String.valueOf(is.getType().getId());
+                serializedItemStack += "t@" + isType;
                 if(is.hasItemMeta()){
                     if(is.getItemMeta().hasDisplayName()){
                         String isName = is.getItemMeta().getDisplayName();
-                        serializedItemStack += "n@" + isName;
+                        serializedItemStack += ":n@" + "*"+isName+"*";
                     }
                     if(is.getItemMeta().hasLore()){
-                        String isLore = StringUtils.join(is.getItemMeta().getLore(), "|");
-                        serializedItemStack += "l@" + isLore;
+                        List<String> st = new ArrayList<>();
+                        for(int j=0;j<is.getItemMeta().getLore().size();j++){
+                            st.add(is.getItemMeta().getLore().get(j));
+                        }
+                        String isLore = StringUtils.join(st, "|");
+                        serializedItemStack += ":l@" + isLore;
                     }
                 }
-                String isType = String.valueOf(is.getType().getId());
-                serializedItemStack += "t@" + isType;
                 if (is.getDurability() != 0) {
                     String isDurability = String.valueOf(is.getDurability());
                     serializedItemStack += ":d@" + isDurability;
@@ -78,21 +82,19 @@ public class SerializeInv {
                     is = new ItemStack(Material.getMaterial(Integer.valueOf(itemAttribute[1])));
                     im = is.getItemMeta();
                     createdItemStack = true;
+                }else if (itemAttribute[0].equals("n") && createdItemStack) {
+                    im.setDisplayName(itemAttribute[1].replace("*",""));
+                    System.out.println(itemAttribute[1]);
+                } else if (itemAttribute[0].equals("l") && createdItemStack){
+                    List<String> lr = new ArrayList<>();
+                    lr.add(itemAttribute[1]);
+                    im.setLore(lr);
                 } else if (itemAttribute[0].equals("d") && createdItemStack) {
                     is.setDurability(Short.valueOf(itemAttribute[1]));
                 } else if (itemAttribute[0].equals("a") && createdItemStack) {
                     is.setAmount(Integer.valueOf(itemAttribute[1]));
                 } else if (itemAttribute[0].equals("e") && createdItemStack) {
                     is.addUnsafeEnchantment(Enchantment.getById(Integer.valueOf(itemAttribute[1])), Integer.valueOf(itemAttribute[2]));
-                } else if (itemAttribute[0].equals("n") && createdItemStack) {
-                    im.setDisplayName(itemAttribute[1]);
-                } else if (itemAttribute[0].equals("l") && createdItemStack){
-                    im = is.getItemMeta();
-                    List<String> lr = new ArrayList<>();
-                    for(String s : itemAttribute[2].split("|")){
-                        lr.add(s);
-                    }
-                    im.setLore(lr);
                 }
             }
             if(im != null) {

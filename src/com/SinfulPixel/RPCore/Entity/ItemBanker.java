@@ -110,11 +110,11 @@ public class ItemBanker implements Listener {
     }
     @EventHandler
     public void onUse(PlayerInteractEntityEvent e){
-        Player p = e.getPlayer();
-        Entity en = e.getRightClicked();
-        if(ibankers.containsKey(en.getUniqueId())){
-            e.setCancelled(true);
-            p.openInventory(Backpack.backpacks.get(p.getUniqueId()));
-        }
+            Player p = e.getPlayer();
+            Entity en = e.getRightClicked();
+            if (ibankers.containsKey(en.getUniqueId())) {
+                e.setCancelled(true);
+                p.openInventory(Backpack.backpacks.get(p.getUniqueId()));
+            }
     }
 }
