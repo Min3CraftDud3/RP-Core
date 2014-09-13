@@ -23,15 +23,15 @@ public class LoreMgr {
     public static ItemStack addLore(ItemStack i){
         ItemMeta im = i.getItemMeta();
         List<String> lore = new ArrayList<String>();
-        if(i.hasItemMeta()){
+        /*if(i.hasItemMeta()){
             if(i.getItemMeta().hasLore()){
                 lore.addAll(i.getItemMeta().getLore());
                 i.getItemMeta().getLore().clear();
             }
-        }
+        }*/
         lore.add("Test");
         im.getLore().clear();
-        im.setLore(null);
+        //im.setLore(null);
         im.setLore(lore);
         i.setItemMeta(im);
         return i;
