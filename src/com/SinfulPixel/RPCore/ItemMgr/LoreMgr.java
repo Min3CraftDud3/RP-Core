@@ -30,7 +30,7 @@ public class LoreMgr {
             }
         }*/
         lore.add("Test");
-        im.getLore().clear();
+        //im.getLore().clear();
         //im.setLore(null);
         im.setLore(lore);
         i.setItemMeta(im);

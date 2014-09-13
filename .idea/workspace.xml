@@ -114,12 +114,12 @@
       <file leaf-file-name="LoreMgr.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8564232" vertical-offset="102" max-vertical-offset="2108">
-              <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.81360203" vertical-offset="102" max-vertical-offset="2108">
+              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
               <folding>
                 <element signature="e#676#684#0" expanded="true" />
-                <element signature="e#2610#2618#0" expanded="true" />
-                <element signature="e#3034#3042#0" expanded="true" />
+                <element signature="e#2612#2620#0" expanded="true" />
+                <element signature="e#3036#3044#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -938,7 +938,7 @@
       <workItem from="1410139374515" duration="29669000" />
       <workItem from="1410383087379" duration="7248000" />
       <workItem from="1410566587259" duration="157000" />
-      <workItem from="1410567212254" duration="3434000" />
+      <workItem from="1410567212254" duration="3510000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1216,11 +1216,15 @@
       <created>1410587130512</created>
       <updated>1410587130512</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Testing String Bug">
+      <created>1410587626931</created>
+      <updated>1410587626931</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173146000" />
+    <option name="totallyTimeSpent" value="173222000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1699,12 +1703,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8564232" vertical-offset="102" max-vertical-offset="2108">
-          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.81360203" vertical-offset="102" max-vertical-offset="2108">
+          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
           <folding>
             <element signature="e#676#684#0" expanded="true" />
-            <element signature="e#2610#2618#0" expanded="true" />
-            <element signature="e#3034#3042#0" expanded="true" />
+            <element signature="e#2612#2620#0" expanded="true" />
+            <element signature="e#3036#3044#0" expanded="true" />
           </folding>
         </state>
       </provider>
