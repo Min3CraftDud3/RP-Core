@@ -1,6 +1,5 @@
 package com.SinfulPixel.RPCore.Cmds;
 
-import com.SinfulPixel.RPCore.ItemMgr.ColorMgr;
 import com.SinfulPixel.RPCore.ItemMgr.LoreMgr;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.ItemMgr.ToolLevel;
@@ -30,7 +29,7 @@ public class BackpackCmd implements CommandExecutor {
                 List<String> lr = new ArrayList<>();
                 ItemStack i = new ItemStack(Material.DIAMOND_SWORD);
                 NameMgr.setName(i);
-                LoreMgr.addLore(i, ColorMgr.pickColor()+"Hip Hip Array!");
+                LoreMgr.addLore(i, new String("Hip Hip Array!"));
                 ToolLevel.makeLeveled(i);
                 LoreMgr.addAttribute(i, 20);
                 player.getInventory().addItem(i);
