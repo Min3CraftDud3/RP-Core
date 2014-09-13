@@ -22,7 +22,7 @@ public class LoreMgr {
     }
     public static ItemStack addLore(ItemStack i){
         ItemMeta im = i.getItemMeta();
-        List<String> lore = new ArrayList();
+        List<String> lore = new ArrayList<String>();
         if(i.hasItemMeta()){
             if(i.getItemMeta().hasLore()){
                 lore.addAll(i.getItemMeta().getLore());
