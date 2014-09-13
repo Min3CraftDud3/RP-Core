@@ -50,5 +50,5 @@ commands:
     description: "BackpackCmd commands."
   party:
     description: "Party Commands"
-  bank:
-    description: "Party Commands"
+  npc:
+    description: "NPC creation command."

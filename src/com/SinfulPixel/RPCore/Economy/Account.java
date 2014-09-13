@@ -32,7 +32,7 @@ public class Account{
     public static void deposit(Player p,double d){
         ResultSet res;
         try{
-            if(Bank.getBalance(p)>d || Bank.getBalance(p)==0){
+            if(Bank.getBalance(p)<d || Bank.getBalance(p)==0){
                 p.sendMessage(ChatColor.RED+"You do not have that much money in your pouch.");
                 return;
             }else {

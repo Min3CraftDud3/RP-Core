@@ -72,6 +72,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NoItemBreak(this),this);
         getServer().getPluginManager().registerEvents(new FireGUI(this), this);
         getServer().getPluginManager().registerEvents(new Banker(this),this);
+        getServer().getPluginManager().registerEvents(new QuestNPC(this),this);
         getServer().getPluginManager().registerEvents(new BankerGUI(this),this);
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
@@ -86,7 +87,7 @@ public class RPCore extends JavaPlugin {
             Banker.cacheBanker();
             ItemBanker.createItemBankerFile();
             ItemBanker.cacheItemBanker();
-            QuestNPC.createQuester();
+            QuestNPC.createQuesterFile();
             QuestNPC.cacheQuester();
             NameMgr.createNameFile();
         } catch (Exception e) {
@@ -145,7 +146,7 @@ public class RPCore extends JavaPlugin {
         getCommand("roll").setExecutor(new DiceCmd(this));
         getCommand("Party").setExecutor(new PartyCmd(this));
         getCommand("backpack").setExecutor(new BackpackCmd(this));
-        getCommand("bank").setExecutor(new BankCreateCmd(this));
+        getCommand("npc").setExecutor(new BankCreateCmd(this));
         //Register Enchantment
         try {
             Field f = Enchantment.class.getDeclaredField("acceptingNew");

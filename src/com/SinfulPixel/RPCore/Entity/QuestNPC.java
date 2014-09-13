@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.Entity;
 
 import com.SinfulPixel.RPCore.RPCore;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -31,15 +32,17 @@ public class QuestNPC implements Listener {
     public QuestNPC(RPCore plugin){this.plugin=plugin;}
     public static void cacheQuester(){
         File Quester = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Quester.yml");
-        List<String> locs = null;
-        List<String> names = null;
-        String name = null;
-        List<String> quote = null;
+        List<String> locs = new ArrayList<>();
+        List<String> names = new ArrayList<>();
+        List<String> quote = new ArrayList<>();
         if(Quester.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Quester);
             for(int i=0;i<fc.getConfigurationSection("Quester").getKeys(false).size();i++){
                 if(fc.isConfigurationSection("Quester."+i)){
-                    names.add(fc.getString("Quester." + i + ".Name"));
+                    if(fc.getString("Quester." + i + ".Name") != null) {
+                        String name = fc.getString("Quester." + i + ".Name");
+                        names.add(name);
+                    }
                     locs.add(fc.getString("Quester."+i+".Location"));
                     quote = fc.getStringList("Quester."+i+".Quote");
                 }
@@ -121,25 +124,44 @@ public class QuestNPC implements Listener {
             }
         },0,0);
     }
-    public static String getQuote(Player p){
+    public static String getQuote(Player p, Entity e){
+        System.out.println("00");
         File Quester = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Quester.yml");
-        List<String> quote = null;
+        List<String> quote = new ArrayList<>();
         if(Quester.exists()) {
+            System.out.println("1");
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Quester);
             for(int i=0;i<fc.getConfigurationSection("Quester").getKeys(false).size();i++){
+                System.out.println("2");
                 if(fc.isConfigurationSection("Quester."+i)){
-                    quote = fc.getStringList("Quester."+i+".Quote");
+                    System.out.println("3");
+                    String[] t = fc.getString("Quester."+i+".Location").split(",");
+                    Location ll = new Location(Bukkit.getWorld(t[0]), Double.parseDouble(t[1]), Double.parseDouble(t[2]), Double.parseDouble(t[3]));
+                    System.out.println("4");
+                    if(questers.get(e.getUniqueId()).equals(ll)) {
+                        System.out.println("5");
+                        System.out.println("test"+StringUtils.join(fc.getStringList("Quester." + i + ".Quote"),","));
+                        quote = fc.getStringList("Quester." + i + ".Quote");
+                    }
                 }
             }
         }
+        System.out.println("6");
         if(quote != null) {
+            System.out.println("7");
             if (plquoteSaver.containsKey(p.getName())) {
+                System.out.println("8");
                 if(quote.get(plquoteSaver.get(p.getName())) != null){
+                    System.out.println("9");
                     return quote.get(plquoteSaver.get(p.getName()));
                 }
             } else {
+                System.out.println(StringUtils.join(quote,","));
+                System.out.println("10");
                 for (int j = 0; j < quote.size(); j++) {
+                    System.out.println("11");
                     plquoteSaver.put(p.getName(), j);
+                    System.out.println("12");
                     return quote.get(j);
                 }
             }
@@ -158,7 +180,7 @@ public class QuestNPC implements Listener {
         Entity en = e.getRightClicked();
         if (questers.containsKey(en.getUniqueId())) {
             e.setCancelled(true);
-            getQuote(p);
+            p.sendMessage(getQuote(p, en));
         }
     }
 }
