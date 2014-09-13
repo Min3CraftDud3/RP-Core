@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -84,8 +85,8 @@
       <file leaf-file-name="BackpackCmd.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="561">
-              <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="561">
+              <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -104,31 +105,31 @@
       <file leaf-file-name="ToolLevel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ToolLevel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="476">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
               <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoreMgr.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="LoreMgr.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.81360203" vertical-offset="102" max-vertical-offset="2108">
-              <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
+              <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
               <folding>
-                <element signature="e#676#684#0" expanded="true" />
-                <element signature="e#2612#2620#0" expanded="true" />
-                <element signature="e#3036#3044#0" expanded="true" />
+                <element signature="e#686#694#0" expanded="true" />
+                <element signature="e#2553#2561#0" expanded="true" />
+                <element signature="e#2977#2985#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NameMgr.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NameMgr.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/NameMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
               <caret line="0" column="62" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
               <folding />
             </state>
@@ -212,8 +213,8 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/ItemBanker.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/SerializeInv.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ColorMgr.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
       </list>
     </option>
   </component>
@@ -938,7 +939,7 @@
       <workItem from="1410139374515" duration="29669000" />
       <workItem from="1410383087379" duration="7248000" />
       <workItem from="1410566587259" duration="157000" />
-      <workItem from="1410567212254" duration="3510000" />
+      <workItem from="1410567212254" duration="3761000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1220,11 +1221,15 @@
       <created>1410587626931</created>
       <updated>1410587626931</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Testing String Bug">
+      <created>1410587704852</created>
+      <updated>1410587704852</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173222000" />
+    <option name="totallyTimeSpent" value="173473000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1651,22 +1656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/NameMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
-          <caret line="0" column="62" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ToolLevel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="408">
-          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/ItemBanker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1106" max-vertical-offset="1734">
@@ -1695,21 +1684,37 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="561">
-          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="561">
+          <caret line="32" column="35" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.81360203" vertical-offset="102" max-vertical-offset="2108">
-          <caret line="32" column="10" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="2074">
+          <caret line="31" column="18" selection-start-line="31" selection-start-column="18" selection-end-line="31" selection-end-column="18" />
           <folding>
-            <element signature="e#676#684#0" expanded="true" />
-            <element signature="e#2612#2620#0" expanded="true" />
-            <element signature="e#3036#3044#0" expanded="true" />
+            <element signature="e#686#694#0" expanded="true" />
+            <element signature="e#2553#2561#0" expanded="true" />
+            <element signature="e#2977#2985#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ToolLevel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="408">
+          <caret line="17" column="30" selection-start-line="17" selection-start-column="30" selection-end-line="17" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/NameMgr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
+          <caret line="0" column="62" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
