@@ -20,7 +20,7 @@ public class LoreMgr {
         i.setItemMeta(im);
         return i;
     }
-    public static ItemStack addLore(ItemStack i, String s){
+    public static ItemStack addLore(ItemStack i){
         ItemMeta im = i.getItemMeta();
         List<String> lore = new ArrayList();
         if(i.hasItemMeta()){
@@ -29,7 +29,7 @@ public class LoreMgr {
                 i.getItemMeta().getLore().clear();
             }
         }
-        lore.add(s);
+        lore.add("Test");
         im.getLore().clear();
         im.setLore(null);
         im.setLore(lore);
