@@ -12,9 +12,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by Min3 on 8/5/2014.
  */
@@ -26,14 +23,15 @@ public class BackpackCmd implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("backpack")) {
-               //player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
-                List<String> lr = new ArrayList<>();
-                ItemStack i = new ItemStack(Material.DIAMOND_SWORD);
-                NameMgr.setName(i);
-                LoreMgr.addLore(i, ColorMgr.pickColor()+"Hip Hip Array!");
-                ToolLevel.makeLeveled(i);
-                LoreMgr.addAttribute(i, 20);
-                player.getInventory().addItem(i);
+                if(args.length==1) {
+                    //player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
+                    ItemStack i = new ItemStack(Material.DIAMOND_SWORD);
+                    NameMgr.setName(i);
+                    LoreMgr.addLore(i, ColorMgr.pickColor() + args[0]);
+                    ToolLevel.makeLeveled(i);
+                    LoreMgr.addAttribute(i, 20);
+                    player.getInventory().addItem(i);
+                }
             }
         }
         return false;

@@ -41,7 +41,7 @@ public class NameMgr {
         }
         int p1 = rand.nextInt(part1.size());
         int p2 = rand.nextInt(part2.size());
-        name = part1.get(p1)+" "+part2.get(p2);
+        name = ColorMgr.pickColor()+part1.get(p1)+" "+part2.get(p2);
         return name;
     }
     public static void createNameFile() throws IOException {
