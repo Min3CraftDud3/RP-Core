@@ -33,7 +33,7 @@ public class Banker implements Listener{
     public static int freeze;
     public Banker(RPCore plugin){this.plugin=plugin;}
     public static void cacheBanker(){
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+        File Bankers = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Bankers.yml");
         List<String> locs = null;
         if(Bankers.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);
@@ -55,7 +55,7 @@ public class Banker implements Listener{
             saves.add(l.getWorld().getName()+","+l.getBlockX()+","+l.getBlockY()+","+l.getBlockZ());
         }
         saves.add(s);
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+        File Bankers = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Bankers.yml");
         if(Bankers.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);
             fc.set("Bankers",saves);
@@ -67,7 +67,7 @@ public class Banker implements Listener{
         List<String> defaults = new ArrayList<String>();
         defaults.add("world,100,60,100");
         defaults.add("world,98,60,98");
-        File Bankers = new File(plugin.getDataFolder()+File.separator+"Bankers.yml");
+        File Bankers = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Bankers.yml");
         if(!Bankers.exists()){
             Bankers.createNewFile();
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Bankers);

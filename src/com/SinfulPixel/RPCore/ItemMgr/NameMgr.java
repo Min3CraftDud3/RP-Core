@@ -33,7 +33,7 @@ public class NameMgr {
         List<String> part1 = new ArrayList<String>();
         List<String> part2 = new ArrayList<String>();
         String name = "";
-        File Names = new File(plugin.getDataFolder()+File.separator+"Names.yml");
+        File Names = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Names.yml");
         if(Names.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Names);
             part1 = fc.getStringList("Name.Part1");
@@ -51,7 +51,7 @@ public class NameMgr {
         List<String> defaults2 = new ArrayList<String>();
         defaults2.add("Item Name 1");
         defaults2.add("Item Name 2");
-        File Names = new File(plugin.getDataFolder()+File.separator+"Names.yml");
+        File Names = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Names.yml");
         if(!Names.exists()){
             Names.createNewFile();
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Names);

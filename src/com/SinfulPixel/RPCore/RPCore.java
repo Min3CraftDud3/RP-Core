@@ -8,6 +8,7 @@ import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Entity.Banker;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.Entity.ItemBanker;
+import com.SinfulPixel.RPCore.Entity.QuestNPC;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
@@ -85,6 +86,8 @@ public class RPCore extends JavaPlugin {
             Banker.cacheBanker();
             ItemBanker.createItemBankerFile();
             ItemBanker.cacheItemBanker();
+            QuestNPC.createQuester();
+            QuestNPC.cacheQuester();
             NameMgr.createNameFile();
         } catch (Exception e) {
             e.printStackTrace();
