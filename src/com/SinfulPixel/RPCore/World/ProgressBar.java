@@ -28,7 +28,7 @@ public class ProgressBar {
                     },20L);
                     cancel(p);
                 }
-                if(n==1) {
+                if(n==0){
                     StatusBarAPI.removeStatusBar(p);
                     StatusBarAPI.setStatusBar(p, i, 0);
                     n++;

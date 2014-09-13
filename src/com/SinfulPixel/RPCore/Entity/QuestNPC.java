@@ -1,7 +1,6 @@
 package com.SinfulPixel.RPCore.Entity;
 
 import com.SinfulPixel.RPCore.RPCore;
-import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
@@ -94,6 +93,7 @@ public class QuestNPC implements Listener {
             fc.set("Quester.X.Name","Default_Quester_NPC_DeleteME");
             fc.set("Quester.X.Location","world,100,60,100");
             fc.set("Quester.X.Quotes",defaults);
+            fc.set("Quester.X.Quests", Arrays.asList("King's Cake", "Time of Need", "Captain Chaos"));
             fc.save(Questers);
         }
     }
@@ -125,44 +125,32 @@ public class QuestNPC implements Listener {
         },0,0);
     }
     public static String getQuote(Player p, Entity e){
-        System.out.println("00");
         File Quester = new File(plugin.getDataFolder()+File.separator + "data"+File.separator+"Quester.yml");
         List<String> quote = new ArrayList<>();
         if(Quester.exists()) {
-            System.out.println("1");
             FileConfiguration fc = YamlConfiguration.loadConfiguration(Quester);
             for(int i=0;i<fc.getConfigurationSection("Quester").getKeys(false).size();i++){
-                System.out.println("2");
                 if(fc.isConfigurationSection("Quester."+i)){
-                    System.out.println("3");
                     String[] t = fc.getString("Quester."+i+".Location").split(",");
                     Location ll = new Location(Bukkit.getWorld(t[0]), Double.parseDouble(t[1]), Double.parseDouble(t[2]), Double.parseDouble(t[3]));
-                    System.out.println("4");
                     if(questers.get(e.getUniqueId()).equals(ll)) {
-                        System.out.println("5");
-                        System.out.println("test"+StringUtils.join(fc.getStringList("Quester." + i + ".Quote"),","));
-                        quote = fc.getStringList("Quester." + i + ".Quote");
+                        quote = fc.getStringList("Quester." + i + ".Quotes");
                     }
                 }
             }
         }
-        System.out.println("6");
-        if(quote != null) {
-            System.out.println("7");
+        if(quote != null && !quote.isEmpty()) {
             if (plquoteSaver.containsKey(p.getName())) {
-                System.out.println("8");
                 if(quote.get(plquoteSaver.get(p.getName())) != null){
-                    System.out.println("9");
-                    return quote.get(plquoteSaver.get(p.getName()));
+                    return quote.get(plquoteSaver.get(p.getName())+1);
+                    //Add Quest
                 }
             } else {
-                System.out.println(StringUtils.join(quote,","));
-                System.out.println("10");
-                for (int j = 0; j < quote.size(); j++) {
-                    System.out.println("11");
-                    plquoteSaver.put(p.getName(), j);
-                    System.out.println("12");
+                int j = 0;
+                if(j<quote.size()) {
+                plquoteSaver.put(p.getName(),j);
                     return quote.get(j);
+                    //Add Quest
                 }
             }
         }

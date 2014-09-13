@@ -7,11 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MOVED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core_Dev\src\TO-DO.txt" afterPath="$PROJECT_DIR$/TO-DO.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/QuestNPC.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/QuestNPC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin.yml" afterPath="$PROJECT_DIR$/plugin.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -75,92 +72,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="QuestNPC.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/QuestNPC.java">
+      <file leaf-file-name="ProgressBar.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.543771" vertical-offset="2074" max-vertical-offset="3213">
-              <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#877#894#0" expanded="true" />
-                <element signature="e#1043#1060#0" expanded="true" />
-                <element signature="e#2713#2721#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Banker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="1768">
-              <caret line="69" column="78" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.42009884" vertical-offset="204" max-vertical-offset="918">
+              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PartyManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="1972">
-              <caret line="69" column="42" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BankCreateCmd.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BankCreateCmd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1105">
-              <caret line="48" column="147" selection-start-line="48" selection-start-column="147" selection-end-line="48" selection-end-column="147" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="plugin.yml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/plugin.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1003">
-              <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-              <folding>
-                <marker date="1410634110652" expanded="true" signature="1597:1642" placeholder="npc:" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RPCore.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3587">
-              <caret line="89" column="41" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
-              <folding>
-                <marker date="1410634305899" expanded="true" signature="5178:5330" placeholder="CREATE TABLE..RPCORE..." />
-                <marker date="1410634305899" expanded="true" signature="5520:6010" placeholder="CREATE TABLE..SKILLS..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Account.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1462">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-              <folding>
-                <marker date="1410633653884" expanded="true" signature="635:698" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410633653884" expanded="true" signature="1213:1280" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410633653884" expanded="true" signature="1451:1528" placeholder="UPDATE RPCOR..." />
-                <marker date="1410633653884" expanded="true" signature="1848:1911" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410633653884" expanded="true" signature="2204:2287" placeholder="UPDATE RPCOR..." />
-                <marker date="1410633653884" expanded="true" signature="2604:2667" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410633653884" expanded="true" signature="2798:2861" placeholder="SELECT ACCOU..RPCORE..." />
-                <marker date="1410633653884" expanded="true" signature="3154:3238" placeholder="UPDATE RPCOR..." />
-                <marker date="1410633653884" expanded="true" signature="3291:3375" placeholder="UPDATE RPCOR..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -221,9 +138,7 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/EntityManager.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/StatusBarAPI.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyCombat.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/PartyCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Pet/PetMgr.java" />
@@ -244,6 +159,8 @@
         <option value="$PROJECT_DIR$/plugin.yml" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/QuestNPC.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java" />
       </list>
     </option>
   </component>
@@ -346,117 +263,7 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Player" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Party" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Entity" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Economy" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Combat" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cmds" />
+              <option name="myItemId" value="World" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -760,7 +567,7 @@
       <workItem from="1410566587259" duration="157000" />
       <workItem from="1410567212254" duration="6090000" />
       <workItem from="1410603710103" duration="483000" />
-      <workItem from="1410629906380" duration="8671000" />
+      <workItem from="1410629906380" duration="10671000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1058,11 +865,15 @@
       <created>1410633192983</created>
       <updated>1410633192983</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Fixed almost all bugs with QuestNPC class">
+      <created>1410648901132</created>
+      <updated>1410648901132</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="184956000" />
+    <option name="totallyTimeSpent" value="186956000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1139,7 +950,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Removed tool durability loss" />
     <MESSAGE value="Added auto anti-lag" />
     <MESSAGE value="(*temp*)Removed Races" />
     <MESSAGE value="Added Skills Table to MySQL Link" />
@@ -1164,7 +974,8 @@
     <MESSAGE value="Testing String Bug" />
     <MESSAGE value="Test devbranch" />
     <MESSAGE value="Moved npc configs to data folder. Added Quester NPC (needs testing)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved npc configs to data folder. Added Quester NPC (needs testing)" />
+    <MESSAGE value="Fixed almost all bugs with QuestNPC class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed almost all bugs with QuestNPC class" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1347,27 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/Hologram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.7874794" vertical-offset="733" max-vertical-offset="1462">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.8286655" vertical-offset="0" max-vertical-offset="2414">
-          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/FireGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="731" max-vertical-offset="2533">
@@ -1490,45 +1280,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="345" max-vertical-offset="1462">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
-          <folding>
-            <marker date="1410633653884" expanded="true" signature="635:698" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410633653884" expanded="true" signature="1213:1280" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410633653884" expanded="true" signature="1451:1528" placeholder="UPDATE RPCOR..." />
-            <marker date="1410633653884" expanded="true" signature="1848:1911" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410633653884" expanded="true" signature="2204:2287" placeholder="UPDATE RPCOR..." />
-            <marker date="1410633653884" expanded="true" signature="2604:2667" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410633653884" expanded="true" signature="2798:2861" placeholder="SELECT ACCOU..RPCORE..." />
-            <marker date="1410633653884" expanded="true" signature="3154:3238" placeholder="UPDATE RPCOR..." />
-            <marker date="1410633653884" expanded="true" signature="3291:3375" placeholder="UPDATE RPCOR..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/plugin.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="396" max-vertical-offset="1003">
-          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
-          <folding>
-            <marker date="1410634110652" expanded="true" signature="1597:1642" placeholder="npc:" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="3587">
-          <caret line="89" column="41" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
-          <folding>
-            <marker date="1410634305899" expanded="true" signature="5178:5330" placeholder="CREATE TABLE..RPCORE..." />
-            <marker date="1410634305899" expanded="true" signature="5520:6010" placeholder="CREATE TABLE..SKILLS..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BankCreateCmd.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1105">
@@ -1547,7 +1298,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/Banker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="1768">
+        <state vertical-scroll-proportion="1.1144781" vertical-offset="154" max-vertical-offset="1768">
           <caret line="69" column="78" selection-start-line="69" selection-start-column="78" selection-end-line="69" selection-end-column="78" />
           <folding />
         </state>
@@ -1555,22 +1306,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="702" max-vertical-offset="1972">
-          <caret line="69" column="42" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.523888" vertical-offset="702" max-vertical-offset="1972">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugin.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.83196044" vertical-offset="396" max-vertical-offset="1003">
+          <caret line="53" column="39" selection-start-line="53" selection-start-column="39" selection-end-line="53" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.6313131" vertical-offset="1887" max-vertical-offset="3587">
+          <caret line="89" column="41" selection-start-line="89" selection-start-column="41" selection-end-line="89" selection-end-column="41" />
+          <folding>
+            <marker date="1410634305899" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..RPCORE..." />
+            <marker date="1410634305899" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..SKILLS..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Entity/QuestNPC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.543771" vertical-offset="2074" max-vertical-offset="3213">
-          <caret line="143" column="1" selection-start-line="143" selection-start-column="1" selection-end-line="143" selection-end-column="1" />
+        <state vertical-scroll-proportion="2.9191918" vertical-offset="187" max-vertical-offset="3043">
+          <caret line="113" column="72" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#877#894#0" expanded="true" />
-            <element signature="e#1043#1060#0" expanded="true" />
-            <element signature="e#2713#2721#0" expanded="true" />
+            <element signature="e#833#850#0" expanded="true" />
+            <element signature="e#999#1016#0" expanded="true" />
+            <element signature="e#2669#2677#0" expanded="true" />
+            <element signature="e#5343#5871#0" expanded="true" />
+            <element signature="e#5860#5861#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Economy/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21581548" vertical-offset="345" max-vertical-offset="1462">
+          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <folding>
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="SELECT ACCOU..RPCORE..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+            <marker date="1410633653884" expanded="true" signature="-1:-1" placeholder="UPDATE RPCOR..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/CheckTime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5601318" vertical-offset="1377" max-vertical-offset="2414">
+          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/Hologram.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.9884679" vertical-offset="855" max-vertical-offset="1462">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42009884" vertical-offset="204" max-vertical-offset="918">
+          <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
