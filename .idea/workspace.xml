@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dependencyLinks" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Quest/QuestMgr.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -71,21 +71,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ProgressBar.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java">
+      <file leaf-file-name="QuestMgr.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Quest/QuestMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="918">
-              <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dependencyLinks" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/dependencyLinks">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.08401977" vertical-offset="0" max-vertical-offset="607">
-              <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.14003295" vertical-offset="0" max-vertical-offset="607">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -273,6 +263,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="World" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Quest" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -576,7 +588,7 @@
       <workItem from="1410566587259" duration="157000" />
       <workItem from="1410567212254" duration="6090000" />
       <workItem from="1410603710103" duration="483000" />
-      <workItem from="1410629906380" duration="11613000" />
+      <workItem from="1410629906380" duration="12852000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -882,11 +894,15 @@
       <created>1410651163783</created>
       <updated>1410651163783</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="Added DependencyLinks file for dependencies and compiled jar.">
+      <created>1410660832095</created>
+      <updated>1410660832095</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187898000" />
+    <option name="totallyTimeSpent" value="189137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -963,7 +979,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="(*temp*)Removed Races" />
     <MESSAGE value="Added Skills Table to MySQL Link" />
     <MESSAGE value="Fixed Anti-Lag bug" />
     <MESSAGE value="To-Do List" />
@@ -988,7 +1003,8 @@
     <MESSAGE value="Moved npc configs to data folder. Added Quester NPC (needs testing)" />
     <MESSAGE value="Fixed almost all bugs with QuestNPC class" />
     <MESSAGE value="Fixed Quester Issue, Progress Bar Change (may need revert)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Quester Issue, Progress Bar Change (may need revert)" />
+    <MESSAGE value="Added DependencyLinks file for dependencies and compiled jar." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added DependencyLinks file for dependencies and compiled jar." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1000,13 +1016,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="398">
@@ -1386,18 +1395,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dependencyLinks">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.08401977" vertical-offset="0" max-vertical-offset="607">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/ProgressBar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="918">
+        <state vertical-scroll-proportion="0.7561779" vertical-offset="0" max-vertical-offset="918">
           <caret line="33" column="24" selection-start-line="33" selection-start-column="24" selection-end-line="33" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dependencyLinks">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Quest/QuestMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.08401977" vertical-offset="0" max-vertical-offset="607">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.14003295" vertical-offset="0" max-vertical-offset="607">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding />
         </state>
       </provider>
