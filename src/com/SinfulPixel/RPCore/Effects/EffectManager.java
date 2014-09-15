@@ -65,7 +65,7 @@ public class EffectManager implements Listener
                                 defender.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 1000, 10));
                                 break;
 
-                            case "Posion":
+                            case "Poison":
                                 defender.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 1000, 10));
                                 break;
 
