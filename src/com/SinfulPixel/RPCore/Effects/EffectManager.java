@@ -7,8 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 
@@ -48,25 +46,19 @@ public class EffectManager implements Listener
                         switch (s) {
 
                             case "Fire":
-                                defender.setFireTicks(10);
+                                new Fire(10).applyEffect(defender); //apply a fire effect for 10 ticks
                                 break;
 
                             case "Life Steal":
-                                double d = e.getDamage();
-
-                                if (p.getMaxHealth() > p.getHealth())
-                                {
-                                    if (p.getHealth() + d > p.getMaxHealth()) p.setHealth(p.getMaxHealth());
-                                    else p.setHealth(p.getHealth()+ d);
-                                }
+                                new LifeSteal(6).applyEffect(p, e.getDamage()); //apply a life steal effect with a max healing of 6
                                 break;
 
                             case "Erosion":
-                                defender.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, 1000, 10));
+                                new Erosion(5000, 2).applyEffect(defender); //apply the wither potion effect for 5000 ticks at a magnituide of 2
                                 break;
 
                             case "Poison":
-                                defender.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 1000, 10));
+                                new Poison(5000, 2).applyEffect(defender); //apply the wither potion effect for 5000 ticks
                                 break;
 
                             default: break;
