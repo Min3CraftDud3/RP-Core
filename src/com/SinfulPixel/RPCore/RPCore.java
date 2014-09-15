@@ -5,6 +5,7 @@ import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.Economy.*;
+import com.SinfulPixel.RPCore.Effects.EffectManager;
 import com.SinfulPixel.RPCore.Entity.Banker;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.Entity.ItemBanker;
@@ -76,6 +77,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BankerGUI(this),this);
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
+        getServer().getPluginManager().registerEvents(new EffectManager(this), this);
         //Create Default Config
         try {
             MakeDir();
