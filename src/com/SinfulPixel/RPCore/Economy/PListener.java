@@ -1,8 +1,9 @@
 package com.SinfulPixel.RPCore.Economy;
 
 import com.SinfulPixel.RPCore.Chat.Chat;
+import com.SinfulPixel.RPCore.DatabaseMgr.createPlayer;
+import com.SinfulPixel.RPCore.DatabaseMgr.dbUtils;
 import com.SinfulPixel.RPCore.RPCore;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -13,12 +14,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.UUID;
 
 public class PListener implements Listener{
 	static RPCore plugin;
@@ -32,20 +30,8 @@ public class PListener implements Listener{
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
-            if(!isCreated(player.getUniqueId())) {
-                Bukkit.getScheduler().scheduleAsyncDelayedTask(plugin, new Runnable() {
-                    @Override
-                    public void run() {
-                        try {
-                            RPCore.statement.executeUpdate("INSERT INTO RPCORE (UUID,PNAME,ACCOUNTBAL)VALUES ('" + player.getUniqueId() + "','" + player.getName() + "','0.0')");
-                            RPCore.statement.executeUpdate("INSERT INTO SKILLS (UUID,PNAME,MINING,WOODCUTTING,SMITHING,FARMING,ARCHERY,FIREMAKING,COOKING,SMELTING)VALUES" +
-                                    " ('" + player.getUniqueId() + "','" + player.getName() + "','0','0','0','0','0','0','0','0')");
-                        }catch(SQLException e){
-                            System.out.println("Error Creating DB Profile: \n"+e.toString());
-                        }
-                    }
-                });
-                System.out.println("Created DB Profile.");
+            if(dbUtils.useSQL()){
+                createPlayer.createPlayerRow(player);
             }
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){
@@ -91,10 +77,5 @@ public class PListener implements Listener{
         if(isBanned==true){
             player.kickPlayer("You have been banned from this server.");
         }
-    }
-    public static boolean isCreated(UUID pu)throws SQLException{
-        RPCore.statement.executeQuery("SELECT * FROM RPCORE WHERE UUID='"+pu+"';");
-        ResultSet rs = RPCore.statement.getResultSet();
-        return rs.next();
     }
 }

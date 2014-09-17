@@ -17,6 +17,7 @@ import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
+import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.World.CheckTime;
@@ -51,7 +52,7 @@ public class RPCore extends JavaPlugin {
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
-    static Connection c = null;
+    public static Connection c = null;
     public static Statement statement = null;
 
 
@@ -84,6 +85,7 @@ public class RPCore extends JavaPlugin {
             saveConfig();
             setupConfig(getConfig());
             saveConfig();
+            LevelMgr.createLevelFile();
             Backpack.createBPConfig();
             Banker.createBankerFile();
             Banker.cacheBanker();
@@ -102,27 +104,6 @@ public class RPCore extends JavaPlugin {
                 c = MySQL.openConnection();
                 System.out.println("Connecting to Database...CONNECTED!");
                 statement = c.createStatement();
-                DatabaseMetaData meta = c.getMetaData();
-                ResultSet res = meta.getTables(null, null, "RPCORE", null);
-                if (!res.next()) {
-                    System.out.println("Creating Core Table");
-                    statement.executeUpdate("CREATE TABLE RPCORE (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
-                            "ACCOUNTBAL DECIMAL(10,2));");
-                    System.out.println("Creating Core Table...COMPLETE!");
-                    System.out.println("Creating Skills Table");
-                    statement.executeUpdate("CREATE TABLE SKILLS (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY," +
-                            "PNAME varchar(30) NOT NULL, " +
-                            "MINING INT," +
-                            "WOODCUTTING INT,"+
-                            "SMITHING INT,"+
-                            "FARMING INT,"+
-                            "ARCHERY INT,"+
-                            "FIREMAKING INT,"+
-                            "COOKING INT," +
-                            "SMELTING INT);");
-                    System.out.println("Creating Skills Table...COMPLETE!");
-                    c.setAutoCommit(true);
-                }
             }
         } catch (Exception i) {
             i.printStackTrace();
