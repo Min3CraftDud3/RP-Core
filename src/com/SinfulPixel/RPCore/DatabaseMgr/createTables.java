@@ -12,8 +12,7 @@ import java.sql.SQLException;
 public class createTables {
     static RPCore plugin;
     public createTables(RPCore plugin){this.plugin=plugin;}
-    public void createDBTables()throws SQLException{
-        if (plugin.getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
+    public static void createDBTables()throws SQLException{
             RPCore.statement = RPCore.c.createStatement();
             DatabaseMetaData meta = RPCore.c.getMetaData();
             ResultSet res = meta.getTables(null, null, "RPCORE", null);
@@ -43,7 +42,6 @@ public class createTables {
                         "SMELTING_Exp INT);");
                 System.out.println("Creating Skills Table...COMPLETE!");
                 RPCore.c.setAutoCommit(true);
-            }
         }
     }
 }

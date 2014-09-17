@@ -4,6 +4,9 @@ import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
+import com.SinfulPixel.RPCore.DatabaseMgr.createPlayer;
+import com.SinfulPixel.RPCore.DatabaseMgr.createTables;
+import com.SinfulPixel.RPCore.DatabaseMgr.dbUtils;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Effects.EffectManager;
 import com.SinfulPixel.RPCore.Entity.Banker;
@@ -37,7 +40,9 @@ import org.bukkit.scheduler.BukkitTask;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class RPCore extends JavaPlugin {
@@ -49,11 +54,17 @@ public class RPCore extends JavaPlugin {
     NameMgr nm = new NameMgr(this);
     Account acc = new Account(this);
     ProgressBar pb = new ProgressBar(this);
+    LevelMgr lvlMgr = new LevelMgr(this);
+    createTables cTable = new createTables(this);
+    createPlayer cPlayer = new createPlayer(this);
+    dbUtils dbu = new dbUtils(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
     public static Connection c = null;
     public static Statement statement = null;
+    public static File dataFolder;
+    public static FileConfiguration configs;
 
 
     public void onEnable() {
@@ -85,6 +96,8 @@ public class RPCore extends JavaPlugin {
             saveConfig();
             setupConfig(getConfig());
             saveConfig();
+            dataFolder = getDataFolder();
+            configs = getConfig();
             LevelMgr.createLevelFile();
             Backpack.createBPConfig();
             Banker.createBankerFile();
@@ -104,6 +117,7 @@ public class RPCore extends JavaPlugin {
                 c = MySQL.openConnection();
                 System.out.println("Connecting to Database...CONNECTED!");
                 statement = c.createStatement();
+                createTables.createDBTables();
             }
         } catch (Exception i) {
             i.printStackTrace();

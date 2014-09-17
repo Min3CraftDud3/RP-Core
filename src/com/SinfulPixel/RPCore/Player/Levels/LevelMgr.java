@@ -14,7 +14,11 @@ public class LevelMgr {
     static RPCore plugin;
     public LevelMgr(RPCore plugin){this.plugin=plugin;}
     public static void createLevelFile() throws IOException{
-        File levelFile = new File(plugin.getDataFolder()+File.separator+"Level"+File.separator+"LevelConfig.yml");
+        File levelDir = new File(plugin.getDataFolder() + File.separator + "Levels");
+        if(!levelDir.exists()){
+            levelDir.mkdir();
+        }
+        File levelFile = new File(plugin.getDataFolder() + File.separator +"Levels"+File.separator+"LevelConfig.yml");
         if(!levelFile.exists()){
             levelFile.createNewFile();
             FileConfiguration fc = YamlConfiguration.loadConfiguration(levelFile);
