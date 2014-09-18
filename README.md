@@ -18,6 +18,9 @@
 * **Add Permission System**
 * Etc.
 
+###Gists (helpful code-bits):
+* https://gist.github.com/Min3CraftDud3
+
 ###Structures:
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
