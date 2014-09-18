@@ -73,6 +73,8 @@
 * ~~Fire: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
 * [ARMOR] lightweight - reduce item weight.
+* Dull Blade - decreased damage.
+* Sharp Blade - increased damage.
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
