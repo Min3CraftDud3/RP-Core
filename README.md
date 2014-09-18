@@ -49,7 +49,7 @@
 * Archery
 * Farming
 * Firemaking
-* Alchemy - potions and stuff (Idea not sure, need input)
+* Alchemy - potions and stuff (Idea not sure, need input) (Possibly weapon or armor enhancements using essences and oils?)
 * Luck - increases item drop/special crafting chance
 
 ###Sounds:
