@@ -59,9 +59,13 @@
 * Crafting Kit - Lvl 0+
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
+* Skyrim like soulgem enchanting/power decrease system.
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
+
+###Equations:
+* Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
