@@ -6,11 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" />
+    <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="Edit: EffectManager, Fixed BankGUI/CombatMgr bug">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -87,8 +84,8 @@
       <file leaf-file-name="EffectManager.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.513468" vertical-offset="307" max-vertical-offset="901">
-              <caret line="45" column="112" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
+            <state vertical-scroll-proportion="0.19865319" vertical-offset="307" max-vertical-offset="901">
+              <caret line="34" column="112" selection-start-line="34" selection-start-column="112" selection-end-line="34" selection-end-column="112" />
               <folding />
             </state>
           </provider>
@@ -868,7 +865,7 @@
       <workItem from="1410603710103" duration="483000" />
       <workItem from="1410629906380" duration="13603000" />
       <workItem from="1410738752020" duration="2467000" />
-      <workItem from="1410915305439" duration="10385000" />
+      <workItem from="1410915305439" duration="10956000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1194,11 +1191,15 @@
       <created>1410923188269</created>
       <updated>1410923188269</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="Edit: EffectManager, Fixed BankGUI/CombatMgr bug">
+      <created>1411020573287</created>
+      <updated>1411020573287</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202740000" />
+    <option name="totallyTimeSpent" value="203311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1275,7 +1276,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Added GUI for Fire" />
     <MESSAGE value="fixed lag timings&#10;" />
     <MESSAGE value="Finished Firegui - needs methods&#10;Added to To-Do List" />
     <MESSAGE value="Fire extinguish - Finished" />
@@ -1300,7 +1300,8 @@
     <MESSAGE value="Started Quest Manager" />
     <MESSAGE value="Started LevelMgr, MySQL edits" />
     <MESSAGE value="Moved MySQL around, fixed bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved MySQL around, fixed bugs" />
+    <MESSAGE value="Edit: EffectManager, Fixed BankGUI/CombatMgr bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Edit: EffectManager, Fixed BankGUI/CombatMgr bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1703,8 +1704,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.513468" vertical-offset="307" max-vertical-offset="901">
-          <caret line="45" column="112" selection-start-line="45" selection-start-column="112" selection-end-line="45" selection-end-column="112" />
+        <state vertical-scroll-proportion="0.19865319" vertical-offset="307" max-vertical-offset="901">
+          <caret line="34" column="112" selection-start-line="34" selection-start-column="112" selection-end-line="34" selection-end-column="112" />
           <folding />
         </state>
       </provider>

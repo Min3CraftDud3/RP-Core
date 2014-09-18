@@ -32,7 +32,7 @@ public class EffectManager implements Listener
             LivingEntity defender = (LivingEntity) e.getEntity();
             if (e.getDamager() instanceof Player) {
                 Player p = (Player) e.getDamager();
-                        switch (LoreMgr.getAttribute(p.getItemInHand())) {
+                        switch (LoreMgr.getAttribute(p.getItemInHand())) { //Changed to use getAttribute Method.
                             case "Fire":
                                 new Fire(10).applyEffect(defender); //apply a fire effect for 10 ticks
                                 break;
