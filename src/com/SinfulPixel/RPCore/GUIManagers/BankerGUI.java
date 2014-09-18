@@ -110,6 +110,9 @@ public class BankerGUI implements Listener {
                         banking.remove(e.getPlayer().getUniqueId());
                         e.setCancelled(true);
                     }
+                }else{
+                    e.getPlayer().sendMessage(ChatColor.RED+"You must type a number. Transaction Cancelled.");
+                    e.setCancelled(true);
                 }
                 if (msg[0].equalsIgnoreCase("exit")) {
                     banking.remove(e.getPlayer().getUniqueId());
@@ -121,6 +124,9 @@ public class BankerGUI implements Listener {
                         if (Bank.isInt(msg[1])) {
                             Account.transfer(e.getPlayer(), target, Double.parseDouble(msg[1]));
                             banking.remove(e.getPlayer().getUniqueId());
+                            e.setCancelled(true);
+                        }else{
+                            e.getPlayer().sendMessage(ChatColor.RED+"You must type a number. Transaction Cancelled.");
                             e.setCancelled(true);
                         }
                     }

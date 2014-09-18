@@ -179,7 +179,7 @@ public class RPCore extends JavaPlugin {
                 FireGUI.exAll(l);
             }
             System.out.println("Extinguishing Fires...COMPLETE!");
-            try{c.close();}catch(SQLException ex){}
+            try{if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {c.close();}}catch(SQLException ex){}
         } catch (IOException i) {
             i.printStackTrace();
         }

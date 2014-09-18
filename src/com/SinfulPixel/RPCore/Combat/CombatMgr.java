@@ -39,10 +39,14 @@ public class CombatMgr implements Listener{
                         }
                     }
                 }catch(Exception ex){}
-		        inCombat.add(p.getUniqueId());
-		        inCombat.add(a.getUniqueId());
-		        p.sendMessage(cl+ChatColor.GRAY+"You have entered combat.");
-                a.sendMessage(cl+ChatColor.GRAY+"You have entered combat.");
+                if(!inCombat.contains(p.getUniqueId())) {
+                    inCombat.add(p.getUniqueId());
+                    p.sendMessage(cl + ChatColor.GRAY + "You have entered combat.");
+                }
+                if(!inCombat.contains(a.getUniqueId())) {
+                    inCombat.add(a.getUniqueId());
+                    a.sendMessage(cl + ChatColor.GRAY + "You have entered combat.");
+                }
                 Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable(){
                     @Override
                     public void run() {
