@@ -1,7 +1,7 @@
-# H1 RP-Core
+#RP-Core
 ---
 
-### H3 To-Do List:
+###To-Do List:
 * Fix Chat Bug - With local and RP chats.
 * ~~Add Party Support~~ 
 * Add Party Exp Gain
@@ -17,25 +17,25 @@
 * Schematic Placement System
 * Etc.
 
-### H3 Structures:
+###Structures:
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
 
-### H3 World Effects:
+###World Effects:
 * Mob levels - epicenter & health increase
 * Disable "Big Tree Growth"
 
-### H3 Player Effects:
+###Player Effects:
 * Item/Armor weight
 * Health
 
-### H3 RPG Effects:
+###RPG Effects:
 * Guilds
 * Bounty
 * Guild bases
 
-### H3 Skills:
+###Skills:
 * Smithing
 * Smelting
 * Mining
@@ -47,12 +47,12 @@
 * Firemaking
 * alchemy - potions and stuff (Idea not sure, need input)
 
-### H3 Sounds:
+###Sounds:
 * forge = Lava blub noise
 * Cooking = fire/mob extinguish by rain noise
 * Smithing =  anvil ting noise
 
-### H3 Ideas:
+###Ideas:
 * Add gui achievement system.
 * NPC shops/Quest givers - Nether Star
 * Crafting Kit - Used to craft all items. Disable crafting table.
@@ -60,7 +60,7 @@
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
 
-### H3 Enchants/Effects:
+###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~
