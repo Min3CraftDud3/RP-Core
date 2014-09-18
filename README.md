@@ -15,6 +15,7 @@
 * Link methods to MySQL DB
 * Add Horse Mounts for Players Reaching level 15
 * Schematic Placement System
+* **Add Permission System**
 * Etc.
 
 ###Structures:
@@ -60,6 +61,7 @@
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
 * Skyrim like soulgem enchanting/power decrease system.
+* Portal system - for fast travel 2x1 portal
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
