@@ -49,7 +49,8 @@
 * Archery
 * Farming
 * Firemaking
-* alchemy - potions and stuff (Idea not sure, need input)
+* Alchemy - potions and stuff (Idea not sure, need input)
+* Luck - increases item drop/special crafting chance
 
 ###Sounds:
 * forge = Lava blub noise
