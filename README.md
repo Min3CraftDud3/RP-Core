@@ -65,14 +65,17 @@
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
 * Skyrim like soulgem enchanting/power decrease system. (Name: Mana Shards)
-* Portal system - for fast travel 2x1 portal **{Gist}**
+* Portal system - for fast travel 2x1 portal **{Gist}** (Temporary player spell/item or Town Building? or both)
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
-* [ARMOR] lightweight - reduce item weight.
+* [ARMOR] Lightweight - reduce item weight.
+* [ARMOR] Heavyweight - Increase Item Weight and Protection
+* Brittle - Reduce Maximum Durability
+* Tempered - Increase Maximum Durability
 * Dull - decreased damage.
 * Sharp - increased damage.
 * [BOOTS] Quick Step - faster walking speed.
