@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="Edit: EffectManager, Fixed BankGUI/CombatMgr bug">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="" />
     <ignored path="RP-Core.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -865,7 +862,7 @@
       <workItem from="1410603710103" duration="483000" />
       <workItem from="1410629906380" duration="13603000" />
       <workItem from="1410738752020" duration="2467000" />
-      <workItem from="1410915305439" duration="10956000" />
+      <workItem from="1410915305439" duration="11599000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1195,11 +1192,15 @@
       <created>1411020573287</created>
       <updated>1411020573287</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Edit: EffectManager, Fixed BankGUI/CombatMgr bug">
+      <created>1411021109110</created>
+      <updated>1411021109110</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203311000" />
+    <option name="totallyTimeSpent" value="203954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
