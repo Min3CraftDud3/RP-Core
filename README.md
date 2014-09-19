@@ -25,6 +25,19 @@
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
+ 
+###Schematic Placement
+* [FARMS]
+ - Need a check for [Farmland]
+ - Place fully grown of the required crop over the farmland
+ - Place water under farmland as long as there is not air to the side or underneath where the water would go
+* [ROADS]
+ - When putting in schematic replace grass with road blocks keep air clear
+* [Possible Commands]
+ - /build [race] [size] [grid #] {varient #}
+  * ex1. /build beastmen small 1a 4 * builds small farm with mixed crops
+  * ex2. /build beastmen small 1a 1 * builds small farm with wheat
+ - /build [schematic name]
 
 ###World Effects:
 * Mob levels - epicenter & health increase
