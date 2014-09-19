@@ -25,13 +25,20 @@
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
+  - Have each type of wood/charcoal/coal give a different duration based on the level required to gather that wood (charcoal/lowest level wood is 5 min add 5 min per tier of wood) when put out return charcoal at a rate of 1 per 10 min left of duration
 
 ###World Effects:
 * Mob levels - epicenter & health increase
 * Disable "Big Tree Growth"
+ - All tree growth
+ - Code something that selects one of our schematic trees based on the sapling used and replaces the sapling with the schematic of the tree after a semi random wait time based on the type of tree
+
 
 ###Player Effects:
 * Item/Armor weight
+  - Institute maximum weight limit of 100 kg
+  - Have the player slow down by 1% per k they are over the weight limit
+  - Minimum player speed of 10% (so players do not get stuck if they carry to much)
 * Health
 
 ###RPG Effects:
@@ -64,18 +71,26 @@
 * Crafting Kit - Lvl 0+
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
-* Skyrim like soulgem enchanting/power decrease system.
-* Portal system - for fast travel 2x1 portal **{Gist}**
+* Skyrim like soulgem enchanting/power decrease system. (Name: Mana Shards)
+* Portal system - for fast travel 2x1 portal **{Gist}** (Temporary player spell/item or Town Building? or both)
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
-* [ARMOR] lightweight - reduce item weight.
+* [ARMOR] Lightweight - reduce item weight.
+* [ARMOR] Heavyweight - Increase Item Weight and Protection
+* Brittle - Reduce Maximum Durability
+* Tempered - Increase Maximum Durability
 * Dull - decreased damage.
 * Sharp - increased damage.
 * [BOOTS] Quick Step - faster walking speed.
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
+
+
+####Item Creator Edits:
+* Add checkboxes for (Weapon - Armor - Neither)
+* Add Damage / Protection Value for Weapons and Armor (Max/Min)
