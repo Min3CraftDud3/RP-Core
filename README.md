@@ -57,6 +57,8 @@
 * Firemaking
 * Alchemy - potions and stuff (Idea not sure, need input) (Possibly weapon or armor enhancements using essences and oils?)
 * Luck - increases item drop/special crafting chance
+* Woodcrafting
+* Leatherworking
 
 ###Sounds:
 * forge = Lava blub noise
