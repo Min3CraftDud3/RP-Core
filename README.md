@@ -25,7 +25,19 @@
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
-  - Have each type of wood/charcoal/coal give a different duration based on the level required to gather that wood (charcoal/lowest level wood is 5 min add 5 min per tier of wood) when put out return charcoal at a rate of 1 per 10 min left of duration
+ 
+###Schematic Placement
+* [FARMS]
+ - Need a check for [Farmland]
+ - Place fully grown of the required crop over the farmland
+ - Place water under farmland as long as there is not air to the side or underneath where the water would go
+* [ROADS]
+ - When putting in schematic replace grass with road blocks keep air clear
+* [Possible Commands]
+ - /build [race] [size] [grid #] {varient #}
+  * ex1. /build beastmen small 1a 4 * builds small farm with mixed crops
+  * ex2. /build beastmen small 1a 1 * builds small farm with wheat
+ - /build [schematic name]
 
 ###World Effects:
 * Mob levels - epicenter & health increase
@@ -53,11 +65,13 @@
 * Cooking
 * Fishing
 * Woodcutting
-* Archery
+* Ranged
 * Farming
 * Firemaking
 * Alchemy - potions and stuff (Idea not sure, need input) (Possibly weapon or armor enhancements using essences and oils?)
 * Luck - increases item drop/special crafting chance
+* Woodcrafting
+* Leatherworking
 
 ###Sounds:
 * forge = Lava blub noise
@@ -81,16 +95,18 @@
 * ~~Life-Steal: steals life from target~~
 * [ARMOR] Lightweight - reduce item weight.
 * [ARMOR] Heavyweight - Increase Item Weight and Protection
-* Brittle - Reduce Maximum Durability
-* Tempered - Increase Maximum Durability
-* Dull - decreased damage.
-* Sharp - increased damage.
+* [ARMOR] Brittle - Reduce Absorbed Damage
+* [ARMOR] Tempered - Increase Absorbed Damage
+* [WEAPON] Jagged - apply bleed to player.
+* ~~Dull - decreased damage.~~
+* ~~Sharp - increased damage.~~
 * [BOOTS] Quick Step - faster walking speed.
+* [WEAPON] Snare - Freeze player for X seconds.
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
 
 
-####Item Creator Edits:
-* Add checkboxes for (Weapon - Armor - Neither)
-* Add Damage / Protection Value for Weapons and Armor (Max/Min)
+###Item Creator Edits:
+* ~~Add checkboxes for (Weapon - Armor - Neither)~~
+* ~~Add Damage / Protection Value for Weapons and Armor (Max/Min)~~
