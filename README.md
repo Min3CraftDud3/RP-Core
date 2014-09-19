@@ -30,9 +30,15 @@
 ###World Effects:
 * Mob levels - epicenter & health increase
 * Disable "Big Tree Growth"
+ - All tree growth
+ - Code something that selects one of our schematic trees based on the sapling used and replaces the sapling with the schematic of the tree after a semi random wait time based on the type of tree
+
 
 ###Player Effects:
 * Item/Armor weight
+  - Institute maximum weight limit of 100 kg
+  - Have the player slow down by 1% per k they are over the weight limit
+  - Minimum player speed of 10% (so players do not get stuck if they carry to much)
 * Health
 
 ###RPG Effects:
