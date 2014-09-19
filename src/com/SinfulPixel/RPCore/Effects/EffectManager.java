@@ -45,6 +45,13 @@ public class EffectManager implements Listener
                             case "Poison":
                                 new Poison(10, 2).applyEffect(defender); //apply the wither potion effect for 10 ticks
                                 break;
+                            case "Dull":
+                                new Dull(2).applyEffect(e);
+                                break;
+                            case "Sharp":
+                                new Sharp(2).applyEffect(e);
+                                break;
+
                            default: break;
                         }
             } else return; //if we want monsters to have effects add it here.
