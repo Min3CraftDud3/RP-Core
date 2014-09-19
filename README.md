@@ -25,6 +25,7 @@
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
+  - Have each type of wood/charcoal/coal give a different duration based on the level required to gather that wood (charcoal/lowest level wood is 5 min add 5 min per tier of wood) when put out return charcoal at a rate of 1 per 10 min left of duration
 
 ###World Effects:
 * Mob levels - epicenter & health increase
