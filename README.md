@@ -79,3 +79,8 @@
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
+
+
+####Item Creator Edits:
+* Add checkboxes for (Weapon - Armor - Neither)
+* Add Damage / Protection Value for Weapons and Armor (Max/Min)
