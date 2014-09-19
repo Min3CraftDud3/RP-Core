@@ -23,6 +23,7 @@ import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
+import com.SinfulPixel.RPCore.WeightMgr.MaterialWeight;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import com.SinfulPixel.RPCore.World.ProgressBar;
 import com.SinfulPixel.RPCore.World.StatusBarAPI;
@@ -58,6 +59,7 @@ public class RPCore extends JavaPlugin {
     createTables cTable = new createTables(this);
     createPlayer cPlayer = new createPlayer(this);
     dbUtils dbu = new dbUtils(this);
+    MaterialWeight mw = new MaterialWeight(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -96,8 +98,7 @@ public class RPCore extends JavaPlugin {
             saveConfig();
             setupConfig(getConfig());
             saveConfig();
-            dataFolder = getDataFolder();
-            configs = getConfig();
+            MaterialWeight.createWeightFile();
             LevelMgr.createLevelFile();
             Backpack.createBPConfig();
             Banker.createBankerFile();

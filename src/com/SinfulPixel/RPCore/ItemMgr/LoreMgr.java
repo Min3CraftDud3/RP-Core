@@ -87,7 +87,7 @@ public class LoreMgr {
         i.setItemMeta(im);
         return i;
     }
-    public static ItemStack addAttribute(ItemStack i, int level){
+    public static ItemStack addAttribute(ItemStack i){
         List<String> lore = new ArrayList<String>();
         ItemMeta im = i.getItemMeta();
         if(im.hasLore()) {
@@ -96,7 +96,7 @@ public class LoreMgr {
                 lore.add(s);
             }
         }
-        String att = pickAttribute(level);
+        String att = pickAttribute(i);
         if(att != null) {
             lore.add("Attribute: " + att);
         }else{
@@ -106,18 +106,34 @@ public class LoreMgr {
         i.setItemMeta(im);
         return i;
     }
-    public static String pickAttribute(int level){
-        int p = rand.nextInt(100);
-        double d = level/4;
-        double total = p+d;
-        if(total>90){
-            return "Life Steal";
-        }else if(total>70 && total<80){
-            return "Erosion";
-        }else if(total>60 && total<70){
-            return "Poison";
-        }else if(total>50 && total<60){
-            return "Fire";
+    public static String pickAttribute(ItemStack i){
+        if(ItemUtils.weaponCheck(i)) {
+            int r = rand.nextInt(60); //1:10 chance of attribute
+            switch(r){
+                case 0: return "Life Steal";
+                case 1: return "Erosion";
+                case 2: return "Poison";
+                case 3: return "Fire";
+                case 4: return "Dull";
+                case 5: return "Sharp";
+                default: return null;
+            }
+        }
+        if(ItemUtils.armorCheck(i)){
+            //Add Armor Attributes
+            int r = rand.nextInt(0);
+            switch(r){
+                case 0: return null;
+                default: return null;
+            }
+        }
+        if(ItemUtils.toolCheck(i)){
+            //Add Tool Attributes
+            int r = rand.nextInt(0);
+            switch(r){
+                case 0: return null;
+                default: return null;
+            }
         }
         return null;
     }
