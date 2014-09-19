@@ -15,7 +15,11 @@
 * Link methods to MySQL DB
 * Add Horse Mounts for Players Reaching level 15
 * Schematic Placement System
+* **Add Permission System**
 * Etc.
+
+###Gists (helpful code-bits):
+* https://gist.github.com/Min3CraftDud3
 
 ###Structures:
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
@@ -45,7 +49,8 @@
 * Archery
 * Farming
 * Firemaking
-* alchemy - potions and stuff (Idea not sure, need input)
+* Alchemy - potions and stuff (Idea not sure, need input) (Possibly weapon or armor enhancements using essences and oils?)
+* Luck - increases item drop/special crafting chance
 
 ###Sounds:
 * forge = Lava blub noise
@@ -60,12 +65,17 @@
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
 * Skyrim like soulgem enchanting/power decrease system.
+* Portal system - for fast travel 2x1 portal **{Gist}**
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
+* [ARMOR] lightweight - reduce item weight.
+* Dull - decreased damage.
+* Sharp - increased damage.
+* [BOOTS] Quick Step - faster walking speed.
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
