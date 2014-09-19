@@ -52,7 +52,7 @@
 * Cooking
 * Fishing
 * Woodcutting
-* Archery
+* Ranged
 * Farming
 * Firemaking
 * Alchemy - potions and stuff (Idea not sure, need input) (Possibly weapon or armor enhancements using essences and oils?)
