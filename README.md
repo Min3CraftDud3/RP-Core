@@ -25,7 +25,6 @@
 * Anvil = inventory gui with ores to make different weapons/armor - Anvil ping noise - Need forge hammer
 * Forge = lava on glass - GUI to smelt items.
 * FirePit = 4 cobble slabs & 1 netherrack - Despawns within 30 minutes unless stoked - Has GUI for stoke, boil water, cook food, put out, etc.
-  - Have each type of wood/charcoal/coal give a different duration based on the level required to gather that wood (charcoal/lowest level wood is 5 min add 5 min per tier of wood) when put out return charcoal at a rate of 1 per 10 min left of duration
 
 ###World Effects:
 * Mob levels - epicenter & health increase
@@ -81,16 +80,18 @@
 * ~~Life-Steal: steals life from target~~
 * [ARMOR] Lightweight - reduce item weight.
 * [ARMOR] Heavyweight - Increase Item Weight and Protection
-* Brittle - Reduce Maximum Durability
-* Tempered - Increase Maximum Durability
-* Dull - decreased damage.
-* Sharp - increased damage.
+* [ARMOR] Brittle - Reduce Absorbed Damage
+* [ARMOR] Tempered - Increase Absorbed Damage
+* [WEAPON] Jagged - apply bleed to player.
+* ~~Dull - decreased damage.~~
+* ~~Sharp - increased damage.~~
 * [BOOTS] Quick Step - faster walking speed.
+* [WEAPON] Snare - Freeze player for X seconds.
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
 
 
-####Item Creator Edits:
-* Add checkboxes for (Weapon - Armor - Neither)
-* Add Damage / Protection Value for Weapons and Armor (Max/Min)
+###Item Creator Edits:
+* ~~Add checkboxes for (Weapon - Armor - Neither)~~
+* ~~Add Damage / Protection Value for Weapons and Armor (Max/Min)~~
