@@ -64,7 +64,7 @@
 * Crafting Kit - Lvl 0+
 * Advanced Crafting Kit - Lvl 40+
 * Master Crafting Kit - Lvl 80+
-* Skyrim like soulgem enchanting/power decrease system.
+* Skyrim like soulgem enchanting/power decrease system. (Name: Mana Shards)
 * Portal system - for fast travel 2x1 portal **{Gist}**
 
 ###Enchants/Effects:
