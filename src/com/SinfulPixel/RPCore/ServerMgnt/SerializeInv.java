@@ -20,7 +20,7 @@ import java.util.Map.Entry;
  */
 public class SerializeInv {
     public static String InventoryToString(Inventory invInventory) {
-        String serialization = invInventory.getSize() + ";";
+        String serialization = invInventory.getSize() + "_";
         for (int i = 0; i < invInventory.getSize(); i++) {
             ItemStack is = invInventory.getItem(i);
             if (is != null) {
@@ -30,38 +30,38 @@ public class SerializeInv {
                 if(is.hasItemMeta()){
                     if(is.getItemMeta().hasDisplayName()){
                         String isName = is.getItemMeta().getDisplayName();
-                        serializedItemStack += ":n@" + "*"+isName+"*";
+                        serializedItemStack += ";n@" +"*"+isName+"*";
                     }
                     if(is.getItemMeta().hasLore()){
                         List<String> st = new ArrayList<>();
                         for(int j=0;j<is.getItemMeta().getLore().size();j++){
                             st.add(is.getItemMeta().getLore().get(j));
                         }
-                        String isLore = StringUtils.join(st, "|");
-                        serializedItemStack += ":l@" + isLore;
+                        String isLore = StringUtils.join(st, "-");
+                        serializedItemStack += ";l@" + isLore;
                     }
                 }
                 if (is.getDurability() != 0) {
                     String isDurability = String.valueOf(is.getDurability());
-                    serializedItemStack += ":d@" + isDurability;
+                    serializedItemStack += ";d@" + isDurability;
                 }
                 if (is.getAmount() != 1) {
                     String isAmount = String.valueOf(is.getAmount());
-                    serializedItemStack += ":a@" + isAmount;
+                    serializedItemStack += ";a@" + isAmount;
                 }
                 Map<Enchantment, Integer> isEnch = is.getEnchantments();
                 if (isEnch.size() > 0) {
                     for (Entry<Enchantment, Integer> ench : isEnch.entrySet()) {
-                        serializedItemStack += ":e@" + ench.getKey().getId() + "@" + ench.getValue();
+                        serializedItemStack += ";e@" + ench.getKey().getId() + "@" + ench.getValue();
                     }
                 }
-                serialization += i + "#" + serializedItemStack + ";";
+                serialization += i + "#" + serializedItemStack + "_";
             }
         }
         return serialization;
     }
     public static ItemStack[] StringToInventory(String invString) {
-        String[] serializedBlocks = invString.split(";");
+        String[] serializedBlocks = invString.split("_");
         String invInfo = serializedBlocks[0];
         Inventory deserializedInventory = Bukkit.getServer().createInventory(null, Integer.valueOf(invInfo));
 
@@ -74,7 +74,7 @@ public class SerializeInv {
             }
             ItemStack is = null;
             Boolean createdItemStack = false;
-            String[] serializedItemStack = serializedBlock[1].split(":");
+            String[] serializedItemStack = serializedBlock[1].split(";");
             ItemMeta im = null;
             for (String itemInfo : serializedItemStack) {
                 String[] itemAttribute = itemInfo.split("@");
@@ -87,7 +87,11 @@ public class SerializeInv {
                     System.out.println(itemAttribute[1]);
                 } else if (itemAttribute[0].equals("l") && createdItemStack){
                     List<String> lr = new ArrayList<>();
-                    lr.add(itemAttribute[1]);
+                    for(String s: itemAttribute[1].split("-")) {
+                        s.toString();
+                        s.replace("-","");
+                        lr.add(s);
+                    }
                     im.setLore(lr);
                 } else if (itemAttribute[0].equals("d") && createdItemStack) {
                     is.setDurability(Short.valueOf(itemAttribute[1]));

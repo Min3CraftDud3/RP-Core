@@ -39,11 +39,9 @@ public class Backpack implements Listener {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
             if(fc.contains("backpacks." + p.getUniqueId()+".Contents")){
                 String s = fc.getString("backpacks." + p.getUniqueId()+".Contents");
-                System.out.println(s);
                 if(s != null) {
                     inv.setContents(SerializeInv.StringToInventory(s));
                     p.updateInventory();
-                    System.out.println("com");
                 }
             }
             backpacks.put(e.getPlayer().getUniqueId(), inv);
