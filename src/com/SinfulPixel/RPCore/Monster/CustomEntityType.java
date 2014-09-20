@@ -1,11 +1,6 @@
 package com.SinfulPixel.RPCore.Monster;
 
-import net.minecraft.server.v1_7_R3.BiomeBase;
-import net.minecraft.server.v1_7_R3.BiomeMeta;
-import net.minecraft.server.v1_7_R3.EntityInsentient;
-import net.minecraft.server.v1_7_R3.EntityZombie;
-import net.minecraft.server.v1_7_R3.EntityTypes;
-import net.minecraft.server.v1_7_R3.EntitySkeleton;
+import net.minecraft.server.v1_7_R3.*;
 import org.bukkit.entity.EntityType;
 
 import java.lang.reflect.Field;
@@ -20,7 +15,9 @@ import java.util.Map;
 public enum CustomEntityType {
 
     ZOMBIE("Zombie", 54, EntityType.ZOMBIE, EntityZombie.class, CustomEntityZombie.class),
-    SKELETON("Skeleton",51, EntityType.SKELETON, EntitySkeleton.class, CustomEntitySkeleton.class);
+    SKELETON("Skeleton",51, EntityType.SKELETON, EntitySkeleton.class, CustomEntitySkeleton.class),
+    CREEPER("Creeper", 50, EntityType.CREEPER, EntityCreeper.class, CustomEntityCreeper.class),
+    SPIDER("Spider", 52, EntityType.SPIDER, EntitySkeleton.class, CustomEntitySpider.class);
 
 
     private String name;
