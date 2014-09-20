@@ -29,7 +29,7 @@ public class BackpackCmd implements CommandExecutor {
                     NameMgr.setName(i);
                     LoreMgr.addLore(i, ColorMgr.pickColor() + args[0]);
                     ToolLevel.makeLeveled(i);
-                    LoreMgr.addAttribute(i, 20);
+                    LoreMgr.addAttribute(i);
                     player.getInventory().addItem(i);
                 }
             }

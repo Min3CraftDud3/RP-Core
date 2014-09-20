@@ -8,6 +8,9 @@ import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by Min3 on 9/19/2014.
@@ -25,8 +28,14 @@ public class MaterialWeight {
             weightFile.createNewFile();
             FileConfiguration fc = YamlConfiguration.loadConfiguration(weightFile);
             fc.set("MaterialWeights.Description","Weight in KG");
-            for(Material s : Material.values()){
-                fc.set("MaterialWeights."+s.name(),1);
+            Material[] mats = Material.values();
+            List<String>list=new ArrayList<>();
+            for(Material m: mats){
+                list.add(m.name());
+            }
+            Collections.sort(list);
+            for(String s:list){
+                fc.set("MaterialWeights."+s,1.0);
             }
             fc.save(weightFile);
         }
