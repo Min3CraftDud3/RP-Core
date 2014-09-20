@@ -19,19 +19,10 @@ public class ArmorUnequipEvent extends Event implements Cancellable {
         this.itemStack = itemStack;
         this.player = player;
     }
-
     @Override
-    public boolean isCancelled() {
-        return cancelled;
-    }
-
+    public boolean isCancelled() {return cancelled;}
     @Override
-    public void setCancelled(boolean b) {
-        cancelled = b;
-    }
-
+    public void setCancelled(boolean b) {cancelled = b;}
     @Override
-    public HandlerList getHandlers() {
-        return handlerList;
-    }
+    public HandlerList getHandlers() {return handlerList;}
 }
