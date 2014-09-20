@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -122,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArmorEquipEvent.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ArmorEquipEvent.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="986">
-              <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.28643215" vertical-offset="379" max-vertical-offset="986">
+              <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +133,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ArmorUnequipEvent.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ArmorUnequipEvent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0251256" vertical-offset="0" max-vertical-offset="561">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
               <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -223,8 +222,8 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/MaterialWeight.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java" />
       </list>
     </option>
   </component>
@@ -705,7 +704,7 @@
       <workItem from="1411099060871" duration="1103000" />
       <workItem from="1411102906434" duration="12000" />
       <workItem from="1411148574205" duration="5258000" />
-      <workItem from="1411154452921" duration="4740000" />
+      <workItem from="1411154452921" duration="4780000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1047,15 +1046,19 @@
       <created>1411178591381</created>
       <updated>1411178591382</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Custom Events Started - Added Usage to EquipEvent">
+      <created>1411187540789</created>
+      <updated>1411187540789</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215067000" />
+    <option name="totallyTimeSpent" value="215107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1129,7 +1132,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Banker added" />
     <MESSAGE value="Weapon Lore/Name systems - added" />
     <MESSAGE value="naming updated" />
     <MESSAGE value="Added Banker GUI" />
@@ -1154,7 +1156,8 @@
     <MESSAGE value="Added ItemUtils for attribute checking. Started on item weights." />
     <MESSAGE value="test push" />
     <MESSAGE value="Custom Events Started" />
-    <option name="LAST_COMMIT_MESSAGE" value="Custom Events Started" />
+    <MESSAGE value="Custom Events Started - Added Usage to EquipEvent" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Events Started - Added Usage to EquipEvent" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1521,20 +1524,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="379" max-vertical-offset="986">
-          <caret line="47" column="34" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
+          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java">
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0251256" vertical-offset="0" max-vertical-offset="561">
-          <caret line="24" column="56" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.28643215" vertical-offset="379" max-vertical-offset="986">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

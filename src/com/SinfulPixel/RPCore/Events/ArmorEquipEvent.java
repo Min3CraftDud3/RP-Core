@@ -27,7 +27,7 @@ import org.bukkit.inventory.ItemStack;
  ((Player)event.getWhoClicked()).sendMessage(event.getSlot()+"/current"+event.getCurrentItem()+"/curosr"+event.getCursor());
  if (event.getCurrentItem() != null) {
 
- //TODO remove enchantments modifiers form old item and apply new
+ //remove enchantments modifiers form old item and apply new
  }
  }
  }
