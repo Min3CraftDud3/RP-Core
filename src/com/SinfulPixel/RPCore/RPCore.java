@@ -16,6 +16,7 @@ import com.SinfulPixel.RPCore.Entity.QuestNPC;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
+import com.SinfulPixel.RPCore.Monster.*;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
@@ -90,6 +91,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
+        getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         //Create Default Config
         try {
             MakeDir();
