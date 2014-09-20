@@ -7,10 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorEquipEvent.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/MaterialWeight.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/MaterialWeight.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -77,8 +73,8 @@
       <file leaf-file-name="RPCore.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="3417">
-              <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="3910">
+              <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -719,7 +715,7 @@
       <workItem from="1411099060871" duration="1103000" />
       <workItem from="1411102906434" duration="12000" />
       <workItem from="1411148574205" duration="5258000" />
-      <workItem from="1411154452921" duration="3503000" />
+      <workItem from="1411154452921" duration="3609000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1053,11 +1049,15 @@
       <created>1411021109110</created>
       <updated>1411021109110</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="Custom Events Started">
+      <created>1411178500572</created>
+      <updated>1411178500572</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213830000" />
+    <option name="totallyTimeSpent" value="213936000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1135,7 +1135,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fire extinguish - Finished" />
     <MESSAGE value="Banker added" />
     <MESSAGE value="Weapon Lore/Name systems - added" />
     <MESSAGE value="naming updated" />
@@ -1160,7 +1159,8 @@
     <MESSAGE value="Edit: EffectManager, Fixed BankGUI/CombatMgr bug" />
     <MESSAGE value="Added ItemUtils for attribute checking. Started on item weights." />
     <MESSAGE value="test push" />
-    <option name="LAST_COMMIT_MESSAGE" value="test push" />
+    <MESSAGE value="Custom Events Started" />
+    <option name="LAST_COMMIT_MESSAGE" value="Custom Events Started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1496,8 +1496,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="3417">
-          <caret line="105" column="37" selection-start-line="105" selection-start-column="37" selection-end-line="105" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1156" max-vertical-offset="3910">
+          <caret line="107" column="37" selection-start-line="107" selection-start-column="37" selection-end-line="107" selection-end-column="37" />
           <folding />
         </state>
       </provider>
