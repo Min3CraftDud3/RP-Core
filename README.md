@@ -8,15 +8,15 @@
 * Add Party Loot Roll
 * Add Toggle Bounty Gain Money Msg
 * Add Mob System
-* Add Leveling System
-* Add Skill System
+* Add Leveling/Skill System
 * Add Better Race System
 * Add Character Card Methods
 * Link methods to MySQL DB
-* Add Horse Mounts for Players Reaching level 15
+* Add Horse Mounts for Players Reaching certain level.
 * Schematic Placement System
 * **Add Permission System**
-* **Add Premium Currency**
+* **Add Premium Currency(currency name Sol(s))**
+* **Work on implementing custom items**
 * Etc.
 
 ###Gists (helpful code-bits):
@@ -102,8 +102,20 @@
 * [WEAPON] Jagged - apply bleed to player.
 * ~~Dull - decreased damage.~~
 * ~~Sharp - increased damage.~~
-* [BOOTS] Quick Step - faster walking speed.
+* [BOOTS] Quick Step/Traction - faster walking speed.
 * [WEAPON] Snare - Freeze player for X seconds.
+* [ARMOR] Smoldering - Attacker has a chance of being set on fire.
+* [ARMOR] Reflection - Chance for attacker to recive 2x damage, victim doesnt take damage.
+* [ARMOR] Leech - Attacking player has chance to have health leached to victim (armor version of lifesteal)
+* [ARMOR] Barbed - Attacker has a chance to bleed.
+* [ARMOR] Blackened - Attacker has chance of being withered.
+* [ARMOR] Tempered - Decrease incomming damage.
+* [WEAPON] Glint - Target has a chance of receiving blindness (very short duration).
+* [WEAPON] Rise - Chance to send target into air.
+* [ARMOR] Void - Chance to teleport player 1-5 blocks away from victim.
+* [ARMOR] Static - Chance to stun/free attacker.
+* [WEAPON] Unjust - Chance to nauseate target.
+
 
 ###Equations:
 * Combat Level: ((health+Defense)+(highest(str OR ranged))+(Lowest(str OR ranged)/2))/3 or Average levels.
