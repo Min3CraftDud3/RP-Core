@@ -93,7 +93,7 @@
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
-* ~~Fire: sets target on fire~~
+* ~~Fire: sets target on fire~~ **Change name to Molten**
 * ~~Life-Steal: steals life from target~~
 * [ARMOR] Lightweight - reduce item weight.
 * [ARMOR] Heavyweight - Increase Item Weight and Protection
