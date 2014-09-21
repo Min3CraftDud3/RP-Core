@@ -4,7 +4,6 @@ import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.inventory.ItemStack;
 
 import java.io.File;
 import java.io.IOException;
@@ -40,11 +39,11 @@ public class MaterialWeight {
             fc.save(weightFile);
         }
     }
-    public static double getWeight(ItemStack i){
+    public static double getWeight(Material i){
         File weightFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"ItemWeight.yml");
         if(weightFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(weightFile);
-            Double d = fc.getDouble("MaterialWeights."+i.getType());
+            Double d = fc.getDouble("MaterialWeights."+i.name());
             return d;
         }
         return 0;

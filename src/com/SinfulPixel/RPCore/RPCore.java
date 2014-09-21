@@ -25,6 +25,7 @@ import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.WeightMgr.MaterialWeight;
+import com.SinfulPixel.RPCore.WeightMgr.WeightEvent;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import com.SinfulPixel.RPCore.World.ProgressBar;
 import com.SinfulPixel.RPCore.World.StatusBarAPI;
@@ -94,6 +95,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
+        getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         //Create Default Config
         try {
             MakeDir();
