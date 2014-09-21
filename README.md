@@ -115,6 +115,8 @@
 * [ARMOR/WEAPON] Static - Chance to stun/freeze attacker.
 * [ARMOR/WEAPON] Frosted - Chance to slow target.
 * [WEAPON] Plague - Chance to nauseate target.
+* [WEAPON] Unstable - explosion. 
+* [WEAPON] Enigma - random effect.
 
 
 ###Equations:
