@@ -114,7 +114,7 @@
 * [WEAPON] Rise - Chance to send target into air.
 * [ARMOR] Void - Chance to teleport player 1-5 blocks away from victim.
 * [ARMOR] Static - Chance to stun/free attacker.
-* [WEAPON] Unjust - Chance to nauseate target.
+* [WEAPON] Plague - Chance to nauseate target.
 
 
 ###Equations:
