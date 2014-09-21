@@ -88,6 +88,7 @@
 * Master Crafting Kit - Lvl 80+
 * Skyrim like soulgem enchanting/power decrease system. (Name: Mana Shards)
 * Portal system - for fast travel 2x1 portal **{Gist}** (Temporary player spell/item or Town Building? or both)
+* Crafting modifiers (items you can place in the crafting interface while making something to modify that item at creation ex. + damage increases the damage value of that item)
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
@@ -111,3 +112,12 @@
 ###Item Creator Edits:
 * ~~Add checkboxes for (Weapon - Armor - Neither)~~
 * ~~Add Damage / Protection Value for Weapons and Armor (Max/Min)~~
+
+###In Game GUI Elements
+* Crafting Interface
+ - Area to select the item you wish to craft with filters to narrow down the choices
+  * Filters: Level Required to Make, Have Materials, Item Type (sword, helmet, etc...), Item Tier, Item Quality
+   - Item quality is a checkbox, dropdown menu combination.
+   - Check box is labeled "Minimum Quality"
+    * If checked show all items of that quality or higher
+    * If unchecked show all items of that quality only
