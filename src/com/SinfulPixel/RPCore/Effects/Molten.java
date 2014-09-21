@@ -6,11 +6,11 @@ import org.bukkit.entity.Entity;
 /**
  * Created by Lantra on 9/15/2014.
  */
-public class Fire
+public class Molten
 {
     int duration; //in ticks
 
-    public Fire (int duration) {
+    public Molten(int duration) {
         this.duration = duration;
     }
 

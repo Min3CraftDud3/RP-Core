@@ -94,20 +94,20 @@
 ###Enchants/Effects:
 * ~~Poison: poisons target~~
 * ~~Erosion: Wither + Slowness applied to target~~
-* ~~Fire: sets target on fire~~ **Change name to Molten**
+* ~~Molten: sets target on fire~~
 * ~~Life-Steal: steals life from target~~
 * [ARMOR] Lightweight - Reduce Item Weight and Protection.
 * [ARMOR] Heavyweight - Increase Item Weight and Protection
-* [ARMOR] Brittle - Reduce Absorbed Damage
-* [ARMOR] Tempered - Increase Absorbed Damage
-* [WEAPON] Jagged - apply bleed to player.
+* ~~[ARMOR] Brittle - Reduce Absorbed Damage~~
+* ~~[ARMOR] Tempered - Increase Absorbed Damage~~
+* ~~[WEAPON] Jagged - apply bleed to player.~~
 * ~~Dull - decreased damage.~~
 * ~~Sharp - increased damage.~~
 * [BOOTS] Quick Step/Traction - faster walking speed.
-* [ARMOR] Smoldering - Attacker has a chance of being set on fire.
+* ~~[ARMOR] Smoldering - Attacker has a chance of being set on fire.~~
 * [ARMOR] Reflection - Chance for attacker to recive 2x damage, victim doesnt take damage.
 * [ARMOR] Leech - Attacking player has chance to have health leached to victim (armor version of lifesteal)
-* [ARMOR] Barbed - Attacker has a chance to bleed.
+* ~~[ARMOR] Barbed - Attacker has a chance to bleed.~~
 * [ARMOR] Blackened - Attacker has chance of being withered.
 * [WEAPON] Glint - Target has a chance of receiving blindness (very short duration).
 * [WEAPON] Rise - Chance to send target into air.

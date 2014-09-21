@@ -12,20 +12,16 @@ public class Erosion
 
         int duration, potency;//in ticks
 
-        public Erosion (int duration, int potency)
-        {
+        public Erosion (int duration, int potency){
             this.duration = duration;
             this.potency = potency;
         }
 
-        public void applyEffect(LivingEntity def)
-        {
+        public void applyEffect(LivingEntity def){
             def.addPotionEffect(new PotionEffect(PotionEffectType.WITHER, duration, potency));
         }
 
-        public void getConfigData() { //unused
-
-        }
+        public void getConfigData() { /*unused*/ }
     }
 
 
