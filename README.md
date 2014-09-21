@@ -16,6 +16,7 @@
 * Add Horse Mounts for Players Reaching level 15
 * Schematic Placement System
 * **Add Permission System**
+* **Add Premium Currency**
 * Etc.
 
 ###Gists (helpful code-bits):
