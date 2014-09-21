@@ -58,6 +58,7 @@
 * Guilds
 * Bounty
 * Guild bases
+* World even: meteor - mining 
 
 ###Skills:
 * Smithing
@@ -95,7 +96,7 @@
 * ~~Erosion: Wither + Slowness applied to target~~
 * ~~Fire: sets target on fire~~ **Change name to Molten**
 * ~~Life-Steal: steals life from target~~
-* [ARMOR] Lightweight - reduce item weight.
+* [ARMOR] Lightweight - Reduce Item Weight and Protection.
 * [ARMOR] Heavyweight - Increase Item Weight and Protection
 * [ARMOR] Brittle - Reduce Absorbed Damage
 * [ARMOR] Tempered - Increase Absorbed Damage
@@ -103,17 +104,16 @@
 * ~~Dull - decreased damage.~~
 * ~~Sharp - increased damage.~~
 * [BOOTS] Quick Step/Traction - faster walking speed.
-* [WEAPON] Snare - Freeze player for X seconds.
 * [ARMOR] Smoldering - Attacker has a chance of being set on fire.
 * [ARMOR] Reflection - Chance for attacker to recive 2x damage, victim doesnt take damage.
 * [ARMOR] Leech - Attacking player has chance to have health leached to victim (armor version of lifesteal)
 * [ARMOR] Barbed - Attacker has a chance to bleed.
 * [ARMOR] Blackened - Attacker has chance of being withered.
-* [ARMOR] Tempered - Decrease incomming damage.
 * [WEAPON] Glint - Target has a chance of receiving blindness (very short duration).
 * [WEAPON] Rise - Chance to send target into air.
 * [ARMOR] Void - Chance to teleport player 1-5 blocks away from victim.
-* [ARMOR] Static - Chance to stun/free attacker.
+* [ARMOR/WEAPON] Static - Chance to stun/freeze attacker.
+* [ARMOR/WEAPON] Frosted - Chance to slow target.
 * [WEAPON] Plague - Chance to nauseate target.
 
 
