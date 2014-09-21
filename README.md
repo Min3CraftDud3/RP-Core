@@ -66,7 +66,7 @@
 * Mining
 * Cooking
 * Fishing
-* Woodcutting
+* ~~Woodcutting~~
 * Ranged
 * Farming
 * Firemaking

@@ -113,9 +113,10 @@ public class LoreMgr {
                 case 0: return "Life Steal";
                 case 1: return "Erosion";
                 case 2: return "Poison";
-                case 3: return "Fire";
+                case 3: return "Molten";
                 case 4: return "Dull";
                 case 5: return "Sharp";
+                case 6: return "Jagged";
                 default: return null;
             }
         }
@@ -123,7 +124,9 @@ public class LoreMgr {
             //Add Armor Attributes
             int r = rand.nextInt(0);
             switch(r){
-                case 0: return null;
+                case 0: return "Barbed";
+                case 1: return "Brittle";
+                case 2: return "Tempered";
                 default: return null;
             }
         }
