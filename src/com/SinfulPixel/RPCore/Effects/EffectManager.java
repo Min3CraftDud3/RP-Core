@@ -85,6 +85,12 @@ public class EffectManager implements Listener
                 case "Tempered":
                     new Tempered(3).applyEffect(e);
                     break;
+                case "Glint":
+                    new Glint().applyEffect(p);
+                    break;
+                case "Blackened":
+                    new Blackened(1).applyEffect(p);
+                    break;
             }
         }
     }

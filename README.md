@@ -108,8 +108,8 @@
 * [ARMOR] Reflection - Chance for attacker to recive 2x damage, victim doesnt take damage.
 * [ARMOR] Leech - Attacking player has chance to have health leached to victim (armor version of lifesteal)
 * ~~[ARMOR] Barbed - Attacker has a chance to bleed.~~
-* [ARMOR] Blackened - Attacker has chance of being withered.
-* [WEAPON] Glint - Target has a chance of receiving blindness (very short duration).
+* ~~[ARMOR] Blackened - Attacker has chance of being withered.~~
+* ~~[WEAPON] Glint - Target has a chance of receiving blindness (very short duration).~~
 * [WEAPON] Rise - Chance to send target into air.
 * [ARMOR] Void - Chance to teleport player 1-5 blocks away from victim.
 * [ARMOR/WEAPON] Static - Chance to stun/freeze attacker.
