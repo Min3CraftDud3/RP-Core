@@ -33,10 +33,15 @@ public class WeightCalc {
         if(weight > 100){weight = 99.0;}
         DecimalFormat df = new DecimalFormat("#.0");
         String ss = df.format(maxWeight - weight).replace(".0", "");
-        String st = "0."+ss;
+        String st = "0.0"+ss;
         Double check = Double.parseDouble(ss);
-        if(check.equals(100.0)){ percent = 1.0f;}else {percent = (float) Double.parseDouble(st);}
+
+        if(check.equals(100.0)){ percent = 1.0f;}else {percent = (float)(0.199 - check);}
         p.setWalkSpeed(percent);
         weightedPlayers.put(p.getName(),percent);
     }
 }
+
+/*
+percent = 0.199-weight = should make it slower.
+ */

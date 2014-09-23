@@ -7,11 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Mining.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/OreMgr.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/OreSelectCmd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/EffectManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -78,8 +74,8 @@
       <file leaf-file-name="RPCore.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2806" max-vertical-offset="3451">
-              <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2891" max-vertical-offset="3570">
+              <caret line="102" column="80" selection-start-line="102" selection-start-column="80" selection-end-line="102" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -111,14 +107,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OreSelectCmd.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="OreSelectCmd.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/OreSelectCmd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3360791" vertical-offset="0" max-vertical-offset="607">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
               <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WeightCalc.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.66392094" vertical-offset="124" max-vertical-offset="816">
+              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -190,7 +196,6 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightEvent.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/MaterialWeight.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Effects/Bleed.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/ItemUtils.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Skills.java" />
@@ -215,6 +220,7 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Mining.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/OreMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/OreSelectCmd.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java" />
       </list>
     </option>
   </component>
@@ -319,6 +325,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="World" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WeightMgr" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -747,7 +775,7 @@
       <workItem from="1411148574205" duration="5258000" />
       <workItem from="1411154452921" duration="15623000" />
       <workItem from="1411324458302" duration="6501000" />
-      <workItem from="1411331100635" duration="17080000" />
+      <workItem from="1411331100635" duration="20901000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1117,11 +1145,15 @@
       <created>1411425664444</created>
       <updated>1411425664444</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="Started work on Mining Skill/Managers">
+      <created>1411447796324</created>
+      <updated>1411447796324</updated>
+    </task>
+    <option name="localTasksCounter" value="94" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="249531000" />
+    <option name="totallyTimeSpent" value="253352000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1199,7 +1231,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Fixed party/account bugs" />
     <MESSAGE value="Combat log pet removal" />
     <MESSAGE value="Added Item-Banker - TESTING" />
     <MESSAGE value="testing" />
@@ -1224,7 +1255,8 @@
     <MESSAGE value="Worked on Skills &amp; ExpMgr" />
     <MESSAGE value="Added 10% chance - to all effects so far" />
     <MESSAGE value="Added new effects." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added new effects." />
+    <MESSAGE value="Started work on Mining Skill/Managers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started work on Mining Skill/Managers" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1396,16 +1428,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="39" max-vertical-offset="646">
           <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="14" column="86" selection-start-line="14" selection-start-column="86" selection-end-line="14" selection-end-column="86" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1596,8 +1619,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="646" max-vertical-offset="3451">
-          <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2891" max-vertical-offset="3570">
+          <caret line="102" column="80" selection-start-line="102" selection-start-column="80" selection-end-line="102" selection-end-column="80" />
           <folding />
         </state>
       </provider>
@@ -1652,11 +1675,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/OreSelectCmd.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3360791" vertical-offset="0" max-vertical-offset="607">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="12" column="76" selection-start-line="12" selection-start-column="76" selection-end-line="12" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.66392094" vertical-offset="124" max-vertical-offset="816">
+          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
