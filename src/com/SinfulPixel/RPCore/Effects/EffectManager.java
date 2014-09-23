@@ -16,15 +16,12 @@ import org.bukkit.inventory.ItemStack;
 
 
 
-public class EffectManager implements Listener
-{
+public class EffectManager implements Listener{
     static RPCore plugin;
-
     public EffectManager(RPCore plugin)
     {
         this.plugin = plugin;
     }
-
 
     @EventHandler
     public void effects(EntityDamageByEntityEvent e){

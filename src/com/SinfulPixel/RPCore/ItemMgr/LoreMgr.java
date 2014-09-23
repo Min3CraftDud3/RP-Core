@@ -96,7 +96,7 @@ public class LoreMgr {
                 lore.add(s);
             }
         }
-        String att = pickAttribute(i);
+        String att = pickAttribute(i,0);
         if(att != null) {
             lore.add("Attribute: " + att);
         }else{
@@ -106,9 +106,30 @@ public class LoreMgr {
         i.setItemMeta(im);
         return i;
     }
-    public static String pickAttribute(ItemStack i){
+    public static ItemStack addAttribute(ItemStack i, int level){
+        List<String> lore = new ArrayList<String>();
+        ItemMeta im = i.getItemMeta();
+        if(im.hasLore()) {
+            List<String> lr = im.getLore();
+            for(String s:lr){
+                lore.add(s);
+            }
+        }
+        String att = pickAttribute(i,level);
+        if(att != null) {
+            lore.add("Attribute: " + att);
+        }else{
+            return i;
+        }
+        im.setLore(lore);
+        i.setItemMeta(im);
+        return i;
+    }
+    public static String pickAttribute(ItemStack i, int level){
+        int modifier = 0;
+        if(level>0){modifier = (int)Math.round(level/4);}
         if(ItemUtils.weaponCheck(i)) {
-            int r = rand.nextInt(60); //1:10 chance of attribute
+            int r = rand.nextInt(60+modifier); //1:10 chance of attribute
             switch(r){
                 case 0: return "Life Steal";
                 case 1: return "Erosion";
@@ -121,20 +142,14 @@ public class LoreMgr {
             }
         }
         if(ItemUtils.armorCheck(i)){
-            //Add Armor Attributes
-            int r = rand.nextInt(0);
+            int r = rand.nextInt(50);
             switch(r){
                 case 0: return "Barbed";
                 case 1: return "Brittle";
                 case 2: return "Tempered";
-                default: return null;
-            }
-        }
-        if(ItemUtils.toolCheck(i)){
-            //Add Tool Attributes
-            int r = rand.nextInt(0);
-            switch(r){
-                case 0: return null;
+                case 3: return "Leech";
+                case 4: return "Smoldering";
+                case 5: return "Blackened";
                 default: return null;
             }
         }
