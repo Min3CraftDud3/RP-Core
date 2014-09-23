@@ -11,7 +11,8 @@ public class Smoldering {
     Random r = new Random();
     int duration;
     public Smoldering(int duration){ this.duration=duration;}
-    public void applyEffect(Entity e){
+    public void applyEffect(Entity e)
+    {
         int i = r.nextInt(100);
         if(i>=20 && i<=30) {
             e.setFireTicks(duration);

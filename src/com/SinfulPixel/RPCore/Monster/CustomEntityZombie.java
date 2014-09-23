@@ -8,32 +8,27 @@ import net.minecraft.server.v1_7_R3.World;
 /**
  * Created by Lantra on 9/18/2014.
  */
-public class CustomEntityZombie extends EntityZombie
+public class CustomEntityZombie extends EntityZombie  implements CustomEntity
 {
     private int level;
 
-    public CustomEntityZombie(World world, int level)
+    public CustomEntityZombie(World world)
     {
         super(world);
-        this.setLevel(level);
 
     }
 
-    @Override
-    protected void aC()
-            /*This Method sets the attributes for the custom entity*/
+
+    public int getLevel()
     {
-        super.aC();
-        this.getAttributeInstance(GenericAttributes.a).setValue(10+(getLevel() * 1.5)); //base health set to 10, health = 10 + level * 1.5
-        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (getLevel() * .25D)); //base damage increases by .25 every level
-    }
-
-    public int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(int level) //set the level after spawning the entity
+    {
         this.level = level;
+        this.getAttributeInstance(GenericAttributes.a).setValue(10+(getLevel() * 1.5)); //base health set to 10, health = 10 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (getLevel() * .25D)); //base damage increases by .25 every level
     }
 
     //TODO: Ignore High Level players

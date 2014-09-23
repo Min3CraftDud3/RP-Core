@@ -7,7 +7,7 @@ import net.minecraft.server.v1_7_R3.World;
 /**
  * Created by Lantra on 9/19/2014.
  */
-public class CustomEntityCreeper extends EntityCreeper
+public class CustomEntityCreeper extends EntityCreeper implements CustomEntity
 {
     protected int level;
     /*
@@ -17,29 +17,21 @@ public class CustomEntityCreeper extends EntityCreeper
     private int explosionRadius = 3;
     World world; */
 
-    public CustomEntityCreeper(World world, int level)
+    public CustomEntityCreeper(World world)
     {
         super(world);
-        this.setLevel(level);
-        this.world = world;
-
     }
 
-    @Override
-    protected void aC()
-            /*This Method sets the attributes for the custom entity*/
-    {
-        super.aC();
-        this.getAttributeInstance(GenericAttributes.a).setValue(8+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
-        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (.25D * getLevel())); //base damage increases by .25 every level
-    }
 
     public int getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(int level)
+    {
         this.level = level;
+        this.getAttributeInstance(GenericAttributes.a).setValue(8+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (.25D * getLevel())); //base damage increases by .25 every level
     }
 
 
