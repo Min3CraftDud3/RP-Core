@@ -122,8 +122,8 @@
       <file leaf-file-name="WeightCalc.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.66392094" vertical-offset="124" max-vertical-offset="816">
-              <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.66392094" vertical-offset="158" max-vertical-offset="816">
+              <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -775,7 +775,7 @@
       <workItem from="1411148574205" duration="5258000" />
       <workItem from="1411154452921" duration="15623000" />
       <workItem from="1411324458302" duration="6501000" />
-      <workItem from="1411331100635" duration="20901000" />
+      <workItem from="1411331100635" duration="22055000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1149,11 +1149,15 @@
       <created>1411447796324</created>
       <updated>1411447796324</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="Apply Weight Needs Help">
+      <created>1411515633554</created>
+      <updated>1411515633554</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253352000" />
+    <option name="totallyTimeSpent" value="254506000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1231,7 +1235,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Combat log pet removal" />
     <MESSAGE value="Added Item-Banker - TESTING" />
     <MESSAGE value="testing" />
     <MESSAGE value="Added Color Picker" />
@@ -1256,7 +1259,8 @@
     <MESSAGE value="Added 10% chance - to all effects so far" />
     <MESSAGE value="Added new effects." />
     <MESSAGE value="Started work on Mining Skill/Managers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Started work on Mining Skill/Managers" />
+    <MESSAGE value="Apply Weight Needs Help" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apply Weight Needs Help" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1685,8 +1689,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/WeightCalc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66392094" vertical-offset="124" max-vertical-offset="816">
-          <caret line="35" column="24" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.66392094" vertical-offset="158" max-vertical-offset="816">
+          <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
           <folding />
         </state>
       </provider>
