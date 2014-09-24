@@ -31,4 +31,12 @@ public class LevelMgr {
             fc.save(levelFile);
         }
     }
+    public static double getExpFromLevel(int level){
+        File levelFile = new File(plugin.getDataFolder() + File.separator +"Levels"+File.separator+"LevelConfig.yml");
+        if(levelFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(levelFile);
+            return fc.getDouble("Levels.Lvl_"+level);
+        }
+        return 0;
+    }
 }

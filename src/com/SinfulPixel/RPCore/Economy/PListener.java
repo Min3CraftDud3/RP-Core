@@ -1,8 +1,8 @@
 package com.SinfulPixel.RPCore.Economy;
 
 import com.SinfulPixel.RPCore.Chat.Chat;
-import com.SinfulPixel.RPCore.DatabaseMgr.createPlayer;
-import com.SinfulPixel.RPCore.DatabaseMgr.dbUtils;
+import com.SinfulPixel.RPCore.DatabaseMgr.CreatePlayer;
+import com.SinfulPixel.RPCore.DatabaseMgr.DbUtils;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -30,8 +30,8 @@ public class PListener implements Listener{
 		MoneyHandler.givePouch(player);
         checkForBan(player);
 		try{
-            if(dbUtils.useSQL()){
-                createPlayer.createPlayerRow(player);
+            if(DbUtils.useSQL()){
+                CreatePlayer.createPlayerRow(player);
             }
 			File playerFile = new File(plugin.getDataFolder() + File.separator + "players" + File.separator + player.getUniqueId().toString() + ".yml");
 			if(!playerFile.exists()){

@@ -1,11 +1,13 @@
 package com.SinfulPixel.RPCore.Party;
 
+import com.SinfulPixel.RPCore.DatabaseMgr.UpdatePlayer;
 import com.SinfulPixel.RPCore.RPCore;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -73,11 +75,12 @@ public class PartyManager {
         p.sendMessage(ChatColor.DARK_GREEN+"Party Members: "+ ChatColor.GREEN+members);
     }
 
-    public static void doExpShare(Player p, Double xp){
+    public static void doExpShare(Player p, Double xp, String skill){
         int numMembers = listPartyMembers(p).size();
+        double d = xp/numMembers;
         for(String s: listPartyMembers(p)){
             Player mem = Bukkit.getPlayer(s);
-            //giveXP(mem, (xp/numMembers));
+            try{UpdatePlayer.updateDB(mem.getUniqueId(), skill, d);}catch(SQLException e){}
         }
     }
 

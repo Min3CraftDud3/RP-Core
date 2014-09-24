@@ -29,9 +29,11 @@ public class CustomEntityCreeper extends EntityCreeper implements CustomEntity
 
     public void setLevel(int level)
     {
+        System.out.println("Creeper SetLevel beginning");
         this.level = level;
         this.getAttributeInstance(GenericAttributes.a).setValue(8+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
         this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (.25D * getLevel())); //base damage increases by .25 every level
+        System.out.println("Creeper SetLevel end");
     }
 
 

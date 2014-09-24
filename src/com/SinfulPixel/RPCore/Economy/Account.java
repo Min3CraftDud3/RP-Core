@@ -15,7 +15,6 @@ public class Account{
     RPCore plugin;
     public Account(RPCore plugin){this.plugin=plugin;}
     public static HashMap<UUID, Boolean> canCmd = new HashMap<UUID, Boolean>();
-    //Banker Class Will Link to Here
     public static double  getBalance(Player p){
         ResultSet res;
         double balance = 0;

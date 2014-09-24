@@ -74,6 +74,9 @@
 * Luck - increases item drop/special crafting chance
 * Woodcrafting
 * Leatherworking
+* Strength
+* Health
+* Defense
 
 ###Sounds:
 * forge = Lava blub noise
