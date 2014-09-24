@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.Monster;
 
 import com.SinfulPixel.RPCore.RPCore;
+import org.bukkit.craftbukkit.v1_7_R3.entity.CraftEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
@@ -23,7 +24,7 @@ public class CreeperExpMan implements Listener
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent event) {
 
-        if (event.getEntity() instanceof CustomEntityCreeper)
+        if (((CraftEntity) event.getEntity()).getHandle() instanceof CustomEntityCreeper)
         {
             CustomEntityCreeper e = (CustomEntityCreeper) event.getEntity(); //there may be some problems with this call, will need a test
             event.blockList().clear(); //disable creeper block damage

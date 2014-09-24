@@ -80,7 +80,7 @@ public class RPCore extends JavaPlugin {
         int lagtimecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {CheckTime.CheckTime();}}, 0L, 20L);
 
         //Register Custom Entities
-        //CustomEntityType.registerEntities();
+        CustomEntityType.registerEntities();
 
         //Register Events
         getServer().getPluginManager().registerEvents(new Chat(this), this);
@@ -99,7 +99,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
-        //getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
+        getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
@@ -192,8 +192,8 @@ public class RPCore extends JavaPlugin {
                 FireGUI.exAll(l);
             }
             System.out.println("Extinguishing Fires...COMPLETE!");
-            //CustomEntityType.unregisterEntities();
-            //System.out.println("Entities Unregistered");
+            CustomEntityType.unregisterEntities();
+            System.out.println("Entities Unregistered");
             try{if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {c.close();}}catch(SQLException ex){}
         } catch (IOException i) {
             i.printStackTrace();

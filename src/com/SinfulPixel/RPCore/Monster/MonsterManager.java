@@ -1,6 +1,7 @@
 package com.SinfulPixel.RPCore.Monster;
 
 import com.SinfulPixel.RPCore.RPCore;
+import org.bukkit.craftbukkit.v1_7_R3.entity.CraftEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;
@@ -13,19 +14,38 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 public class MonsterManager implements Listener
 {
     RPCore plugin;
+    int level;
 
     public MonsterManager (RPCore plugin)
+
     {
       this.plugin = plugin;
+      level = 5;
     }
 
     @EventHandler
     public void onCreatureSpawn (CreatureSpawnEvent e)
     {
-        if (e.getEntity() instanceof CustomEntitySkeleton) ((CustomEntitySkeleton) e.getEntity()).setLevel(5); //static numbers for now
-        if (e.getEntity() instanceof CustomEntityCreeper) ((CustomEntityCreeper) e.getEntity()).setLevel(5); //static numbers for now
-        if (e.getEntity() instanceof CustomEntityZombie) ((CustomEntityZombie) e.getEntity()).setLevel(5); //static numbers for now
-        if (e.getEntity() instanceof CustomEntitySpider) ((CustomEntitySpider) e.getEntity()).setLevel(5); //static numbers for now
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntitySkeleton) {
+            ((CustomEntitySkeleton) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Skeleton lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntityCreeper) {
+            ((CustomEntityCreeper) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Creeper lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntityZombie) {
+            ((CustomEntityZombie) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Zombie lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntitySpider) {
+            ((CustomEntitySpider) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Spider lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
 
     }
 }
