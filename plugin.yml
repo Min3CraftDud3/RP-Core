@@ -52,3 +52,5 @@ commands:
     description: "Party Commands"
   npc:
     description: "NPC creation command."
+  radio:
+    description: "Radio Test command."

@@ -29,6 +29,7 @@ import com.SinfulPixel.RPCore.WeightMgr.WeightEvent;
 import com.SinfulPixel.RPCore.World.CheckTime;
 import com.SinfulPixel.RPCore.World.ProgressBar;
 import com.SinfulPixel.RPCore.World.StatusBarAPI;
+import com.SinfulPixel.RPCore.World.TreeMgr;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -101,6 +102,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
+        getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
         //Create Default Config
         try {
             MakeDir();
@@ -154,6 +156,7 @@ public class RPCore extends JavaPlugin {
         getCommand("Party").setExecutor(new PartyCmd(this));
         getCommand("backpack").setExecutor(new BackpackCmd(this));
         getCommand("npc").setExecutor(new BankCreateCmd(this));
+        getCommand("radio").setExecutor(new RadioCmd(this));
         //Register Enchantment
         try {
             Field f = Enchantment.class.getDeclaredField("acceptingNew");

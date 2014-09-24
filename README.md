@@ -4,14 +4,14 @@
 ###To-Do List:
 * Fix Chat Bug - With local and RP chats.
 * ~~Add Party Support~~ 
-* Add Party Exp Gain
+* ~~Add Party Exp Gain~~
 * Add Party Loot Roll
 * Add Toggle Bounty Gain Money Msg
-* Add Mob System
-* Add Leveling/Skill System
-* Add Better Race System
+* *Add Mob System*
+* *Add Leveling/Skill System*
+* Add Race System
 * Add Character Card Methods
-* Link methods to MySQL DB
+* *Link methods to MySQL DB*
 * Add Horse Mounts for Players Reaching certain level.
 * Schematic Placement System
 * **Add Permission System**

@@ -1,9 +1,7 @@
 package com.SinfulPixel.RPCore.Cmds;
 
-import com.SinfulPixel.RPCore.ItemMgr.ColorMgr;
 import com.SinfulPixel.RPCore.ItemMgr.LoreMgr;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
-import com.SinfulPixel.RPCore.ItemMgr.ToolLevel;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -23,15 +21,11 @@ public class BackpackCmd implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if (cmd.getName().equalsIgnoreCase("backpack")) {
-                if(args.length==1) {
                     //player.openInventory(Backpack.backpacks.get(player.getUniqueId()));
                     ItemStack i = new ItemStack(Material.DIAMOND_SWORD);
                     NameMgr.setName(i);
-                    LoreMgr.addLore(i, ColorMgr.pickColor() + args[0]);
-                    ToolLevel.makeLeveled(i);
-                    LoreMgr.addAttribute(i);
+                    LoreMgr.addAttribute(i,0);
                     player.getInventory().addItem(i);
-                }
             }
         }
         return false;

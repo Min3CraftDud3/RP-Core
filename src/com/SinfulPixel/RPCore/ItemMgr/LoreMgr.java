@@ -129,20 +129,21 @@ public class LoreMgr {
         int modifier = 0;
         if(level>0){modifier = (int)Math.round(level/4);}
         if(ItemUtils.weaponCheck(i)) {
-            int r = rand.nextInt(60+modifier); //1:10 chance of attribute
+            int r = rand.nextInt(30-modifier); //1:10 chance of attribute
+            System.out.println("P");
             switch(r){
-                case 0: return "Life Steal";
-                case 1: return "Erosion";
-                case 2: return "Poison";
-                case 3: return "Molten";
-                case 4: return "Dull";
-                case 5: return "Sharp";
-                case 6: return "Jagged";
-                default: return null;
+                case 0: System.out.println("P1");return "Life Steal";
+                case 1: System.out.println("P1");return "Erosion";
+                case 2: System.out.println("P1");return "Poison";
+                case 3: System.out.println("P1");return "Molten";
+                case 4: System.out.println("P1");return "Dull";
+                case 5: System.out.println("P1");return "Sharp";
+                case 6: System.out.println("P1");return "Jagged";
+                default: System.out.println("P1");return null;
             }
         }
         if(ItemUtils.armorCheck(i)){
-            int r = rand.nextInt(50);
+            int r = rand.nextInt(30-modifier);
             switch(r){
                 case 0: return "Barbed";
                 case 1: return "Brittle";
