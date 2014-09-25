@@ -55,6 +55,9 @@ public class CreateTables {
                         "LEATHERWORKING_Lvl INT," +
                         "LEATHERWORKING_Exp INT);");
                 System.out.println("Creating Skills Table...COMPLETE!");
+                System.out.println("Creating Mobs Table");
+                RPCore.statement.executeUpdate("CREATE TABLE MOBS (X INT,Y INT, RADUIS INT, MINRANGE INT, MAXRANGE INT);");
+                System.out.println("Creating Mobs Table...COMPLETE!");
                 RPCore.c.setAutoCommit(true);
         }
     }

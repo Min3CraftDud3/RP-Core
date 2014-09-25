@@ -7,10 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="db0a20ac-ecf9-49d4-b00b-e32d5de6aa3c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Schematics/Evas.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Schematics/Evas.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/plugin.yml" afterPath="$PROJECT_DIR$/plugin.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdateMobs.java" />
+      <change type="MOVED" beforePath="C:\Users\hubeb_000\Dropbox\BukkitPlugins\RP-Core_Dev\src\com\SinfulPixel\RPCore\DatabaseMgr\createTables.java" afterPath="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RP-Core.iws" />
@@ -84,37 +82,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Evas.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Schematics/Evas.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="6.596354" vertical-offset="0" max-vertical-offset="6443">
-              <caret line="149" column="16" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4144#4145#0" expanded="true" />
-                <element signature="e#4182#4183#0" expanded="true" />
-                <element signature="e#4205#4206#0" expanded="true" />
-                <element signature="e#4243#4244#0" expanded="true" />
-                <element signature="e#4266#4267#0" expanded="true" />
-                <element signature="e#4304#4305#0" expanded="true" />
-                <element signature="e#4328#4329#0" expanded="true" />
-                <element signature="e#4367#4368#0" expanded="true" />
-                <element signature="e#4391#4392#0" expanded="true" />
-                <element signature="e#4430#4431#0" expanded="true" />
-                <element signature="e#4454#4455#0" expanded="true" />
-                <element signature="e#4493#4494#0" expanded="true" />
-                <element signature="e#4522#4523#0" expanded="true" />
-                <element signature="e#4564#4565#0" expanded="true" />
-                <element signature="e#4593#4594#0" expanded="true" />
-                <element signature="e#4625#4626#0" expanded="true" />
-                <element signature="e#6727#6734#0" expanded="true" />
-                <element signature="e#7664#7665#0" expanded="true" />
-                <element signature="e#7760#7761#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SchematicCmd.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -127,45 +94,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoreMgr.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
+      <file leaf-file-name="CreateTables.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1858" max-vertical-offset="2686">
-              <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BackpackCmd.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TreeMgr.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/TreeMgr.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="409" max-vertical-offset="1122">
+              <caret line="58" column="118" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="118" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1411681332429" expanded="true" signature="720:886" placeholder="CREATE TABLE..RPCORE..." />
+                <marker date="1411681332429" expanded="true" signature="1071:2561" placeholder="CREATE TABLE..SKILLS..." />
+                <marker date="1411681332429" expanded="true" signature="2746:2765" placeholder="CREATE TABLE..MOBS..." />
+                <marker date="1411681332429" expanded="true" signature="2746:2817" placeholder="CREATE TABLE..MOBS..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RadioCmd.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/RadioCmd.java">
+      <file leaf-file-name="UpdateMobs.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdateMobs.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-              <caret line="17" column="123" selection-start-line="17" selection-start-column="123" selection-end-line="17" selection-end-column="123" />
+            <state vertical-scroll-proportion="1.1067709" vertical-offset="0" max-vertical-offset="561">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#534#995#0" expanded="true" />
+                <element signature="e#984#985#0" expanded="true" />
+                <marker date="1411681842047" expanded="true" signature="765:908" placeholder="INSERT INTO ..." />
+                <marker date="1411681842047" expanded="true" signature="765:906" placeholder="INSERT INTO ..." />
+                <marker date="1411681842047" expanded="true" signature="765:906" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdatePlayer.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdatePlayer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="850">
+              <caret line="37" column="61" selection-start-line="14" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#572#1843#0" expanded="true" />
+                <element signature="e#1832#1833#0" expanded="true" />
+                <marker date="1411527614452" expanded="true" signature="916:971" placeholder="SELECT missi..SKILLS..." />
+                <marker date="1411527614452" expanded="true" signature="1174:1228" placeholder="SELECT missi..." />
+                <marker date="1411527614452" expanded="true" signature="1426:1504" placeholder="UPDATE SKILL..." />
+                <marker date="1411527614452" expanded="true" signature="1654:1733" placeholder="UPDATE SKILL..." />
               </folding>
             </state>
           </provider>
@@ -199,7 +172,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Combat/CombatMgr.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/WeightMgr/materialWeight.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Events/ArmorUnequipEvent.java" />
@@ -239,7 +211,6 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Party/PartyManager.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Mining.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Woodcutting.java" />
-        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreatePlayer.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/TreeMgr.java" />
@@ -250,6 +221,8 @@
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Schematics/Evas.java" />
         <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java" />
+        <option value="$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdateMobs.java" />
       </list>
     </option>
   </component>
@@ -417,6 +390,54 @@
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Player" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Skills" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RP-Core_Dev" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RPCore" />
+              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Party" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -506,28 +527,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DatabaseMgr" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RP-Core_Dev" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="RPCore" />
-              <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Cmds" />
               <option name="myItemType" value="com.android.tools.idea.gradle.projectView.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -845,7 +844,7 @@
       <workItem from="1411154452921" duration="15623000" />
       <workItem from="1411324458302" duration="6501000" />
       <workItem from="1411331100635" duration="30163000" />
-      <workItem from="1411529221233" duration="13926000" />
+      <workItem from="1411529221233" duration="15490000" />
     </task>
     <task id="LOCAL-00001" summary="Removed Scoreboards for time being, moved &quot;roll&quot; command to a more suitable spot.">
       <created>1405286403352</created>
@@ -1235,11 +1234,15 @@
       <created>1411596592325</created>
       <updated>1411596592325</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Need help error: http://pastebin.com/f78Ge60i">
+      <created>1411620260191</created>
+      <updated>1411620260191</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="276540000" />
+    <option name="totallyTimeSpent" value="278104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1258,7 +1261,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33070865" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33070865" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1275,23 +1278,24 @@
     </layout>
     <layout-to-restore>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33070865" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32755905" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2510981" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32913387" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -1317,8 +1321,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="Testing String Bug" />
-    <MESSAGE value="Test devbranch" />
     <MESSAGE value="Moved npc configs to data folder. Added Quester NPC (needs testing)" />
     <MESSAGE value="Fixed almost all bugs with QuestNPC class" />
     <MESSAGE value="Fixed Quester Issue, Progress Bar Change (may need revert)" />
@@ -1342,7 +1344,9 @@
     <MESSAGE value="Fiddled With Database Fields." />
     <MESSAGE value="Started with new manager, added radio command" />
     <MESSAGE value="Added Schematic Manager - need to register commands." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Schematic Manager - need to register commands." />
+    <MESSAGE value="Need help error: http://pastebin.com/f78Ge60i" />
+    <MESSAGE value="Added Mob class to databasemgr" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Mob class to databasemgr" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1354,13 +1358,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ServerMgnt/SerializeInv.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="551" max-vertical-offset="1802">
-          <caret line="39" column="63" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/GUIManagers/BankerGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1514" max-vertical-offset="2142">
@@ -1597,13 +1594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.9884679" vertical-offset="0" max-vertical-offset="1989">
           <caret line="82" column="16" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdatePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6532399" vertical-offset="222" max-vertical-offset="850">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1653,30 +1644,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Woodcutting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="243" max-vertical-offset="1411">
-          <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Firemaking.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
           <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="126" max-vertical-offset="1071">
-          <caret line="21" column="63" selection-start-line="21" selection-start-column="63" selection-end-line="21" selection-end-column="63" />
-          <folding>
-            <marker date="1411528721427" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..RPCORE..." />
-            <marker date="1411528721427" expanded="true" signature="-1:-1" placeholder="CREATE TABLE..SKILLS..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1691,32 +1663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/TreeMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
-          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1858" max-vertical-offset="2686">
-          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.8835617" vertical-offset="521" max-vertical-offset="1139">
@@ -1725,27 +1671,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="3689">
-          <caret line="117" column="91" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="1955">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Schematics/Evas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="6.596354" vertical-offset="0" max-vertical-offset="6443">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="6443">
           <caret line="149" column="16" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1768,6 +1696,102 @@
             <element signature="e#6727#6734#0" expanded="true" />
             <element signature="e#7664#7665#0" expanded="true" />
             <element signature="e#7760#7761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Player/Skills/Woodcutting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0" vertical-offset="0" max-vertical-offset="1292">
+          <caret line="31" column="78" selection-start-line="31" selection-start-column="78" selection-end-line="31" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/RPCore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="3689">
+          <caret line="117" column="91" selection-start-line="117" selection-start-column="46" selection-end-line="117" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/World/TreeMgr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5041186" vertical-offset="0" max-vertical-offset="607">
+          <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/BackpackCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5041186" vertical-offset="0" max-vertical-offset="607">
+          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/ItemMgr/LoreMgr.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41186163" vertical-offset="1858" max-vertical-offset="2686">
+          <caret line="131" column="36" selection-start-line="131" selection-start-column="36" selection-end-line="131" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/Cmds/SchematicCmd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="341" max-vertical-offset="1955">
+          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdatePlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="154" max-vertical-offset="850">
+          <caret line="37" column="61" selection-start-line="14" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#572#1843#0" expanded="true" />
+            <element signature="e#1832#1833#0" expanded="true" />
+            <marker date="1411527614452" expanded="true" signature="916:971" placeholder="SELECT missi..SKILLS..." />
+            <marker date="1411527614452" expanded="true" signature="1174:1228" placeholder="SELECT missi..." />
+            <marker date="1411527614452" expanded="true" signature="1426:1504" placeholder="UPDATE SKILL..." />
+            <marker date="1411527614452" expanded="true" signature="1654:1733" placeholder="UPDATE SKILL..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/CreateTables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="409" max-vertical-offset="1122">
+          <caret line="58" column="118" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="118" />
+          <folding>
+            <marker date="1411681332429" expanded="true" signature="720:886" placeholder="CREATE TABLE..RPCORE..." />
+            <marker date="1411681332429" expanded="true" signature="1071:2561" placeholder="CREATE TABLE..SKILLS..." />
+            <marker date="1411681332429" expanded="true" signature="2746:2765" placeholder="CREATE TABLE..MOBS..." />
+            <marker date="1411681332429" expanded="true" signature="2746:2817" placeholder="CREATE TABLE..MOBS..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/SinfulPixel/RPCore/DatabaseMgr/UpdateMobs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1067709" vertical-offset="0" max-vertical-offset="561">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#534#995#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+            <marker date="1411681842047" expanded="true" signature="765:908" placeholder="INSERT INTO ..." />
+            <marker date="1411681842047" expanded="true" signature="765:906" placeholder="INSERT INTO ..." />
+            <marker date="1411681842047" expanded="true" signature="765:906" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
