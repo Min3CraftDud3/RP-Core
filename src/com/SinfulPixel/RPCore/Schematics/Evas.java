@@ -30,6 +30,11 @@ import java.util.Iterator;
 import java.util.List;
 
 
+/**
+ *
+ * @author Yekllurt
+ * copyright 2014
+ */
 public class Evas {
 
     public enum EvasType{
@@ -38,8 +43,8 @@ public class Evas {
     }
 
     private int CordinateX, CordinateY, CordinateZ, CordinateX1, CordinateY1, CordinateZ1, size;
-    private World CordinateWorld;
-    public static  EvasType evasType;
+    public static  World CordinateWorld;
+    private EvasType evasType;
     private String name;
     private File file;
     private YamlConfiguration yml;
@@ -254,7 +259,8 @@ public class Evas {
      */
     public void save(){
         ArrayList<String> importantData = new ArrayList<>();
-        importantData.add(this.CordinateWorld.getName());
+        System.out.println(CordinateWorld.getName());
+        importantData.add(CordinateWorld.getName());
         importantData.add(String.valueOf(this.CordinateX));
         importantData.add(String.valueOf(this.CordinateY));
         importantData.add(String.valueOf(this.CordinateZ));

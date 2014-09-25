@@ -103,6 +103,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
+        getServer().getPluginManager().registerEvents(new SchematicCmd(this),this);
         //Create Default Config
         try {
             MakeDir();
@@ -157,6 +158,10 @@ public class RPCore extends JavaPlugin {
         getCommand("backpack").setExecutor(new BackpackCmd(this));
         getCommand("npc").setExecutor(new BankCreateCmd(this));
         getCommand("radio").setExecutor(new RadioCmd(this));
+        getCommand("/swand").setExecutor(new SchematicCmd(this));
+        getCommand("/save").setExecutor(new SchematicCmd(this));
+        getCommand("/load").setExecutor(new SchematicCmd(this));
+
         //Register Enchantment
         try {
             Field f = Enchantment.class.getDeclaredField("acceptingNew");

@@ -54,3 +54,9 @@ commands:
     description: "NPC creation command."
   radio:
     description: "Radio Test command."
+  /swand:
+    description: "Schematic Wand command."
+  /save:
+    description: "Schematic Save command."
+  /load:
+    description: "Schematic Load command."
