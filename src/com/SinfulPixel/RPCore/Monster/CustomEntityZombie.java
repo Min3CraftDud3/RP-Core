@@ -11,6 +11,8 @@ import net.minecraft.server.v1_7_R3.World;
 public class CustomEntityZombie extends EntityZombie  implements CustomEntity
 {
     private int level;
+    private final int BASEHEALTH = 10;
+    private final double BASEDAMAGE = 3.0D;
 
     public CustomEntityZombie(World world)
     {
@@ -27,8 +29,8 @@ public class CustomEntityZombie extends EntityZombie  implements CustomEntity
     public void setLevel(int level) //set the level after spawning the entity
     {
         this.level = level;
-        this.getAttributeInstance(GenericAttributes.a).setValue(10+(getLevel() * 1.5)); //base health set to 10, health = 10 + level * 1.5
-        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (getLevel() * .25D)); //base damage increases by .25 every level
+        this.getAttributeInstance(GenericAttributes.a).setValue(BASEHEALTH + (getLevel() * 1.5)); //base health set to 10, health = 10 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.e).setValue(BASEDAMAGE + (getLevel() * .25D)); //base damage increases by .25 every level
     }
 
     //TODO: Ignore High Level players

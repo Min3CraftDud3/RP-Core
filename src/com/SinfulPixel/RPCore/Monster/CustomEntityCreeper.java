@@ -10,6 +10,8 @@ import net.minecraft.server.v1_7_R3.World;
 public class CustomEntityCreeper extends EntityCreeper implements CustomEntity
 {
     protected int level;
+    private final int BASEHEALTH = 8;
+    private final double BASEDAMAGE = 3.0D;
     /*
     private int bp;   //this is all used for customized creeper explosions
     private int fuseTicks;
@@ -30,8 +32,8 @@ public class CustomEntityCreeper extends EntityCreeper implements CustomEntity
     public void setLevel(int level)
     {
         this.level = level;
-        this.getAttributeInstance(GenericAttributes.a).setValue(8+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
-        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (.25D * getLevel())); //base damage increases by .25 every level
+        this.getAttributeInstance(GenericAttributes.a).setValue(BASEHEALTH + (getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.e).setValue(BASEDAMAGE + (.25D * getLevel())); //base damage increases by .25 every level
     }
 
 

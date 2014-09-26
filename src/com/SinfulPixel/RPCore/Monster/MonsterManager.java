@@ -16,25 +16,26 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 public class MonsterManager implements Listener
 {
     RPCore plugin;
-    World world;
 
-    public MonsterManager (RPCore plugin, World world)
+
+    public MonsterManager (RPCore plugin)
 
     {
       this.plugin = plugin;
-      this.world = world;
+
     }
 
     @EventHandler
     public void onCreatureSpawn (CreatureSpawnEvent e)
     {
         int level;
+        World world = e.getEntity().getWorld();
         //determine the nearest epicenter
 
 
         //determine level by calculating the distance to the nearest epicenter
         Chunk mstrChunk = e.getLocation().getChunk();
-        Chunk epicenterChunk = world.getChunkAt(world.getSpawnLocation());
+        Chunk epicenterChunk =  world.getChunkAt(world.getSpawnLocation());
         double mCX = mstrChunk.getX();
         double mCZ = mstrChunk.getZ();
         double eCX = epicenterChunk.getX();

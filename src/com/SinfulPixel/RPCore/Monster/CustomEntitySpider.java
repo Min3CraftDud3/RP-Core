@@ -10,6 +10,8 @@ import net.minecraft.server.v1_7_R3.World;
 public class CustomEntitySpider extends EntitySpider  implements CustomEntity
 {
     private int level;
+    private final int BASEHEALTH = 10;
+    private final double BASEDAMAGE = 3.0D;
 
     public CustomEntitySpider(World world)
     {
@@ -24,8 +26,8 @@ public class CustomEntitySpider extends EntitySpider  implements CustomEntity
     public void setLevel(int level)
     {
         this.level = level;
-        this.getAttributeInstance(GenericAttributes.a).setValue(10+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
-        this.getAttributeInstance(GenericAttributes.e).setValue(3.0D + (.25D * getLevel())); //base damage increases by .25 every level
+        this.getAttributeInstance(GenericAttributes.a).setValue(BASEHEALTH+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.e).setValue(BASEDAMAGE + (.25D * getLevel())); //base damage increases by .25 every level
 
     }
 }
