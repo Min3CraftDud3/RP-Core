@@ -17,7 +17,11 @@ public enum CustomEntityType {
     ZOMBIE("Zombie", 54, EntityType.ZOMBIE, EntityZombie.class, CustomEntityZombie.class),
     SKELETON("Skeleton",51, EntityType.SKELETON, EntitySkeleton.class, CustomEntitySkeleton.class),
     CREEPER("Creeper", 50, EntityType.CREEPER, EntityCreeper.class, CustomEntityCreeper.class),
-    SPIDER("Spider", 52, EntityType.SPIDER, EntitySkeleton.class, CustomEntitySpider.class);
+    SPIDER("Spider", 52, EntityType.SPIDER, EntitySpider.class, CustomEntitySpider.class),
+    CAVESPIDER("CaveSpider", 59, EntityType.CAVE_SPIDER, EntityCaveSpider.class, CustomEntityCavespider.class),
+    SLIME("Slime", 55, EntityType.SLIME, EntitySlime.class, CustomEntitySlime.class),
+    WITCH("Witch", 66, EntityType.WITCH, EntityWitch.class, CustomEntityWitch.class),
+    ENDERMAN("Enderman", 58, EntityType.ENDERMAN, EntityEnderman.class, CustomEntityEnderman.class);
 
 
     private String name;

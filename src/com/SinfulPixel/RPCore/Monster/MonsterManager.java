@@ -75,6 +75,25 @@ public class MonsterManager implements Listener
             e.getEntity().setCustomName("Spider lvl " + level);
             e.getEntity().setCustomNameVisible(true);
         }
-
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntityCavespider) {
+            ((CustomEntitySpider) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Spider lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntitySlime) {
+            ((CustomEntitySpider) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Slime lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntityEnderman) {
+            ((CustomEntitySpider) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Enderman lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
+        if (((CraftEntity) e.getEntity()).getHandle() instanceof CustomEntityWitch) {
+            ((CustomEntitySpider) ((CraftEntity) e.getEntity()).getHandle()).setLevel(level);
+            e.getEntity().setCustomName("Witch lvl " + level);
+            e.getEntity().setCustomNameVisible(true);
+        }
     }
 }
