@@ -63,6 +63,7 @@ public class RPCore extends JavaPlugin {
     CreatePlayer cPlayer = new CreatePlayer(this);
     DbUtils dbu = new DbUtils(this);
     MaterialWeight mw = new MaterialWeight(this);
+    MonsterFile mf = new MonsterFile(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -111,6 +112,7 @@ public class RPCore extends JavaPlugin {
             setupConfig(getConfig());
             saveConfig();
             MaterialWeight.createWeightFile();
+            MonsterFile.createMobFile();
             LevelMgr.createLevelFile();
             Backpack.createBPConfig();
             Banker.createBankerFile();
