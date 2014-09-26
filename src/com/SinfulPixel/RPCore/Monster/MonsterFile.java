@@ -38,6 +38,53 @@ public class MonsterFile {
             fc.save(mobFile);
         }
     }
+
+    public static int findNearest (double xCoord, double zCoord)
+     /*Possible Method for Traversing the file*/
+    {
+        File mobFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"Mobs.yml");
+        int ID = 0, RID = 0;
+        double shortestDist = -1;
+
+        if (mobFile.exists())
+        {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
+            while (fc.contains("Mobs."+ID))
+            {
+                if (shortestDist == -1)
+                {
+                    shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                    RID = ID;
+                }
+                else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
+                {
+                    shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                    RID = ID;
+                }
+
+                ID++;
+            }
+        } return RID;
+
+    }
+    public static int getLastID()
+            /*The Method I will use to generate a quick and easy ID*/
+    {
+        File mobFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"Mobs.yml");
+        int ID = 0, RID = 0;
+        double shortestDist = -1;
+
+        if (mobFile.exists())
+        {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
+        }
+
+        return 0;
+    }
+
+
+
+
     public static double getXCoord(int ID){
         File mobFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"Mobs.yml");
         if(mobFile.exists()) {
