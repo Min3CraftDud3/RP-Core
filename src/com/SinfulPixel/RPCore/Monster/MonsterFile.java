@@ -6,6 +6,7 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 /**
  * Created by Min3 on 9/25/2014.
@@ -49,37 +50,44 @@ public class MonsterFile {
         if (mobFile.exists())
         {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
-            while (fc.contains("Mobs."+ID))
+            if (!fc.getConfigurationSection("Mobs").getKeys(false).isEmpty())
             {
-                if (shortestDist == -1)
-                {
-                    shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
-                    RID = ID;
-                }
-                else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
-                {
-                    shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
-                    RID = ID;
-                }
+                String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
 
-                ID++;
+                for (String id : ids)
+                    {
+                        ID = Integer.parseInt(id);
+                        if (shortestDist == -1)
+                        {
+                            shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                            RID = ID;
+                        }
+                        else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
+                        {
+                            shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                            RID = ID;
+                        }
+                    }
             }
-        } return RID;
-
+        }
+        return RID;
     }
+
     public static int getLastID()
             /*The Method I will use to generate a quick and easy ID*/
     {
         File mobFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"Mobs.yml");
-        int ID = 0, RID = 0;
-        double shortestDist = -1;
+        FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
 
         if (mobFile.exists())
         {
-            FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
+         String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
+            if (ids.length == 0) return 0;
+            return Integer.parseInt(ids[ids.length-1]);
         }
 
-        return 0;
+        else return 0;
+
     }
 
 
