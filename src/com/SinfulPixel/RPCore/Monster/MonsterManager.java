@@ -28,21 +28,26 @@ public class MonsterManager implements Listener
     @EventHandler
     public void onCreatureSpawn (CreatureSpawnEvent e)
     {
-        int level;
+        int level, distance;
         World world = e.getEntity().getWorld();
         //determine the nearest epicenter
 
 
         //determine level by calculating the distance to the nearest epicenter
         Chunk mstrChunk = e.getLocation().getChunk();
-        Chunk epicenterChunk =  world.getChunkAt(world.getSpawnLocation());
         double mCX = mstrChunk.getX();
         double mCZ = mstrChunk.getZ();
-        double eCX = epicenterChunk.getX();
-        double eCZ = epicenterChunk.getZ();
 
-        // distance formula
-        int distance = (int) Math.sqrt(Math.pow((mCX - eCX), 2) + Math.pow((mCZ - eCZ),2));
+
+        distance = MonsterFile.findNearest(mCX, mCZ);
+
+        if (distance == -1) //if there is no epicenters default to spawn for mob leveling
+        {
+            Chunk epicenterChunk =  world.getChunkAt(world.getSpawnLocation());
+            double eCX = epicenterChunk.getX();
+            double eCZ = epicenterChunk.getZ();
+            distance = (int) Math.sqrt(Math.pow((mCX - eCX), 2) + Math.pow((mCZ - eCZ),2));
+        }
 
         if (distance <= 1 ) level = 1;
         else if (distance <= 250) level = distance /2; //every two chunks from the epicenter is a new level

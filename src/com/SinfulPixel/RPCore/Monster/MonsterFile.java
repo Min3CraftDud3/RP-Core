@@ -44,7 +44,7 @@ public class MonsterFile {
      /*Possible Method for Traversing the file*/
     {
         File mobFile = new File(plugin.getDataFolder()+File.separator+"data"+File.separator+"Mobs.yml");
-        int ID = 0, RID = 0;
+        int ID = 0, RID = -1;
         double shortestDist = -1;
 
         if (mobFile.exists())

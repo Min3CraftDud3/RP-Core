@@ -28,9 +28,9 @@ public class MonsterSpawnCmd implements CommandExecutor {
         if(cmd.getName().equalsIgnoreCase("epicenter"))
         {
             Chunk c = p.getLocation().getChunk();
-            sender.sendMessage("Setting Mob Spawnign Epicenter at chunk "+ c.getX() + ", " + c.getZ());
+            sender.sendMessage("Setting Mob Spawning Epicenter at chunk "+ c.getX() + ", " + c.getZ());
             try {
-                MonsterFile.addToFile(MonsterFile.getLastID(), c.getX(), c.getZ(), 0, 0, 0);
+                MonsterFile.addToFile(MonsterFile.getLastID()+1, c.getX(), c.getZ(), 0, 0, 0);
             } catch (IOException e) {
                 e.printStackTrace();
             }
