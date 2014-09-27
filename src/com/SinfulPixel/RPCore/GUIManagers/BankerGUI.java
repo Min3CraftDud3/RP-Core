@@ -39,7 +39,7 @@ public class BankerGUI implements Listener {
         deposit.setItemMeta(depositIM);
         //Option 2 - Withdraw
         ArrayList<String> lrWithdraw = new ArrayList<String>();
-        lrWithdraw.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"cook"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" your gold.");
+        lrWithdraw.add(ChatColor.LIGHT_PURPLE+"Click to "+ ChatColor.UNDERLINE+"withdraw"+ChatColor.RESET+ChatColor.LIGHT_PURPLE+" your gold.");
         ItemStack withdraw = new ItemStack(Material.PAPER,1);
         ItemMeta withdrawIM = withdraw.getItemMeta();
         withdrawIM.setDisplayName(ChatColor.GOLD+""+ChatColor.BOLD+"Withdraw Gold");

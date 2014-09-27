@@ -6,10 +6,10 @@
 * ~~Add Party Support~~ 
 * ~~Add Party Exp Gain~~
 * Add Party Loot Roll
-* Add Toggle Bounty Gain Money Msg
+* ~~Add Toggle Bounty Gain Money Msg~~
 * *Add Mob System*
 * *Add Leveling/Skill System*
-* Add Race System
+* Add Race System: Nurenar, Tarnean, and Forsaken
 * Add Character Card Methods
 * *Link methods to MySQL DB*
 * Add Horse Mounts for Players Reaching certain level.
@@ -58,7 +58,7 @@
 * Guilds
 * Bounty
 * Guild bases
-* World even: meteor - mining 
+* World event: meteor - mining 
 
 ###Skills:
 * Smithing

@@ -41,4 +41,15 @@ public class UpdatePlayer {
         if(exp > LevelMgr.getExpFromLevel(level)){return true;}
         return false;
     }
+    public static void setRace(final UUID pu, final String race){
+        Bukkit.getScheduler().scheduleAsyncDelayedTask(plugin,new Runnable(){
+            public void run() {
+                try {
+                    RPCore.statement.executeUpdate("UPDATE RPCORE SET RACE='" + race + "' WHERE UUID='" + pu + "';");
+                } catch (SQLException se) {
+                    System.out.println("Error changing race of player(UUID): " + pu);
+                }
+            }
+        });
+    }
 }

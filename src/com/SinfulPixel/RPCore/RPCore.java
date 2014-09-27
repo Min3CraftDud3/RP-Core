@@ -15,6 +15,7 @@ import com.SinfulPixel.RPCore.Entity.ItemBanker;
 import com.SinfulPixel.RPCore.Entity.QuestNPC;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
+import com.SinfulPixel.RPCore.GUIManagers.PremiumShop.PremiumShopGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
 import com.SinfulPixel.RPCore.Monster.CustomEntityType;
@@ -68,6 +69,7 @@ public class RPCore extends JavaPlugin {
     DbUtils dbu = new DbUtils(this);
     MaterialWeight mw = new MaterialWeight(this);
     MonsterFile mf = new MonsterFile(this);
+    PremiumCash pc = new PremiumCash(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -110,6 +112,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
         getServer().getPluginManager().registerEvents(new SchematicCmd(this),this);
         getServer().getPluginManager().registerEvents(new DeathMgr(this),this);
+        getServer().getPluginManager().registerEvents(new PremiumShopGUI(this),this);
         //Create Default Config
         try {
             MakeDir();
@@ -169,6 +172,7 @@ public class RPCore extends JavaPlugin {
         getCommand("/save").setExecutor(new SchematicCmd(this));
         getCommand("/load").setExecutor(new SchematicCmd(this));
         getCommand("togglemsg").setExecutor(new ToggleBountyCmd(this));
+        getCommand("shop").setExecutor(new PremiumCmd(this));
 
         //Register Enchantment
         try {

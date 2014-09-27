@@ -61,6 +61,7 @@ public class PListener implements Listener{
             fc.set("Player.isBanned", false);
 		    fc.set("Player.Balance", Double.parseDouble(plugin.getConfig().getString("RPCore.Eco.StartingAmount")));
             fc.set("Player.Account", 0.0);
+            fc.set("Player.PremiumCash",5);
             fc.set("Player.Character.Name", player.getName());
             fc.set("Player.Character.Race","Unset");
             fc.set("Player.Character.Profession","Unset");
