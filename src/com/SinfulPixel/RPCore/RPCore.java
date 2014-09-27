@@ -16,11 +16,15 @@ import com.SinfulPixel.RPCore.Entity.QuestNPC;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
-import com.SinfulPixel.RPCore.Monster.*;
+import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
+import com.SinfulPixel.RPCore.Monster.CustomEntityType;
+import com.SinfulPixel.RPCore.Monster.MonsterFile;
+import com.SinfulPixel.RPCore.Monster.MonsterManager;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
+import com.SinfulPixel.RPCore.Player.DeathMgr;
 import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
@@ -105,6 +109,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
         getServer().getPluginManager().registerEvents(new SchematicCmd(this),this);
+        getServer().getPluginManager().registerEvents(new DeathMgr(this),this);
         //Create Default Config
         try {
             MakeDir();
@@ -163,6 +168,7 @@ public class RPCore extends JavaPlugin {
         getCommand("/swand").setExecutor(new SchematicCmd(this));
         getCommand("/save").setExecutor(new SchematicCmd(this));
         getCommand("/load").setExecutor(new SchematicCmd(this));
+        getCommand("togglemsg").setExecutor(new ToggleBountyCmd(this));
 
         //Register Enchantment
         try {

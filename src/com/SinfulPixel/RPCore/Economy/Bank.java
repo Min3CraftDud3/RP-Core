@@ -1,17 +1,20 @@
 package com.SinfulPixel.RPCore.Economy;
 
-import java.io.File;
-import java.io.IOException;
-
+import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 
-import com.SinfulPixel.RPCore.RPCore;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 
 public class Bank {
 	static RPCore plugin;
+    public static List<UUID> noMsg = new ArrayList<UUID>();
 	public Bank(RPCore instance) {
 		plugin = instance;
 	}	
@@ -35,7 +38,9 @@ public class Bank {
 		    double round = Math.round((bal+addAmnt) * 100.0) / 100.0;
 		    fc.set("Player.Balance", round);
 		    fc.save(playerFile);
-		    player.sendMessage(ChatColor.AQUA+""+addAmnt+ChatColor.GREEN+" has been added to your account.");
+            if(!noMsg.contains(player.getUniqueId())) {
+                player.sendMessage(ChatColor.AQUA + "" + addAmnt + ChatColor.GREEN + " has been added to your money pouch.");
+            }
 		}
 	}
 	//Remove from player balance
@@ -49,11 +54,11 @@ public class Bank {
 		    double round = Math.round((bal-removeAmnt) * 100.0) / 100.0;
 		    fc.set("Player.Balance", round);
 		    fc.save(playerFile);
-		    player.sendMessage(ChatColor.BOLD+""+ChatColor.RED+removeAmnt+ChatColor.GREEN+" has been removed from your account.");
+		    player.sendMessage(ChatColor.BOLD+""+ChatColor.RED+removeAmnt+ChatColor.GREEN+" has been removed from your money pouch.");
 		    }else{
 		    	fc.set("Player.Balance", 0);
 		    	fc.save(playerFile);
-		    	player.sendMessage(ChatColor.BOLD+""+ChatColor.RED+"Your Balance has been reset.");
+		    	player.sendMessage(ChatColor.BOLD+""+ChatColor.RED+"Your money pouch has been reset.");
 		    }
 		}
 		
@@ -65,7 +70,7 @@ public class Bank {
 		    FileConfiguration fc = YamlConfiguration.loadConfiguration(playerFile);
 		    fc.set("Player.Balance",0);
 		    fc.save(playerFile);
-		    target.sendMessage(ChatColor.BOLD+""+ChatColor.RED+"Your Balance has been reset.");
+		    target.sendMessage(ChatColor.BOLD+""+ChatColor.RED+"Your money pouch has been reset.");
 		}
 		
 	}

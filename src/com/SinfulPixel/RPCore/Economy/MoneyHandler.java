@@ -2,8 +2,7 @@ package com.SinfulPixel.RPCore.Economy;
 
 
 
-import java.util.ArrayList;
-
+import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -14,7 +13,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.SinfulPixel.RPCore.RPCore;
+import java.util.ArrayList;
 
 
 public class MoneyHandler implements Listener{
@@ -53,18 +52,18 @@ public class MoneyHandler implements Listener{
 	}
 	@EventHandler
 	public void noPlace(BlockPlaceEvent e){
-		if(e.getBlock().getType().equals(Material.TRAPPED_CHEST)){
+        if(e.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GOLD+"Money Pouch")){
 			e.setCancelled(true);
 		}
 	}
 	@EventHandler
 	public void noDrop(PlayerDropItemEvent e){
 		try{
-		Player p = e.getPlayer();
-		if(e.getItemDrop().getItemStack().getType() == Material.TRAPPED_CHEST){
-			e.setCancelled(true);
-			p.sendMessage(ChatColor.RED+"You cannot drop your moneypouch.");
-		}
+		    Player p = e.getPlayer();
+            if(e.getItemDrop().getItemStack().getItemMeta().getDisplayName().equals(ChatColor.GOLD+"Money Pouch")){
+                e.setCancelled(true);
+                p.sendMessage(ChatColor.RED+"You cannot drop your moneypouch.");
+            }
 		}catch(Exception ignored){}
 	}
 }
