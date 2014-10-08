@@ -173,6 +173,7 @@ public class RPCore extends JavaPlugin {
         getCommand("/load").setExecutor(new SchematicCmd(this));
         getCommand("togglemsg").setExecutor(new ToggleBountyCmd(this));
         getCommand("shop").setExecutor(new PremiumCmd(this));
+        getCommand("epicenter").setExecutor(new MonsterSpawnCmd(this));
 
         //Register Enchantment
         try {

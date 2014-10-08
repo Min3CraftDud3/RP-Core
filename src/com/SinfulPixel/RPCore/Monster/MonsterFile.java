@@ -6,7 +6,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Set;
 
 /**
  * Created by Min3 on 9/25/2014.
@@ -50,25 +49,25 @@ public class MonsterFile {
         if (mobFile.exists())
         {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
-            if (!fc.getConfigurationSection("Mobs").getKeys(false).isEmpty())
-            {
-                String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
 
-                for (String id : ids)
+
+            String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
+
+            for (String id : ids)
+                {
+                    ID = Integer.parseInt(id);
+                    if (shortestDist == -1)
                     {
-                        ID = Integer.parseInt(id);
-                        if (shortestDist == -1)
-                        {
-                            shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
-                            RID = ID;
-                        }
-                        else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
-                        {
-                            shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
-                            RID = ID;
-                        }
+                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                        RID = ID;
                     }
-            }
+                    else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
+                    {
+                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                        RID = ID;
+                    }
+                }
+
         }
         return RID;
     }
