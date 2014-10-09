@@ -28,7 +28,7 @@ public class MonsterManager implements Listener
     @EventHandler
     public void onCreatureSpawn (CreatureSpawnEvent e)
     {
-        int level, distance;
+        int level, distance, id;
         World world = e.getEntity().getWorld();
         //determine the nearest epicenter
 
@@ -39,13 +39,17 @@ public class MonsterManager implements Listener
         double mCZ = mstrChunk.getZ();
 
 
-        distance = MonsterFile.findNearest(mCX, mCZ);
-
-        if (distance == -1) //if there is no epicenters default to spawn for mob leveling
+        id = MonsterFile.findNearest(mCX, mCZ); //get the id for the monster file
+        if (id == -1) //if there is no epicenters default to spawn for mob leveling
         {
             Chunk epicenterChunk =  world.getChunkAt(world.getSpawnLocation());
             double eCX = epicenterChunk.getX();
             double eCZ = epicenterChunk.getZ();
+            distance = (int) Math.sqrt(Math.pow((mCX - eCX), 2) + Math.pow((mCZ - eCZ),2));
+        } else
+        {
+            double eCX = MonsterFile.getXCoord(id);
+            double eCZ = MonsterFile.getZCoord(id);
             distance = (int) Math.sqrt(Math.pow((mCX - eCX), 2) + Math.pow((mCZ - eCZ),2));
         }
 
