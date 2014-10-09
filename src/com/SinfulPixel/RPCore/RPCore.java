@@ -20,7 +20,6 @@ import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
 import com.SinfulPixel.RPCore.Monster.CustomEntityType;
 import com.SinfulPixel.RPCore.Monster.MonsterFile;
-import com.SinfulPixel.RPCore.Monster.MonsterManager;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
@@ -106,7 +105,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
-        getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
+        //getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
