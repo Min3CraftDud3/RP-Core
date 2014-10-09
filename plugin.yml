@@ -61,6 +61,8 @@ commands:
   /load:
     description: "Schematic Load command."
   shop:
-    description: "Schematic Load command."
+    description: "Opens premium shop GUI."
   togglemsg:
-    description: "Schematic Load command."
+    description: "Toggle MobBounty Messages."
+  epicenter:
+    description: "Epicenter Command for mob spawning"
