@@ -47,6 +47,24 @@ public class Backpack implements Listener {
             backpacks.put(e.getPlayer().getUniqueId(), inv);
         }
     }
+    public static void reloadBanker(){
+        for(Player p : Bukkit.getOnlinePlayers()){
+            Inventory inv = Bukkit.getServer().createInventory(p, InventoryType.CHEST, ChatColor.GOLD+"Item Bank");
+            File backpackFile = new File(plugin.getDataFolder() + File.separator + "data" + File.separator + "Backpacks.yml");
+            if(backpackFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(backpackFile);
+                if(fc.contains("backpacks." + p.getUniqueId()+".Contents")){
+                    String s = fc.getString("backpacks." + p.getUniqueId()+".Contents");
+                    if(s != null) {
+                        inv.setContents(SerializeInv.StringToInventory(s));
+                        p.updateInventory();
+                    }
+                }
+                backpacks.put(p.getUniqueId(), inv);
+            }
+        }
+    }
+
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e)throws IOException{
         Player p = e.getPlayer();

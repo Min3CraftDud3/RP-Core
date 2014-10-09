@@ -16,17 +16,23 @@ public class WeightEvent implements Listener {
     public WeightEvent(RPCore plugin){this.plugin=plugin;}
     @EventHandler
     public void onCraft(InventoryClickEvent e){
+        try{
         Player p = (Player)e.getWhoClicked();
         WeightCalc.applyWeight(p);
+        }catch(Exception i){}
     }
     @EventHandler
     public void onItemPickup(PlayerPickupItemEvent e){
+        try{
         Player p = e.getPlayer();
         WeightCalc.applyWeight(p);
+        }catch(Exception i){}
     }
     @EventHandler
     public void onLogin(PlayerLoginEvent e){
+        try{
         Player p = e.getPlayer();
         WeightCalc.applyWeight(p);
+        }catch(Exception i){}
     }
 }

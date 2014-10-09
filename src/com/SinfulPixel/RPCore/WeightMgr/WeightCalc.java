@@ -29,7 +29,7 @@ public class WeightCalc {
     public static void applyWeight(Player p){
         double maxWeight = 100.0;
         float percent;
-        double weight = getPlayerWeight(p);
+        double weight = getPlayerWeight(p)+1;
         if(weight > 100){weight = 99.0;}
         DecimalFormat df = new DecimalFormat("#.0");
         String ss = df.format(weight).replace(".0", "");

@@ -42,10 +42,8 @@
 
 ###World Effects:
 * Mob levels - epicenter & health increase
-* Disable "Big Tree Growth"
- - All tree growth
- - Code something that selects one of our schematic trees based on the sapling used and replaces the sapling with the schematic of the tree after a semi random wait time based on the type of tree
-
+* ~~Disable "Big Tree Growth"~~
+* Anti-Loot Steal
 
 ###Player Effects:
 * Item/Armor weight
@@ -93,6 +91,7 @@
 * Skyrim like soulgem enchanting/power decrease system. (Name: Mana Shards)
 * Portal system - for fast travel 2x1 portal **{Gist}** (Temporary player spell/item or Town Building? or both)
 * Crafting modifiers (items you can place in the crafting interface while making something to modify that item at creation ex. + damage increases the damage value of that item)
+* ~~Teleport Animation~~
 
 ###Enchants/Effects:
 * ~~Poison: poisons target~~

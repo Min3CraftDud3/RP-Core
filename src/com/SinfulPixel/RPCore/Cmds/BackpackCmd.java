@@ -8,8 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import java.util.Random;
-
 /**
  * Created by Min3 on 8/5/2014.
  */
@@ -27,21 +25,5 @@ public class BackpackCmd implements CommandExecutor {
             Bukkit.getPluginManager().callEvent(pte);
         }
         return false;
-    }
-
-    public static void stopSpiral(){Bukkit.getScheduler().cancelTask(spiral);}
-    public static String randParticle() {
-        Random r = new Random();
-        int rNum = r.nextInt(5) + 1;
-        if (rNum == 1)
-            return "fireworksSpark";
-        else if (rNum == 2)
-            return "happyVillager";
-        else if (rNum == 3)
-            return "witchMagic";
-        else if (rNum == 4){
-            return "flame";
-        }
-        return null;
     }
 }
