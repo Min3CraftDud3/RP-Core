@@ -50,23 +50,25 @@ public class MonsterFile {
         {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(mobFile);
 
+            try
+            {
+                String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
 
-            String[] ids = (String[]) fc.getConfigurationSection("Mobs").getKeys(false).toArray();
-
-            for (String id : ids)
-                {
+                for (String id : ids) {
                     ID = Integer.parseInt(id);
-                    if (shortestDist == -1)
-                    {
-                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                    if (shortestDist == -1) {
+                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)), 2));
                         RID = ID;
-                    }
-                    else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2)))
-                    {
-                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)),2));
+                    } else if (shortestDist > Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)), 2))) {
+                        shortestDist = Math.sqrt(Math.pow((xCoord - getXCoord(ID)), 2) + Math.pow((zCoord - getZCoord(ID)), 2));
                         RID = ID;
                     }
                 }
+            }
+            catch (NullPointerException e)
+            {
+                return -1;
+            }
 
         }
         return RID;
