@@ -20,7 +20,6 @@ import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
 import com.SinfulPixel.RPCore.Monster.CustomEntityType;
 import com.SinfulPixel.RPCore.Monster.MonsterFile;
-import com.SinfulPixel.RPCore.Monster.MonsterManager;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
@@ -106,7 +105,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
-        getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
+        //getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
@@ -146,6 +145,8 @@ public class RPCore extends JavaPlugin {
             i.printStackTrace();
             System.out.println("Error Connecting to Database. Please Check your login details.");
         }
+        //Recreate Banker INV on reload
+        Backpack.reloadBanker();
         //Register Commands
         getCommand("rpcore").setExecutor(new RPCoreCmd(this));
         getCommand("diag").setExecutor(new DiagnosticCmd(this));
@@ -196,11 +197,16 @@ public class RPCore extends JavaPlugin {
     }
     public void onDisable() {
         StatusBarAPI.removeAllStatusBars();
+        System.out.println("Cancelling Running Tasks.");
+        Bukkit.getScheduler().cancelAllTasks();
+        System.out.println("Cancelling Running Tasks...COMPLETE!");
         try {
+            System.out.println("Removing Bankers.");
             for(Entity e : Bukkit.getWorld("world").getEntities()){
                 if(e instanceof Villager){
                     e.remove();
                 }
+            System.out.println("Removing Bankers...COMPLETE!");
             }
             System.out.println("Disabling Backpacks.");
             Backpack.disable();

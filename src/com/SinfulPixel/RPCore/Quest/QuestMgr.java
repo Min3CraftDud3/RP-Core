@@ -43,9 +43,19 @@ public class QuestMgr {
         return -1;
     }
 
-    public static void killQuest(Player p, Entity e, String eName, int amount, int level, Location l){}
-    public static void gotoQuest(Player p, Location endingLoc, Entity talkTo){}
-    public static void gatherQuest(Player p, ItemStack i, String itemName, int amount){}
-    public static void escortQuest(Player p, Entity escort, Location start, Location end, Entity talkTo){}
-    public static void talkQuest(Player p, Entity talkTo){}
+    public static void killQuest(Player p, Entity e, String eName, int amount, int level, Location l){
+
+    }
+    public static void gotoQuest(Player p, Location endingLoc, Entity talkTo){
+
+    }
+    public static void gatherQuest(Player p, ItemStack i, String itemName, int amount){
+
+    }
+    public static void escortQuest(Player p, Entity escort, Location start, Location end, Entity talkTo){
+
+    }
+    public static void talkQuest(Player p, Entity talkTo){
+
+    }
 }
