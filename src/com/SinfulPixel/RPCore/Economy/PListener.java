@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 public class PListener implements Listener{
@@ -67,6 +68,8 @@ public class PListener implements Listener{
             fc.set("Player.Character.Profession","Unset");
             fc.set("Player.Character.Description","Unset");
             fc.set("Player.Pet",false);
+            fc.set("Player.CompletedQuests", Arrays.asList("X"));
+            fc.set("Player.QuestsInProgress", Arrays.asList("X"));
 		    fc.save(playerFile);
 		   }
 	}

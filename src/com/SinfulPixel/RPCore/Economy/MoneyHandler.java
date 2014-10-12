@@ -52,9 +52,11 @@ public class MoneyHandler implements Listener{
 	}
 	@EventHandler
 	public void noPlace(BlockPlaceEvent e){
-        if(e.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GOLD+"Money Pouch")){
-			e.setCancelled(true);
-		}
+        try {
+            if (e.getPlayer().getItemInHand().getItemMeta().getDisplayName().equals(ChatColor.GOLD + "Money Pouch")) {
+                e.setCancelled(true);
+            }
+        }catch(Exception xe){}
 	}
 	@EventHandler
 	public void noDrop(PlayerDropItemEvent e){
