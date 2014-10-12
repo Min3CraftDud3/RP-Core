@@ -20,6 +20,7 @@ import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
 import com.SinfulPixel.RPCore.Monster.CustomEntityType;
 import com.SinfulPixel.RPCore.Monster.MonsterFile;
+import com.SinfulPixel.RPCore.Monster.MonsterManager;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Pet.PetMgr;
@@ -27,6 +28,7 @@ import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.Player.DeathMgr;
 import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
 import com.SinfulPixel.RPCore.Player.NoItemBreak;
+import com.SinfulPixel.RPCore.Quest.QuestMgr;
 import com.SinfulPixel.RPCore.ServerMgnt.Lag;
 import com.SinfulPixel.RPCore.WeightMgr.MaterialWeight;
 import com.SinfulPixel.RPCore.WeightMgr.WeightEvent;
@@ -69,6 +71,7 @@ public class RPCore extends JavaPlugin {
     MaterialWeight mw = new MaterialWeight(this);
     MonsterFile mf = new MonsterFile(this);
     PremiumCash pc = new PremiumCash(this);
+    QuestMgr qm = new QuestMgr(this);
     public EnchantGlow glow = new EnchantGlow(120);
     MySQL MySQL = new MySQL(this, getConfig().getString("RPCore.MySQL.Host"), getConfig().getString("RPCore.MySQL.Port"),
             getConfig().getString("RPCore.MySQL.Database"), getConfig().getString("RPCore.MySQL.Username"), getConfig().getString("RPCore.MySQL.Password"));
@@ -105,7 +108,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PartyCombat(this),this);
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
-        //getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
+        getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
         getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
@@ -132,6 +135,7 @@ public class RPCore extends JavaPlugin {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        QuestMgr.prepQuestFile();
         //MySQL
         try {
             if (getConfig().getBoolean("RPCore.MySQL.UseMySQL")) {
@@ -206,8 +210,8 @@ public class RPCore extends JavaPlugin {
                 if(e instanceof Villager){
                     e.remove();
                 }
-            System.out.println("Removing Bankers...COMPLETE!");
             }
+            System.out.println("Removing Bankers...COMPLETE!");
             System.out.println("Disabling Backpacks.");
             Backpack.disable();
             System.out.println("Disabling Backpacks...COMPLETE!");
@@ -235,6 +239,9 @@ public class RPCore extends JavaPlugin {
             config.set("RPCore.MySQL.Database", "minecraft");
             config.set("RPCore.MySQL.Username", "UserNameHere");
             config.set("RPCore.MySQL.Password", "PassHere");
+            config.set("RPCore.Files.Warning", "====== File Settings ======");
+            config.set("RPCore.Files.QuestFileURL", "dropbox download link");
+            config.set("RPCore.Files.ItemFileURL", "dropbox download link");
             config.set("RPCore.General.Warning", "====== General Settings ======");
             config.set("RPCore.General.MaxCombatLogs", 5);
             config.set("RPCore.Eco.Warning", "====== Economy Settings ======");
