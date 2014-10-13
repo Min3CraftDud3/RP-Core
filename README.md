@@ -14,7 +14,7 @@
 * *Link methods to MySQL DB*
 * Add Horse Mounts for Players Reaching certain level.
 * Schematic Placement System
-* **Add Permission System**
+* ~~Add Permission System~~
 * **Add Premium Currency(currency name Sol(s))**
 * **Work on implementing custom items**
 * Etc.
