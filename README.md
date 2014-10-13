@@ -11,13 +11,13 @@
 * *Add Leveling/Skill System*
 * Add Race System: Nurenar, Tarnean, and Forsaken
 * Add Character Card Methods
-* *Link methods to MySQL DB*
+* ~~Link methods to MySQL DB~~
 * Add Horse Mounts for Players Reaching certain level.
 * Schematic Placement System
 * ~~Add Permission System~~
 * **Add Premium Currency(currency name Sol(s))**
 * **Work on implementing custom items**
-* **Make it so that Quests are external Jars**
+* **Make it so that Quests are external Jars** 
 * Etc.
 
 ###Gists (helpful code-bits):
