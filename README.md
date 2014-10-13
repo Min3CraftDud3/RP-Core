@@ -17,6 +17,7 @@
 * ~~Add Permission System~~
 * **Add Premium Currency(currency name Sol(s))**
 * **Work on implementing custom items**
+* **Make it so that Quests are external Jars**
 * Etc.
 
 ###Gists (helpful code-bits):
