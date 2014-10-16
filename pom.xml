@@ -2,15 +2,32 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- Project Info -->
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.SinfulPixel</groupId>
     <artifactId>RP-Core_Dev</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>RP-Core</name>
-
+    <developers>
+        <developer>
+            <id>Min3</id>
+            <name>Brandon H</name>
+            <email>Min3@Celenhiem.com</email>
+            <url>http://www.celenhiem.com</url>
+            <roles>
+                <role>Developer</role>
+                <role>Maintainer</role>
+            </roles>
+            <timezone>-5</timezone>
+        </developer>
+    </developers>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <!-- Build -->
     <build>
-        <finalName>RP-Core</finalName>
-        <sourceDirectory>src/main/java</sourceDirectory>
+        <finalName>${project.name}</finalName>
+        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <defaultGoal>clean package</defaultGoal>
         <resources>
             <resource>
@@ -18,10 +35,12 @@
                 <filtering>true</filtering>
                 <directory>${basedir}/src/main/resources/</directory>
                 <includes>
-                    <include>plugin.yml</include>
+                    <include>*.yml</include>
+                    <include>*.dat</include>
                 </includes>
             </resource>
         </resources>
+        <!-- Plugins -->
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -33,14 +52,14 @@
             </plugin>
         </plugins>
     </build>
-
+    <!-- Repos -->
     <repositories>
         <repository>
             <id>bukkit-repo</id>
             <url>http://repo.bukkit.org/content/groups/public/</url>
         </repository>
     </repositories>
-
+    <!-- Depends -->
     <dependencies>
         <dependency>
             <groupId>org.bukkit</groupId>
