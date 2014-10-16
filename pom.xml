@@ -26,17 +26,18 @@
         <package.dir>${project.build.directory}</package.dir>
         <assembly.dir>${project.build.directory}</assembly.dir>
         <package.name>${project.build.finalName}</package.name>
+        <bukkitVersion>1.7.9-R0.2</bukkitVersion>
     </properties>
     <!-- Build -->
     <build>
         <finalName>${project.name}</finalName>
-        <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
+        <sourceDirectory>/src/main/java</sourceDirectory>
         <defaultGoal>clean package</defaultGoal>
         <resources>
             <resource>
                 <targetPath>.</targetPath>
                 <filtering>true</filtering>
-                <directory>${basedir}/src/main/resources/</directory>
+                <directory>/src/main/resources/</directory>
                 <includes>
                     <include>*.yml</include>
                     <include>*.dat</include>
