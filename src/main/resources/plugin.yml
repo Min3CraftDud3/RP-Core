@@ -65,6 +65,8 @@ commands:
   togglemsg:
     description: "Toggle MobBounty Messages."
   epicenter:
-    description: "Epicenter Command for mob spawning"
+    description: "Epicenter Command for mob spawning."
   QuestList:
     description: "Displays all current quests."
+  perm:
+    description: "Permission Commands."

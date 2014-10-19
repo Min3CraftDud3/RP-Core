@@ -31,6 +31,8 @@ public class PermCfg {
                 fc.set("Permissions.Group.TestPerm.Prefix", "[Member]");
                 fc.set("Permissions.Group.TestPerm.Suffix", "&f");
                 fc.set("Permissions.Group.TestPerm.Permissions", Arrays.asList("permission.perm1","-permission.perm2","permission.perm3"));
+                fc.set("Permissions.Players.TestPlayer.Group","TestPerm");
+                fc.set("Permissions.Players.TestPlayer.Permissions",Arrays.asList("permission.perm5","permission.perm7"));
                 fc.save(permFile);
             }
             System.out.println("Creating Permission File...COMPLETE!");

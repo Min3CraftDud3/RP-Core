@@ -1,7 +1,235 @@
 package com.SinfulPixel.RPCore.Permissions;
 
+import com.SinfulPixel.RPCore.RPCore;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
+import org.bukkit.permissions.PermissionAttachment;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
 /**
  * Created by Min3 on 10/18/2014.
  */
 public class PermMgr {
+    static RPCore plugin;
+    public PermMgr(RPCore pl){this.plugin = pl;}
+    private static HashMap<UUID,PermissionAttachment> attachments = new HashMap<UUID,PermissionAttachment>();
+    public static void detach(Player p){
+        p.removeAttachment(attachments.get(p.getUniqueId()));
+    }
+    public static void attach(Player p){
+        PermissionAttachment pa = p.addAttachment(plugin);
+        attachments.put(p.getUniqueId(),pa);
+        if(inFile(p)) {
+            setPerms(p);
+        }else{
+            addToDefaultGroup(p);
+            setPerms(p);
+        }
+    }
+    public static void attachAll(){
+        if(Bukkit.getOnlinePlayers() != null){
+            for(Player p:Bukkit.getOnlinePlayers()){
+                attach(p);
+            }
+        }
+    }
+    private static void refreshPerms(Player p){
+        PermissionAttachment pa = attachments.get(p.getUniqueId());
+        List<String> perms = getAllPerms(p);
+        for(int i=0;i<perms.size();i++) {
+            pa.unsetPermission(perms.get(i));
+        }
+        setPerms(p);
+    }
+    public static void refreshAllPerms(){
+        for(Player p:Bukkit.getOnlinePlayers()){
+            PermissionAttachment pa = attachments.get(p.getUniqueId());
+            List<String> perms = getAllPerms(p);
+            for(int i=0;i<perms.size();i++) {
+                pa.unsetPermission(perms.get(i));
+            }
+            setPerms(p);
+        }
+    }
+    private static void setPerms(Player p){
+        List<String> perms = getPerms(p);
+        PermissionAttachment pa = attachments.get(p.getUniqueId());
+        for(int i=0;i<perms.size();i++){
+            if(perms.get(i).startsWith("-")){
+                pa.setPermission(perms.get(i).replaceFirst("-",""),false);
+            }else{
+                pa.setPermission(perms.get(i),true);
+            }
+        }
+    }
+    private static List<String> getPerms(Player p) {
+        List<String> perms = new ArrayList<>();
+        //Group Perms
+        List<String> gPerms = getGroupPerms(getGroup(p));
+        for(int i=0;i<gPerms.size();i++){
+            perms.add(gPerms.get(i));
+        }
+        //Player Perms
+        List<String> pPerms = getPlayerPerms(p);
+        for(int j=0;j<pPerms.size();j++){
+            perms.add(pPerms.get(j));
+        }
+        return perms;
+    }
+    private static String getGroup(Player p){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            if(fc.contains("Permissions.Players."+p.getUniqueId())){
+                return fc.getString("Permissions.Players."+p.getUniqueId()+".Group");
+            }
+        }
+        return null;
+    }
+    private static List<String> getGroupPerms(String group){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            if(fc.contains("Permissions.Group."+group)){
+                return fc.getStringList("Permissions.Group."+group+".Permissions");
+            }
+        }
+        return null;
+    }
+    private static List<String> getPlayerPerms(Player p){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            if(fc.contains("Permissions.Players."+p.getUniqueId())){
+                return fc.getStringList("Permissions.Players." + p.getUniqueId() + ".Permissions");
+            }
+        }
+        return null;
+    }
+    public static Set<String> getAllGroups(){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            return fc.getConfigurationSection("Permissions.Group").getKeys(false);
+        }
+        return null;
+    }
+    //Player Status Checks & Additions
+    private static boolean inFile(Player p){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            if(fc.contains("Permissions.Players."+p.getUniqueId())){
+                return true;
+            }
+        }
+        return false;
+    }
+    public static String getDefaultGroup(){
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            for(String s: fc.getConfigurationSection("Permissions.Group").getKeys(false)){
+                if(fc.getBoolean("Permissions.Group." + s + ".Default")){
+                    return s;
+                }
+            }
+        }
+        return null;
+    }
+    private static void addToDefaultGroup(Player p){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if (fc.contains("Permissions.Players." + p.getUniqueId())) {
+                    return;
+                }
+                fc.set("Permissions.Players." + p.getUniqueId() + ".PlayerName", p.getName());
+                fc.set("Permissions.Players." + p.getUniqueId() + ".Group", getDefaultGroup());
+                fc.set("Permissions.Players." + p.getUniqueId() + ".Permissions", " ");
+                fc.save(permFile);
+            }
+        }catch(IOException i){}
+    }
+    public static List<String> getAllPerms(Player p){
+        List<String> perms = new ArrayList<String>();
+        PermissionAttachment pa = attachments.get(p.getUniqueId());
+        Set<String> pm = pa.getPermissions().keySet();
+        for(String perm:pm){
+            perms.add(perm);
+        }
+        return perms;
+    }
+    public static void addPlayerPerm(CommandSender sender,Player p, String perm){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if (fc.contains("Permissions.Players." + p.getUniqueId())) {return;}
+                List<String> perms = fc.getStringList("Permissions.Players." + p.getUniqueId() + ".Permissions");
+                perms.add(perm);
+                fc.set("Permissions.Players." + p.getUniqueId() + ".Permissions",perms);
+                fc.save(permFile);
+                sender.sendMessage(ChatColor.RED+"Permission \""+ChatColor.WHITE+perm+ChatColor.RED+"\" added to player: "+ ChatColor.WHITE+p.getName());
+                refreshPerms(p);
+            }
+        }catch(IOException i){}
+    }
+    public static void removePlayerPerm(CommandSender sender, Player p,String perm){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if (fc.contains("Permissions.Players." + p.getUniqueId())) {return;}
+                List<String> perms = fc.getStringList("Permissions.Players." + p.getUniqueId() + ".Permissions");
+                if(perms.contains(perm)) {
+                    perms.remove(perm);
+                }else{
+                    sender.sendMessage(ChatColor.RED+"Permission \""+ChatColor.WHITE+perm+ChatColor.RED+"\" does not exist for player: "+ChatColor.WHITE+p.getName());
+                }
+                fc.set("Permissions.Players." + p.getUniqueId() + ".Permissions",perms);
+                fc.save(permFile);
+                refreshPerms(p);
+            }
+        }catch(IOException i){}
+    }
+    //Group Perms
+    public static void addGroupPerm(CommandSender sender,String group, String perm){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if(!fc.contains("Permissions.Group." + group)){return;}
+                List<String> perms = fc.getStringList("Permissions.Group." +group+ ".Permissions");
+                perms.add(perm);
+                fc.set("Permissions.Group." +group+ ".Permissions",perms);
+                fc.save(permFile);
+                sender.sendMessage(ChatColor.RED+"Permission \""+ChatColor.WHITE+perm+ChatColor.RED+"\" added to group: "+ChatColor.WHITE+group);
+                refreshAllPerms();
+            }
+        }catch(IOException i){}
+    }
+    public static void removeGroupPerm(CommandSender sender,String group, String perm){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if(!fc.contains("Permissions.Group." + group)){return;}
+                List<String> perms = fc.getStringList("Permissions.Group." +group+ ".Permissions");
+                perms.remove(perm);
+                fc.set("Permissions.Group." +group+ ".Permissions",perms);
+                fc.save(permFile);
+                sender.sendMessage(ChatColor.RED + "Permission \"" + ChatColor.WHITE + perm + ChatColor.RED + "\" removed from group: " + ChatColor.WHITE+group);
+                refreshAllPerms();
+            }
+        }catch(IOException i){}
+    }
 }
