@@ -15,7 +15,7 @@
 * Add Horse Mounts for Players Reaching certain level.
 * Schematic Placement System
 * ~~Add Permission System~~
-* **Add Premium Currency(currency name Sol(s))**
+* **Add Premium Currency(currency name Sol(s)) - (needs extra GUI's attached)**
 * **Work on implementing custom items**
 * **Make it so that Quests are external Jars** 
 * Etc.

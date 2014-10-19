@@ -70,3 +70,5 @@ commands:
     description: "Displays all current quests."
   perm:
     description: "Permission Commands."
+  shop:
+    description: "Opens Premium Shop."

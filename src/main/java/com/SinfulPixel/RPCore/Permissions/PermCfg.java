@@ -27,7 +27,8 @@ public class PermCfg {
                 permFile.createNewFile();
                 FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
                 fc.set("Permissions.Header", "======== [ Permissions File ] ========");
-                fc.set("Permissions.Group.TestPerm.Default", true);
+                fc.set("Permissions.Group.TestPerm.Options.Default", true);
+                fc.set("Permissions.Group.TestPerm.Options.Inherits", " ");
                 fc.set("Permissions.Group.TestPerm.Prefix", "[Member]");
                 fc.set("Permissions.Group.TestPerm.Suffix", "&f");
                 fc.set("Permissions.Group.TestPerm.Permissions", Arrays.asList("permission.perm1","-permission.perm2","permission.perm3"));
@@ -36,6 +37,32 @@ public class PermCfg {
                 fc.save(permFile);
             }
             System.out.println("Creating Permission File...COMPLETE!");
+        }catch(IOException e){e.printStackTrace();}
+    }
+    public static void addGroup(String g){
+        try{
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                fc.set("Permissions.Group."+g+".Options.Default", false);
+                fc.set("Permissions.Group."+g+".Options.Inherits", " ");
+                fc.set("Permissions.Group."+g+".Prefix", "["+g+"]");
+                fc.set("Permissions.Group."+g+".Suffix", " ");
+                fc.set("Permissions.Group."+g+".Permissions", " ");
+                fc.save(permFile);
+            }
+        }catch(IOException e){e.printStackTrace();}
+    }
+    public static void removeGroup(String group){
+        try{
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                if (fc.contains("Permissions.Group." + group)) {
+                    fc.set("Permissions.Group." + group, null);
+                    fc.save(permFile);
+                }
+            }
         }catch(IOException e){e.printStackTrace();}
     }
 

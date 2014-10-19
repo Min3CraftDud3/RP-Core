@@ -73,6 +73,11 @@ public class PermMgr {
         for(int j=0;j<pPerms.size();j++){
             perms.add(pPerms.get(j));
         }
+        //Inherit Perms
+        List<String> iPerms = getInheritedPerms(getGroup(p));
+        for(int k=0;k<iPerms.size();k++){
+            perms.add(iPerms.get(k));
+        }
         return perms;
     }
     private static String getGroup(Player p){
@@ -94,6 +99,21 @@ public class PermMgr {
             }
         }
         return null;
+    }
+    private static List<String> getInheritedPerms(String group){
+        List<String> perms = new ArrayList<>();
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            if(fc.contains("Permissions.Group."+group)){
+                for(String s: fc.getStringList("Permissions.Group."+group+".Options.Inherits")){
+                    for(String perm: getGroupPerms(s)){
+                        perms.add(perm);
+                    }
+                }
+            }
+        }
+        return perms;
     }
     private static List<String> getPlayerPerms(Player p){
         File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
@@ -129,7 +149,7 @@ public class PermMgr {
         if (permFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
             for(String s: fc.getConfigurationSection("Permissions.Group").getKeys(false)){
-                if(fc.getBoolean("Permissions.Group." + s + ".Default")){
+                if(fc.getBoolean("Permissions.Group." + s + ".Options.Default")){
                     return s;
                 }
             }

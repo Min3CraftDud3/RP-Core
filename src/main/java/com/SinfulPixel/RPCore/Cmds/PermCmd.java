@@ -1,5 +1,6 @@
 package com.SinfulPixel.RPCore.Cmds;
 
+import com.SinfulPixel.RPCore.Permissions.PermCfg;
 import com.SinfulPixel.RPCore.Permissions.PermMgr;
 import com.SinfulPixel.RPCore.RPCore;
 import org.bukkit.Bukkit;
@@ -27,12 +28,24 @@ public class PermCmd implements CommandExecutor {
                 sender.sendMessage("Set Player Group:"+ ChatColor.GREEN+" /perm player <player> group set <group>");
                 sender.sendMessage("Add/Remove Player Permissions:"+ ChatColor.GREEN+" /perm player <player> add/remove <permission>");
                 sender.sendMessage("Add/Remove Group Permissions:"+ ChatColor.GREEN+" /perm group <group> add/remove <permission>");
-            }else if(args.length==1){
-                if(args[0].equalsIgnoreCase("listgroups")){
+                sender.sendMessage("Remove Group:"+ ChatColor.GREEN+" /perm remove group <group>");
+            }else if(args.length==1) {
+                if (args[0].equalsIgnoreCase("listgroups")) {
                     Set<String> groups = PermMgr.getAllGroups();
-                    sender.sendMessage("===[ Groups ]===");
-                    for(String s: groups){
+                    sender.sendMessage(ChatColor.GREEN + "===[ Groups ]===");
+                    for (String s : groups) {
                         sender.sendMessage(s);
+                    }
+                }
+            }else if(args.length==3){
+                if(args[0].equalsIgnoreCase("remove")){
+                    if(args[1].equalsIgnoreCase("group")){
+                        Set<String> gr = PermMgr.getAllGroups();
+                        if(gr.contains(args[2])){
+                            PermCfg.removeGroup(args[2]);
+                        }else{
+                            sender.sendMessage(ChatColor.RED+"That group does not exist or is spelled wrong. Groups are (CaseSensitive).");
+                        }
                     }
                 }
             }else if(args.length==4){
