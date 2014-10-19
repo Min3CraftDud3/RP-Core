@@ -41,21 +41,13 @@ public class PermMgr {
         }
     }
     private static void refreshPerms(Player p){
-        PermissionAttachment pa = attachments.get(p.getUniqueId());
-        List<String> perms = getAllPerms(p);
-        for(int i=0;i<perms.size();i++) {
-            pa.unsetPermission(perms.get(i));
-        }
-        setPerms(p);
+       detach(p);
+       attach(p);
     }
     public static void refreshAllPerms(){
         for(Player p:Bukkit.getOnlinePlayers()){
-            PermissionAttachment pa = attachments.get(p.getUniqueId());
-            List<String> perms = getAllPerms(p);
-            for(int i=0;i<perms.size();i++) {
-                pa.unsetPermission(perms.get(i));
-            }
-            setPerms(p);
+            detach(p);
+            attach(p);
         }
     }
     private static void setPerms(Player p){
@@ -173,7 +165,6 @@ public class PermMgr {
             File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
             if (permFile.exists()) {
                 FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-                if (fc.contains("Permissions.Players." + p.getUniqueId())) {return;}
                 List<String> perms = fc.getStringList("Permissions.Players." + p.getUniqueId() + ".Permissions");
                 perms.add(perm);
                 fc.set("Permissions.Players." + p.getUniqueId() + ".Permissions",perms);
@@ -183,12 +174,23 @@ public class PermMgr {
             }
         }catch(IOException i){}
     }
+    public static void setPlayerGroup(CommandSender sender,Player p, String group){
+        try {
+            File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+            if (permFile.exists()) {
+                FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+                fc.set("Permissions.Players." + p.getUniqueId() + ".Group",group);
+                fc.save(permFile);
+                sender.sendMessage(ChatColor.RED + "Set \"" + ChatColor.WHITE + p.getName() + "'s" + ChatColor.RED + "\" group to: " + ChatColor.WHITE+group);
+                refreshPerms(p);
+            }
+        }catch(IOException i){}
+    }
     public static void removePlayerPerm(CommandSender sender, Player p,String perm){
         try {
             File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
             if (permFile.exists()) {
                 FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-                if (fc.contains("Permissions.Players." + p.getUniqueId())) {return;}
                 List<String> perms = fc.getStringList("Permissions.Players." + p.getUniqueId() + ".Permissions");
                 if(perms.contains(perm)) {
                     perms.remove(perm);
@@ -207,7 +209,6 @@ public class PermMgr {
             File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
             if (permFile.exists()) {
                 FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-                if(!fc.contains("Permissions.Group." + group)){return;}
                 List<String> perms = fc.getStringList("Permissions.Group." +group+ ".Permissions");
                 perms.add(perm);
                 fc.set("Permissions.Group." +group+ ".Permissions",perms);
@@ -222,7 +223,6 @@ public class PermMgr {
             File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
             if (permFile.exists()) {
                 FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-                if(!fc.contains("Permissions.Group." + group)){return;}
                 List<String> perms = fc.getStringList("Permissions.Group." +group+ ".Permissions");
                 perms.remove(perm);
                 fc.set("Permissions.Group." +group+ ".Permissions",perms);
