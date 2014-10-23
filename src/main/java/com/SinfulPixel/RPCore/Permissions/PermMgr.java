@@ -65,18 +65,24 @@ public class PermMgr {
         List<String> perms = new ArrayList<>();
         //Group Perms
         List<String> gPerms = getGroupPerms(getGroup(p));
-        for(int i=0;i<gPerms.size();i++){
-            perms.add(gPerms.get(i));
+        if(gPerms != null) {
+            for (int i = 0; i < gPerms.size(); i++) {
+                perms.add(gPerms.get(i));
+            }
         }
         //Player Perms
         List<String> pPerms = getPlayerPerms(p);
-        for(int j=0;j<pPerms.size();j++){
-            perms.add(pPerms.get(j));
+        if(pPerms != null) {
+            for (int j = 0; j < pPerms.size(); j++) {
+                perms.add(pPerms.get(j));
+            }
         }
         //Inherit Perms
         List<String> iPerms = getInheritedPerms(getGroup(p));
-        for(int k=0;k<iPerms.size();k++){
-            perms.add(iPerms.get(k));
+        if(iPerms != null) {
+            for (int k = 0; k < iPerms.size(); k++) {
+                perms.add(iPerms.get(k));
+            }
         }
         return perms;
     }
