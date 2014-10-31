@@ -22,11 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="RP-Core" />
+        <module name="RPCore" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="RP-Core" target="1.7" />
+      <module name="RPCore" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">

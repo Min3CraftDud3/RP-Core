@@ -2,7 +2,6 @@
   <artifact type="jar" name="RPCore">
     <output-path>$PROJECT_DIR$/out/artifacts/RPCore</output-path>
     <root id="archive" name="RPCore.jar">
-      <element id="module-output" name="RP-Core" />
       <element id="file-copy" path="$PROJECT_DIR$/src/main/resources/plugin.yml" />
     </root>
   </artifact>
