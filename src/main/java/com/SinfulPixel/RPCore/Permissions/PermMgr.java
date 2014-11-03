@@ -258,4 +258,22 @@ public class PermMgr {
             }
         }catch(IOException i){}
     }
+    public static String getPrefix(Player p){
+        String group = getGroup(p);
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            return fc.getString("Permissions.Group." +group+ ".Prefix");
+        }
+        return null;
+    }
+    public static String getSuffix(Player p){
+        String group = getGroup(p);
+        File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
+        if (permFile.exists()) {
+            FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
+            return fc.getString("Permissions.Group." +group+ ".Suffix");
+        }
+        return null;
+    }
 }

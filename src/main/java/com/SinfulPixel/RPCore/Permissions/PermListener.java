@@ -17,6 +17,7 @@ public class PermListener implements Listener {
     @EventHandler
     public void onJoin(PlayerLoginEvent e){
         PermMgr.attach(e.getPlayer());
+        e.getPlayer().setDisplayName(PermMgr.getPrefix(e.getPlayer())+e.getPlayer().getName()+PermMgr.getSuffix(e.getPlayer()));
     }
     @EventHandler
     public void onQuit(PlayerQuitEvent e){
