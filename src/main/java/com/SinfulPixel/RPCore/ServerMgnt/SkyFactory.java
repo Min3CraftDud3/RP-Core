@@ -68,9 +68,20 @@ public class SkyFactory implements Listener {
     private Map<String, Environment> worldEnvironments = new HashMap<String, Environment>();
 
     public void setDimension(World w, Environment env) {
-        worldEnvironments.put(w.getName(), env);
+        worldEnvironments.put(w.getName(), env); refreshPlayers();
     }
 
+    private void refreshPlayers(){
+        try {
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                if (this.worldEnvironments.containsKey(p.getWorld().getName())) {
+                    Object nms_entity = getHandle.invoke(p);
+                    Object nms_connection = playerConnection.get(nms_entity);
+                    sendPacket.invoke(nms_connection, getPacket(p));
+                }
+            }
+        }catch(Exception i){}
+    }
     @EventHandler
     private void onJoin(PlayerJoinEvent event) throws IllegalAccessException, IllegalArgumentException, InvocationTargetException, InstantiationException, ClassNotFoundException {
         Player p = event.getPlayer();
