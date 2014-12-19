@@ -21,7 +21,9 @@ public class PermMgr {
     public PermMgr(RPCore pl){this.plugin = pl;}
     private static HashMap<UUID,PermissionAttachment> attachments = new HashMap<UUID,PermissionAttachment>();
     public static void detach(Player p){
-        p.removeAttachment(attachments.get(p.getUniqueId()));
+        try{
+            p.removeAttachment(attachments.get(p.getUniqueId()));
+        }catch(Exception e){}
     }
     public static void attach(Player p){
         PermissionAttachment pa = p.addAttachment(plugin);
@@ -209,6 +211,7 @@ public class PermMgr {
                 fc.save(permFile);
                 sender.sendMessage(ChatColor.RED + "Set \"" + ChatColor.WHITE + p.getName() + "'s" + ChatColor.RED + "\" group to: " + ChatColor.WHITE+group);
                 refreshPerms(p);
+                p.getPlayer().setDisplayName(PermMgr.getPrefix(p.getPlayer())+p.getPlayer().getName()+PermMgr.getSuffix(p.getPlayer()));
             }
         }catch(IOException i){}
     }
@@ -263,7 +266,7 @@ public class PermMgr {
         File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
         if (permFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-            return fc.getString("Permissions.Group." +group+ ".Prefix");
+            return ChatColor.translateAlternateColorCodes('&',fc.getString("Permissions.Group." +group+ ".Prefix"));
         }
         return null;
     }
@@ -272,7 +275,7 @@ public class PermMgr {
         File permFile = new File(plugin.getDataFolder() + File.separator + "Permissions" + File.separator + "permissions.yml");
         if (permFile.exists()) {
             FileConfiguration fc = YamlConfiguration.loadConfiguration(permFile);
-            return fc.getString("Permissions.Group." +group+ ".Suffix");
+            return ChatColor.translateAlternateColorCodes('&', fc.getString("Permissions.Group." + group + ".Suffix"));
         }
         return null;
     }

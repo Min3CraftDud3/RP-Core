@@ -41,21 +41,23 @@ public class PartyCmd implements CommandExecutor {
                             if(args[1] != null) {
                                 Player pl = Bukkit.getPlayer(args[1]);
                                 if (pl != null) {
+                                    if(pl.getName().equals(p.getName())){p.sendMessage(ChatColor.GRAY+"You cannot make yourself leader."); return false;}
                                     PartyManager.makeLeader(p, pl);
                                 }
                             }
                         }
                         if(args[0].equalsIgnoreCase("toggle")){
                             if(args[1] != null && args[1].equalsIgnoreCase("PvP")){
-                                //Toggle Party PvP
+                                PartyManager.pvpStatus.put(p.getUniqueId(),true);
                                 p.sendMessage("Toggled Party PvP");
                             }
                         }
                     if(args[0].equalsIgnoreCase("invite")){
                         Player t = Bukkit.getPlayer(args[1]);
                         if(t != null){
+                            if(t.getName().equals(p.getName())){p.sendMessage(ChatColor.GRAY+"You cannot invite yourself to the party."); return false;}
                             PartyManager.invited.put(t.getName(),p.getName());
-                            t.sendMessage(ChatColor.GREEN+p.getName()+" has invited you to the party. Type: /party accept to join.");
+                            t.sendMessage(ChatColor.GREEN+p.getName()+" has invited you to their party. Type: /party accept to join.");
                             p.sendMessage(ChatColor.GREEN+"Invited "+t.getName()+" to your party.");
                         }
 

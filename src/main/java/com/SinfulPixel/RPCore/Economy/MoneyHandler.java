@@ -45,12 +45,14 @@ public class MoneyHandler implements Listener{
 				}
 			}catch(Exception ignored){}
             int rem = 0;
-            for(ItemStack im : player.getInventory().getContents()){
-                if(im.getType().equals(Material.TRAPPED_CHEST)){
-                    rem = im.getAmount();
-                }
-            }
-			player.getInventory().remove(new ItemStack(Material.TRAPPED_CHEST,rem));
+			try{
+				for (ItemStack im : player.getInventory().getContents()) {
+					if (im.getType().equals(Material.TRAPPED_CHEST)) {
+						rem = im.getAmount();
+					}
+				}
+			    player.getInventory().remove(new ItemStack(Material.TRAPPED_CHEST,rem));
+			}catch(Exception ex){}
 		}catch(Exception e){e.printStackTrace();System.out.println("Error with money pouch updates.");}
 		player.getInventory().addItem(pouch);
 	}

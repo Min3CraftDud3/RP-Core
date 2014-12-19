@@ -14,19 +14,14 @@ import java.io.IOException;
  * Created by Lantra on 9/19/2014.
  */
 public class MonsterSpawnCmd implements CommandExecutor {
-
     RPCore plugin;
-
     public MonsterSpawnCmd(RPCore plugin) {
         this.plugin = plugin;
     }
-
     @Override
-    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
-    {
+    public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
         Player p = (Player) sender;
-        if(cmd.getName().equalsIgnoreCase("epicenter"))
-        {
+        if(cmd.getName().equalsIgnoreCase("epicenter")){
             Chunk c = p.getLocation().getChunk();
             sender.sendMessage("Setting Mob Spawning Epicenter at chunk "+ c.getX() + ", " + c.getZ());
             try {
@@ -37,5 +32,4 @@ public class MonsterSpawnCmd implements CommandExecutor {
         }
         return false;
     }
-
 }

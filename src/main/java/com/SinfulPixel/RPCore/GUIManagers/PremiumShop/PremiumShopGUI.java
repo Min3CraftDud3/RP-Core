@@ -74,7 +74,7 @@ public class PremiumShopGUI implements Listener {
                 if (clicked.getItemMeta().getDisplayName().equals(ChatColor.AQUA + "" + ChatColor.BOLD + "Boosts")) {
                     e.setCancelled(true);
                     p.closeInventory();
-                    //Open Boost GUI
+                    p.openInventory(PremiumBoosts.premiumBoosts);
                 } else if (clicked.getItemMeta().getDisplayName().equals(ChatColor.GRAY + "" + ChatColor.BOLD + "Deployables")) {
                     e.setCancelled(true);
                     p.closeInventory();

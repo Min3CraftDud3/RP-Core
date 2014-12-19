@@ -16,6 +16,7 @@ import com.SinfulPixel.RPCore.Entity.ItemBanker;
 import com.SinfulPixel.RPCore.Entity.QuestNPC;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
+import com.SinfulPixel.RPCore.GUIManagers.PremiumShop.PremiumBoosts;
 import com.SinfulPixel.RPCore.GUIManagers.PremiumShop.PremiumShopGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
@@ -132,6 +133,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Firemaking(this),this);
         getServer().getPluginManager().registerEvents(new Mining(this),this);
         getServer().getPluginManager().registerEvents(new Woodcutting(this),this);
+        getServer().getPluginManager().registerEvents(new PremiumBoosts(this),this);
 
         //Create Default Config
         try {
@@ -208,6 +210,7 @@ public class RPCore extends JavaPlugin {
         getCommand("QuestList").setExecutor(new QuestCmd(this));
         getCommand("perm").setExecutor(new PermCmd(this));
         getCommand("shop").setExecutor(new ShopCmd(this));
+        getCommand("logout").setExecutor(new LogoutCmd(this));
 
         //Register Enchantment
         try {

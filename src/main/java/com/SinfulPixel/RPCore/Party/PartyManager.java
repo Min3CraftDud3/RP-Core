@@ -23,6 +23,7 @@ public class PartyManager {
     public static HashMap<UUID,String> playersinParty = new HashMap<UUID,String>();
     public static HashMap<String, String> invited = new HashMap<String,String>();
     public static List<UUID> leaders = new ArrayList<UUID>();
+    public static HashMap<UUID,Boolean> pvpStatus = new HashMap<UUID,Boolean>();
 
     public static boolean isInParty(Player p){
         if(playersinParty.containsKey(p.getUniqueId())){
@@ -38,7 +39,10 @@ public class PartyManager {
                 playersinParty.put(p.getUniqueId(), invited.get(p.getName()));
                 Player t = Bukkit.getPlayer(invited.get(p.getName()));
                 if(t !=null){
-                    t.sendMessage(ChatColor.GREEN+p.getName()+" has joined the party.");
+                    for(String n : listPartyMembers(t)) {
+                        Player na = Bukkit.getPlayer(n);
+                        na.sendMessage(ChatColor.GREEN + p.getName() + " has joined the party.");
+                    }
                     p.sendMessage(ChatColor.GREEN+"You have joined "+t.getName()+"'s party.");
                 }
             }
@@ -82,8 +86,8 @@ public class PartyManager {
         for(String s: listPartyMembers(p)){
             Player mem = Bukkit.getPlayer(s);
             try{
+                ProgressBar.doExpGain(mem, skill, d);
                 UpdatePlayer.addExp(mem.getUniqueId(), skill, d);
-                ProgressBar.doExpGain(mem, "WOODCUTTING", d);
             }catch(SQLException e){}
         }
     }

@@ -31,7 +31,7 @@ public class DiagnosticCmd implements CommandExecutor {
                     player.sendMessage(ChatColor.GREEN + "Server TPS: " + ChatColor.DARK_GREEN + tps + ChatColor.GREEN + ". Server Lag Percentage: " + ChatColor.DARK_GREEN + lag);
                     Runtime runtime = Runtime.getRuntime();
                     System.gc();
-                    if (player.isOp()) {
+                    if (player.isOp()|| player.hasPermission("RPCore.Diagnostics")) {
                         sender.sendMessage(ChatColor.RED + "MEMORY" + ChatColor.YELLOW + "[Maximum / Used]   " + ChatColor.GREEN + runtime.totalMemory() / 1048576L + " MB / " + (runtime.totalMemory() - runtime.freeMemory()) / 1048576L + " MB");
                         sender.sendMessage(ChatColor.RED + "MEMORY" + ChatColor.YELLOW + "[Free]   " + ChatColor.RESET + ChatColor.GREEN + runtime.freeMemory() / 1048576L + " MB");
                     }

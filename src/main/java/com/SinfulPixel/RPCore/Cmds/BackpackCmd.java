@@ -25,7 +25,7 @@ public class BackpackCmd implements CommandExecutor {
             //PlayerTeleportEvent pte = new PlayerTeleportEvent(player,player.getWorld().getSpawnLocation());
             //Bukkit.getPluginManager().callEvent(pte);
             List<String> perms = PermMgr.getAllPerms(player);
-            player.sendMessage("==[Player Permissions]===");
+            player.sendMessage("===[Player Permissions]===");
             for(int i=0;i<perms.size();i++){
                 player.sendMessage(perms.get(i));
             }

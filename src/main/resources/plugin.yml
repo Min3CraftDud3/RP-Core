@@ -72,3 +72,5 @@ commands:
     description: "Permission Commands."
   shop:
     description: "Opens Premium Shop."
+  logout:
+    description: "Safely logs the player out."

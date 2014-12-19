@@ -28,17 +28,18 @@ public class CombatMgr implements Listener{
 	@EventHandler
 	public void combat(EntityDamageByEntityEvent e){
 		if(e.getEntity() instanceof Player){
-			final Player p = (Player)e.getEntity();
+			final Player p = (Player)e.getEntity();//victim
 			if(e.getDamager() instanceof Player) {
-		        final Player a = (Player) e.getDamager();
+		        final Player a = (Player) e.getDamager();//attacker
                 try {
                     if(PetMgr.hasPet(p)){PetMgr.removePet(p);}
+                    if(PetMgr.hasPet(a)){PetMgr.removePet(a);}
                     if (PartyManager.playersinParty.containsKey(p.getUniqueId()) || PartyManager.playersinParty.containsKey(a.getUniqueId())) {
-                        if (PartyManager.playersinParty.get(p.getUniqueId()).equals(PartyManager.playersinParty.get(a.getUniqueId()))) {
+                        if (PartyManager.playersinParty.get(p.getUniqueId()).equals(PartyManager.playersinParty.get(a.getUniqueId()))||PartyManager.playersinParty.get(a.getUniqueId()).equals(PartyManager.playersinParty.get(p.getUniqueId()))) {
                             return;
                         }
                     }
-                }catch(Exception ex){}
+                }catch(Exception ex){ex.printStackTrace();}
                 if(!inCombat.contains(p.getUniqueId())) {
                     inCombat.add(p.getUniqueId());
                     p.sendMessage(cl + ChatColor.GRAY + "You have entered combat.");
