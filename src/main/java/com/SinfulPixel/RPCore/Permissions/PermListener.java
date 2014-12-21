@@ -8,6 +8,7 @@ import org.bukkit.event.player.PlayerLoginEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 /**
+ * Permission activator for permissions.
  * Created by Min3 on 10/18/2014.
  */
 public class PermListener implements Listener {

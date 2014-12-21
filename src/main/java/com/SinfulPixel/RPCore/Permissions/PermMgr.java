@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
+ * This class is responsible for attaching/detaching and processing permission changes wo all players and groups.
  * Created by Min3 on 10/18/2014.
  */
 public class PermMgr {

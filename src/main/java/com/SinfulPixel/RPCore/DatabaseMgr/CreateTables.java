@@ -58,6 +58,12 @@ public class CreateTables {
             System.out.println("Creating Mobs Table");
             RPCore.statement.executeUpdate("CREATE TABLE MOBS (X INT,Y INT, RADUIS INT, MINRANGE INT, MAXRANGE INT);");
             System.out.println("Creating Mobs Table...COMPLETE!");
+            System.out.println("Creating PlayerInfo Table");
+            RPCore.statement.executeUpdate("CREATE TABLE PLAYERS (UUID varchar(38) NOT NULL UNIQUE PRIMARY KEY,PNAME varchar(30) NOT NULL, " +
+                    "LOCATION varchar(40),"+
+                    "ISOP INT,"+
+                    "ISFLYING INT);");
+            System.out.println("Creating PlayerInfo Table...COMPLETE!");
             RPCore.c.setAutoCommit(true);
         }
     }

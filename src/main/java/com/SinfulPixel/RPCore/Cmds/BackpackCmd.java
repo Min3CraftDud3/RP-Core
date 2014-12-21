@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import java.util.List;
 
 /**
+ * Test command for any code bits that need it
  * Created by Min3 on 8/5/2014.
  */
 public class BackpackCmd implements CommandExecutor {

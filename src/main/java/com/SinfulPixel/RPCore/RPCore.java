@@ -4,10 +4,7 @@ import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
-import com.SinfulPixel.RPCore.DatabaseMgr.CreatePlayer;
-import com.SinfulPixel.RPCore.DatabaseMgr.CreateTables;
-import com.SinfulPixel.RPCore.DatabaseMgr.DbUtils;
-import com.SinfulPixel.RPCore.DatabaseMgr.UpdatePlayer;
+import com.SinfulPixel.RPCore.DatabaseMgr.*;
 import com.SinfulPixel.RPCore.Economy.*;
 import com.SinfulPixel.RPCore.Effects.EffectManager;
 import com.SinfulPixel.RPCore.Entity.Banker;
@@ -82,6 +79,7 @@ public class RPCore extends JavaPlugin {
     PermCfg pcfg = new PermCfg(this);
     PermMgr pmgr = new PermMgr(this);
     UpdatePlayer up = new UpdatePlayer(this);
+    PlayerInfo pi = new PlayerInfo(this);
     public EnchantGlow glow = new EnchantGlow(120);
     public static PastebinReporter REPORTER;
     private ArtRenderer artRenderer;
@@ -134,6 +132,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Mining(this),this);
         getServer().getPluginManager().registerEvents(new Woodcutting(this),this);
         getServer().getPluginManager().registerEvents(new PremiumBoosts(this),this);
+        getServer().getPluginManager().registerEvents(new LogoutCmd(this),this);
 
         //Create Default Config
         try {
