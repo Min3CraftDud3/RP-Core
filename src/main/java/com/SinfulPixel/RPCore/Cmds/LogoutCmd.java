@@ -38,14 +38,23 @@ public class LogoutCmd implements CommandExecutor, Listener{
                         this.it = this.it - 1;
                         if (this.it <= 0) {
                             if(DbUtils.useSQL()){
-                                try{PlayerInfo.saveInfo(player);}catch(Exception e){}
+                                try{
+                                    PlayerInfo.saveInfo(player);
+                                    player.kickPlayer(ChatColor.GOLD + "You have been safely logged out.");
+                                    Bukkit.getScheduler().cancelTask(LogoutCmd.run);
+                                    break;
+                                }catch(Exception e){e.printStackTrace();}
                             }
                             player.kickPlayer(ChatColor.GOLD + "You have been safely logged out.");
                             Bukkit.getScheduler().cancelTask(LogoutCmd.run);
                         }
                     }
+                    if(isCancelled.get(player.getUniqueId())){
+                        Bukkit.getScheduler().cancelTask(LogoutCmd.run);
+                        player.sendMessage(ChatColor.RED+"Logout Canceled due to movement.");
+                    }
                 }
-            },0L,20L);
+            },0L,80L);
         }
         return false;
     }

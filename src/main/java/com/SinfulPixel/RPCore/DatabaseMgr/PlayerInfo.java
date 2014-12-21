@@ -16,25 +16,17 @@ public class PlayerInfo {
     static RPCore plugin;
     public PlayerInfo(RPCore pl){this.plugin = pl;}
     public static void saveInfo(final Player player) throws SQLException {
-        if(!isPlayer(player.getUniqueId())) {
-            final String loc = player.getLocation().getWorld()+","+player.getLocation().getX()+","+player.getLocation().getY()+","+
-                    player.getLocation().getZ();
-            Bukkit.getScheduler().scheduleAsyncDelayedTask(plugin, new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        RPCore.statement.executeUpdate("INSERT INTO PLAYERS (UUID,PNAME,LOCATION,ISOP,ISFLYING)VALUES ('"
-                                + player.getUniqueId() + "','" + player.getName() + "','"+loc+"','"+player.isOp()+"','"+player.isFlying()+"')");
-
-                    }catch(SQLException e){
-                        System.out.println("Error Creating Player Data: \n"+e.toString());
-                    }
-                }
-            });
-            System.out.println("Created DB Profile.");
-        }
+        String loc = player.getLocation().getWorld().getName()+","+(int)player.getLocation().getX()+","+(int)player.getLocation().getY()+","+(int)player.getLocation().getZ();
+        System.out.println(loc+","+loc.length());
+        try {
+                    RPCore.statement.executeUpdate("INSERT INTO PLAYERS (UUID,PNAME,LOCATION,ISOP,ISFLYING)VALUES ('"
+                        + player.getUniqueId() + "','" + player.getName() + "','"+loc+"','"+boolint(player.isOp())+"','"+boolint(player.isFlying())+"')");
+                }catch(SQLException e) {
+                System.out.println("Error Creating Player Data: \n" + e.toString());
+            }
+        System.out.println("Created DB Profile.");
     }
-    public static void loadInfo(final Player player){
+    public static void loadInfo(Player player){
         ResultSet res;
         try {
             res = RPCore.statement.executeQuery("SELECT * FROM PLAYERS WHERE UUID ='" + player.getUniqueId() + "';");
@@ -58,6 +50,13 @@ public class PlayerInfo {
             return true;
         }
         return false;
+    }
+    public static int boolint(boolean b){
+        if(b){
+            return 1;
+        }else{
+            return 0;
+        }
     }
     public static Location strLoc(String str){
         String[] s = str.split(",");
