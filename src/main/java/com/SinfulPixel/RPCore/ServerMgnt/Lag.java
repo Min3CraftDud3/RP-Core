@@ -1,11 +1,11 @@
 package com.SinfulPixel.RPCore.ServerMgnt;
 
 import com.SinfulPixel.RPCore.RPCore;
-import net.minecraft.server.v1_7_R3.EntityPlayer;
+import net.minecraft.server.v1_8_R1.EntityPlayer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.v1_7_R3.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_8_R1.entity.CraftPlayer;
 import org.bukkit.entity.*;
 
 public class Lag implements Runnable {

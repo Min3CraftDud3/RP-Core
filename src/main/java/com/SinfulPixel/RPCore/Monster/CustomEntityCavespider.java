@@ -1,9 +1,9 @@
 package com.SinfulPixel.RPCore.Monster;
 
-import net.minecraft.server.v1_7_R3.EntityCaveSpider;
-import net.minecraft.server.v1_7_R3.EntitySpider;
-import net.minecraft.server.v1_7_R3.GenericAttributes;
-import net.minecraft.server.v1_7_R3.World;
+
+import net.minecraft.server.v1_8_R1.EntityCaveSpider;
+import net.minecraft.server.v1_8_R1.GenericAttributes;
+import net.minecraft.server.v1_8_R1.World;
 
 /**
  * Created by Lantra on 9/19/2014.
@@ -27,7 +27,7 @@ public class CustomEntityCavespider extends EntityCaveSpider implements CustomEn
     public void setLevel(int level)
     {
         this.level = level;
-        this.getAttributeInstance(GenericAttributes.a).setValue(BASEHEALTH+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
+        this.getAttributeInstance(GenericAttributes.maxHealth).setValue(BASEHEALTH+(getLevel() * 1.5)); //base health set to 5, health = 5 + level * 1.5
         this.getAttributeInstance(GenericAttributes.e).setValue(BASEDAMAGE + (.25D * getLevel())); //base damage increases by .25 every level
 
     }

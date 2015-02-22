@@ -138,3 +138,7 @@
    - Check box is labeled "Minimum Quality"
     * If checked show all items of that quality or higher
     * If unchecked show all items of that quality only
+
+###Newly Added
+* Aperture - Device for spawning portals to travel to towns, 30 min cooldown.
+* Fix petMgr class, update it to 1.8

@@ -1,12 +1,12 @@
 package com.SinfulPixel.RPCore.Monster;
 
-import net.minecraft.server.v1_7_R3.*;
+
+import net.minecraft.server.v1_8_R1.*;
 import org.bukkit.entity.EntityType;
 
 import java.lang.reflect.Field;
 import java.util.List;
 import java.util.Map;
-
 
 /**
  * Created by Lantra on 9/18/2014.

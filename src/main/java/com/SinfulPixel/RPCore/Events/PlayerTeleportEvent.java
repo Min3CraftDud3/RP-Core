@@ -1,9 +1,7 @@
 package com.SinfulPixel.RPCore.Events;
 
-import net.minecraft.server.v1_7_R3.PacketPlayOutWorldParticles;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_7_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
@@ -53,11 +51,11 @@ public class PlayerTeleportEvent extends Event implements Cancellable {
             double z1= -(radius*Math.sin(y));
             double x = radius * Math.cos(y);
             double z = radius * Math.sin(y);
-            PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(randParticle(),(float)(l.getX()+x),(float)(l.getY()+y),(float)(l.getZ()+z),0,0,0,0,1);
-            PacketPlayOutWorldParticles packet1 = new PacketPlayOutWorldParticles(randParticle(),(float)(l.getX()+x1),(float)(l.getY()+y),(float)(l.getZ()+z1),0,0,0,0,1);
+           // PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles(randParticle(),(float)(l.getX()+x),(float)(l.getY()+y),(float)(l.getZ()+z),0,0,0,0,1);
+            //PacketPlayOutWorldParticles packet1 = new PacketPlayOutWorldParticles(randParticle(),(float)(l.getX()+x1),(float)(l.getY()+y),(float)(l.getZ()+z1),0,0,0,0,1);
             for(Player o : Bukkit.getOnlinePlayers()){
-                ((CraftPlayer)o).getHandle().playerConnection.sendPacket(packet);
-                ((CraftPlayer)o).getHandle().playerConnection.sendPacket(packet1);
+                //((CraftPlayer)o).getHandle().playerConnection.sendPacket(packet);
+                //((CraftPlayer)o).getHandle().playerConnection.sendPacket(packet1);
 
             }
         }

@@ -1,9 +1,9 @@
 package com.SinfulPixel.RPCore.Monster;
 
 import com.SinfulPixel.RPCore.RPCore;
-import org.bukkit.World;
 import org.bukkit.Chunk;
-import org.bukkit.craftbukkit.v1_7_R3.entity.CraftEntity;
+import org.bukkit.World;
+import org.bukkit.craftbukkit.v1_8_R1.entity.CraftEntity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.CreatureSpawnEvent;

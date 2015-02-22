@@ -1,11 +1,17 @@
 package com.SinfulPixel.RPCore.Cmds;
 
+import com.SinfulPixel.RPCore.ItemMgr.LoreMgr;
+import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
 import com.SinfulPixel.RPCore.Permissions.PermMgr;
 import com.SinfulPixel.RPCore.RPCore;
+import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.List;
 
@@ -25,6 +31,16 @@ public class BackpackCmd implements CommandExecutor {
             Player player = (Player) sender;
             //PlayerTeleportEvent pte = new PlayerTeleportEvent(player,player.getWorld().getSpawnLocation());
             //Bukkit.getPluginManager().callEvent(pte);
+            ItemStack is = new ItemStack(Material.LOG,1);
+            ItemMeta im = is.getItemMeta();
+            im.setDisplayName(ChatColor.GRAY+"Fire Pit");
+            is.setItemMeta(im);
+            player.getInventory().addItem(is);
+
+            ItemStack s = new ItemStack(Material.DIAMOND_SWORD,1);
+            NameMgr.setName(s);
+            LoreMgr.addAttribute(s);
+            player.getInventory().addItem(s);
             List<String> perms = PermMgr.getAllPerms(player);
             player.sendMessage("===[Player Permissions]===");
             for(int i=0;i<perms.size();i++){

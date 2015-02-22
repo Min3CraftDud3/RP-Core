@@ -3,6 +3,7 @@ package com.SinfulPixel.RPCore;
 import com.SinfulPixel.RPCore.Chat.Chat;
 import com.SinfulPixel.RPCore.Cmds.*;
 import com.SinfulPixel.RPCore.Combat.CombatMgr;
+import com.SinfulPixel.RPCore.CustItems.Aperture;
 import com.SinfulPixel.RPCore.Database.MySQL.MySQL;
 import com.SinfulPixel.RPCore.DatabaseMgr.*;
 import com.SinfulPixel.RPCore.Economy.*;
@@ -11,20 +12,18 @@ import com.SinfulPixel.RPCore.Entity.Banker;
 import com.SinfulPixel.RPCore.Entity.EntityManager;
 import com.SinfulPixel.RPCore.Entity.ItemBanker;
 import com.SinfulPixel.RPCore.Entity.QuestNPC;
+import com.SinfulPixel.RPCore.GUIManagers.ApertureGUI;
 import com.SinfulPixel.RPCore.GUIManagers.BankerGUI;
 import com.SinfulPixel.RPCore.GUIManagers.FireGUI;
 import com.SinfulPixel.RPCore.GUIManagers.PremiumShop.PremiumBoosts;
 import com.SinfulPixel.RPCore.GUIManagers.PremiumShop.PremiumShopGUI;
 import com.SinfulPixel.RPCore.ItemMgr.NameMgr;
-import com.SinfulPixel.RPCore.Monster.CreeperExpMan;
 import com.SinfulPixel.RPCore.Monster.CustomEntityType;
-import com.SinfulPixel.RPCore.Monster.MonsterFile;
 import com.SinfulPixel.RPCore.Party.PartyCombat;
 import com.SinfulPixel.RPCore.Party.PartyManager;
 import com.SinfulPixel.RPCore.Permissions.PermCfg;
 import com.SinfulPixel.RPCore.Permissions.PermListener;
 import com.SinfulPixel.RPCore.Permissions.PermMgr;
-import com.SinfulPixel.RPCore.Pet.PetMgr;
 import com.SinfulPixel.RPCore.Player.Backpack;
 import com.SinfulPixel.RPCore.Player.DeathMgr;
 import com.SinfulPixel.RPCore.Player.Levels.LevelMgr;
@@ -73,7 +72,7 @@ public class RPCore extends JavaPlugin {
     CreatePlayer cPlayer = new CreatePlayer(this);
     DbUtils dbu = new DbUtils(this);
     MaterialWeight mw = new MaterialWeight(this);
-    MonsterFile mf = new MonsterFile(this);
+    //MonsterFile mf = new MonsterFile(this);
     PremiumCash pc = new PremiumCash(this);
     QuestMgr qm = new QuestMgr(this);
     PermCfg pcfg = new PermCfg(this);
@@ -97,7 +96,7 @@ public class RPCore extends JavaPlugin {
         int lagtimecheck = Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new BukkitRunnable(){public void run() {CheckTime.CheckTime();}}, 0L, 20L);
 
         //Register Custom Entities
-        CustomEntityType.registerEntities();
+        //CustomEntityType.registerEntities();
         //Remove Statusbars on restart
         StatusBarAPI.removeAllStatusBars();
         //Re-Attach Permission on Restart
@@ -106,7 +105,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Chat(this), this);
         getServer().getPluginManager().registerEvents(new PListener(this), this);
         getServer().getPluginManager().registerEvents(new MoneyHandler(this), this);
-        getServer().getPluginManager().registerEvents(new PetMgr(this), this);
+        //getServer().getPluginManager().registerEvents(new PetMgr(this), this);
         getServer().getPluginManager().registerEvents(new CombatMgr(this), this);
         getServer().getPluginManager().registerEvents(new Bounty(this), this);
         getServer().getPluginManager().registerEvents(new EntityManager(this), this);
@@ -120,7 +119,7 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ItemBanker(this),this);
         getServer().getPluginManager().registerEvents(new EffectManager(this), this);
         //getServer().getPluginManager().registerEvents(new MonsterManager(this), this);
-        getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
+        //getServer().getPluginManager().registerEvents(new CreeperExpMan(this), this);
         getServer().getPluginManager().registerEvents(new WeightEvent(this),this);
         getServer().getPluginManager().registerEvents(new TreeMgr(this),this);
         getServer().getPluginManager().registerEvents(new SchematicCmd(this),this);
@@ -133,6 +132,8 @@ public class RPCore extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new Woodcutting(this),this);
         getServer().getPluginManager().registerEvents(new PremiumBoosts(this),this);
         getServer().getPluginManager().registerEvents(new LogoutCmd(this),this);
+        getServer().getPluginManager().registerEvents(new Aperture(this),this);
+        getServer().getPluginManager().registerEvents(new ApertureGUI(this),this);
 
         //Create Default Config
         try {
@@ -142,7 +143,7 @@ public class RPCore extends JavaPlugin {
             saveConfig();
             PermCfg.createConfig();
             MaterialWeight.createWeightFile();
-            MonsterFile.createMobFile();
+           // MonsterFile.createMobFile();
             LevelMgr.createLevelFile();
             Backpack.createBPConfig();
             Banker.createBankerFile();
@@ -194,7 +195,7 @@ public class RPCore extends JavaPlugin {
         getCommand("EcoAdd").setExecutor(new EconomyCmd(this));
         getCommand("Eco").setExecutor(new EconomyCmd(this));
         getCommand("EcoLookUp").setExecutor(new EconomyCmd(this));
-        getCommand("petme").setExecutor(new PetCmd(this));
+        //getCommand("petme").setExecutor(new PetCmd(this));
         getCommand("roll").setExecutor(new DiceCmd(this));
         getCommand("Party").setExecutor(new PartyCmd(this));
         getCommand("backpack").setExecutor(new BackpackCmd(this));
@@ -237,6 +238,7 @@ public class RPCore extends JavaPlugin {
         System.out.println("Cancelling Running Tasks.");
         Bukkit.getScheduler().cancelAllTasks();
         System.out.println("Cancelling Running Tasks...COMPLETE!");
+        //CustomEntityType.unregisterEntities();
         try {
             System.out.println("Removing Bankers.");
             for(Entity e : Bukkit.getWorld("world").getEntities()){

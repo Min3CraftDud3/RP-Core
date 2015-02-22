@@ -1,13 +1,13 @@
 package com.SinfulPixel.RPCore.Pet;
 
 import com.SinfulPixel.RPCore.RPCore;
-import net.minecraft.server.v1_7_R3.*;
+import net.minecraft.server.v1_8_R1.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.craftbukkit.v1_7_R3.entity.CraftLivingEntity;
-import org.bukkit.craftbukkit.v1_7_R3.util.UnsafeList;
+import org.bukkit.craftbukkit.v1_8_R1.entity.CraftLivingEntity;
+import org.bukkit.craftbukkit.v1_8_R1.util.UnsafeList;
 import org.bukkit.entity.*;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Skeleton.SkeletonType;
@@ -89,10 +89,10 @@ public class PetMgr implements Listener{
 		public boolean a() {
 			if (Bukkit.getPlayer(p) == null) {return path != null;}
 			Location targetLocation = Bukkit.getPlayer(p).getLocation();
-			boolean flag = this.entity.getNavigation().c();
-			this.entity.getNavigation().b(false);
-			this.path = this.entity.getNavigation().a(targetLocation.getX() + 1, targetLocation.getY(), targetLocation.getZ() + 1);
-			this.entity.getNavigation().b(flag);
+			//boolean flag = this.entity.getNavigation().c();
+			//this.entity.getNavigation().b(false);
+			//this.path = this.entity.getNavigation().a(targetLocation.getX() + 1, targetLocation.getY(), targetLocation.getZ() + 1);
+			//this.entity.getNavigation().b(flag);
 			if (this.path != null) {this.c();}
 			return this.path != null;
 		}
